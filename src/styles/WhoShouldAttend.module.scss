@@ -1,0 +1,90 @@
+.whoShouldAttend {
+    background-color: #1E1E1E; 
+    color: #ffffff;
+    padding: 2rem;
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        font-weight: normal;
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    p {
+        flex: 1;
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-right: 2rem;
+    }
+
+    .attendeeTypes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        max-width: 40%;
+    }
+
+    .attendeeType {
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-weight: 500;
+        font-size: 0.9rem;
+        white-space: nowrap;
+
+        &.orange {
+            background-color: #FF6B2B; 
+        }
+
+        &.red {
+            background-color: #FF5A5A;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .whoShouldAttend {
+        padding: 1.5rem;
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        .content {
+            flex-direction: column;
+        }
+
+        p {
+            margin-right: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .attendeeTypes {
+            max-width: 100%;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .whoShouldAttend {
+        padding: 1rem;
+
+        h2 {
+            font-size: 1.75rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+        }
+
+        .attendeeType {
+            font-size: 0.8rem;
+            padding: 0.4rem 0.8rem;
+        }
+    }
+}
