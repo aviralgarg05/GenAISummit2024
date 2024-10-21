@@ -17,8 +17,6 @@ export default function Home() {
         <link rel="icon" href="/GenAI.svg" />
       </Head>
 
-      <Navbar />
-
       <main className={styles.main}>
         <About />
         <WhoShouldAttend />
@@ -27,7 +25,6 @@ export default function Home() {
         <AdvisoryCommittee />
       </main>
 
-      <Footer />
     </div>
   )
 }
