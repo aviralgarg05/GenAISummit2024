@@ -1,10 +1,11 @@
 .themes {
-    background-color: #f5e6d3;
+    padding: 8rem;
+    background-color: #FFF8EF;
     overflow: hidden;
 
     h2 {
         font-size: 2.5rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
         color: #333;
         text-align: left;
         font-weight: normal;
@@ -17,12 +18,12 @@
         padding: 0.5rem 0;
         border-top: 1px solid rgba(0, 0, 0, 0.1);
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        background-color: #ffffff;
+        background-color: #FFF8EF;
 
         .scrollContent {
             display: inline-block;
             animation: scroll 60s linear infinite;
-            background-color: #ffffff;
+            background-color: #FFF8EF;
 
             span {
                 display: inline-block;
@@ -96,10 +97,6 @@
 
     .description {
         flex: 1;
-        background-color: white;
-        padding: 2rem;
-        border-radius: 20px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 
         p {
             font-size: 1rem;

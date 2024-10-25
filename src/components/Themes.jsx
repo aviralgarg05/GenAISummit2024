@@ -25,14 +25,13 @@ const Themes = () => {
 
   return (
     <section className={styles.themes}>
-      <h2>Conference Themes</h2>
-      <div className={styles.scrollingStrip}>
+     {/* <div className={styles.scrollingStrip}>
         <div className={styles.scrollContent}>
           {[...scrollingThemes, ...scrollingThemes].map((theme, index) => (
             <span key={index}>{theme}</span>
           ))}
         </div>
-      </div>
+      </div> */}
       <div className={styles.content}>
         <div className={styles.carouselContainer}>
           <div className={styles.carousel}>
@@ -51,8 +50,9 @@ const Themes = () => {
           </div>
         </div>
         <div className={styles.description}>
+          <h2>Conference Themes</h2>
           <p>
-            Generative AI is more than a technology—it's the engine driving the future
+            Generative AI is more than a technology. It&apos;s the engine driving the future
             of innovation. From automating complex processes to creating entirely new
             forms of content, GenAI is unlocking possibilities that were once the realm
             of science fiction. This summit is your gateway to understanding how GenAI

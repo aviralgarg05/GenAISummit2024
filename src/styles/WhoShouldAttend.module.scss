@@ -1,19 +1,19 @@
 .whoShouldAttend {
-    background-color: #1E1E1E; 
+    background-color: #111111; 
     color: #ffffff;
-    padding: 2rem;
+    padding: 4rem;
+    display: flex;
 
     h2 {
         font-size: 2.5rem;
-        margin-bottom: 1rem;
         font-weight: normal;
     }
 
     .content {
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
-        gap: 2rem;
     }
 
     p {
@@ -31,6 +31,9 @@
     }
 
     .attendeeType {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 0.5rem 1rem;
         border-radius: 50px;
         font-weight: 500;
@@ -50,6 +53,7 @@
 @media (max-width: 768px) {
     .whoShouldAttend {
         padding: 1.5rem;
+        flex-direction: column;
 
         h2 {
             font-size: 2rem;

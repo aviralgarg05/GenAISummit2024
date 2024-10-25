@@ -1,41 +1,42 @@
 import React, { useState } from 'react';
 import styles from '../styles/AdvisoryCommittee.module.scss';
+import Image from 'next/image';
 
 const advisors = [
   {
     name: "Rishikesh Patankar",
     title: "Vice President at National Skill Development Corporation, New Delhi",
-    // image: "/images/rishikesh-patankar.jpg"
+    image: "/Rishikesh.png"
   },
   {
     name: "Geetha Adinarayan",
     title: "IBM Distinguished Engineer, CTO, Product Engineering, APAC, Bangalore",
-    // image: "/images/geetha-adinarayan.jpg"
+    image: "/Geetha.png"
   },
   {
     name: "Neeti Gupta",
     title: "Founder and CEO of AI Partnerships Consultancy, California, United States",
-    // image: "/images/neeti-gupta.jpg"
+    image: "/Neeti.png"
   },
   {
     name: "Kuljeet Singh",
     title: "Principal Architect, Wipro Technologies, Memphis, United States",
-    // image: "/images/kuljeet-singh.jpg"
+    image: "/Kuljeet.png"
   },
   {
     name: "Sharad Bajaj",
     title: "Director of Engineering, AWS, Seattle, United States",
-    // image: "/images/sharad-bajaj.jpg"
+    image: "/Sharad.png"
   },
   {
     name: "Anupam Gupta",
     title: "Program Director, Power Electronics BOSCH, Germany",
-    // image: "/images/anupam-gupta.jpg"
+    image: "/Anupam.png"
   },
   {
     name: "Mohit Kumar",
     title: "Professor at Rostock University, Research Team Lead AI Regulations and Security Software Competence Center Hagenberg, Austria",
-    // image: "/images/mohit-kumar.jpg"
+    image: "/Mohit.png"
   }
 ];
 
@@ -57,21 +58,23 @@ const AdvisoryCommittee = () => {
             </div>
           ))}
         </div>
-        <div className={styles.advisorGrid}>
-          {advisors.map((advisor, index) => (
+       <div className={styles.advisorGrid}>
+          {advisors.slice(0, 7).map((advisor, index) => (
             <div 
               key={index} 
               className={styles.advisorBox}
               onMouseEnter={() => setHoveredAdvisor(index)}
               onMouseLeave={() => setHoveredAdvisor(null)}
             >
-              {/* 
-              <img 
+              <Image 
                 src={advisor.image} 
-                alt={advisor.name} 
-                className={styles.advisorImage} 
+                alt={advisor.name}
+                fill
+                sizes="(max-width: 768px) 100vw,
+                       40vw"
+                style={{ objectFit: 'cover' }}
+                priority={index === 0}
               />
-              */}
             </div>
           ))}
         </div>

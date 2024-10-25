@@ -3,6 +3,7 @@ import Head from 'next/head'
 import styles from '@/styles/preRegister.module.scss'
 import { initializeApp, getApps, FirebaseApp } from "firebase/app";
 import { getFirestore, collection, addDoc, Firestore } from "firebase/firestore";
+import Image from 'next/image';
 
 let app: FirebaseApp | undefined;
 let db: Firestore | undefined;
@@ -19,12 +20,13 @@ const PreRegister: React.FC = () => {
 
   useEffect(() => {
     const firebaseConfig = {
-      apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-      authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-      projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-      storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-      messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-      appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  apiKey: "AIzaSyAaJEWMEsU0Mt6RI2E_43v0_a-KCpS8y9c",
+  authDomain: "genai-summit.firebaseapp.com",
+  projectId: "genai-summit",
+  storageBucket: "genai-summit.appspot.com",
+  messagingSenderId: "451993233683",
+  appId: "1:451993233683:web:5f8e95e2188770ffb4d2e6",
+  measurementId: "G-P440ENWW7V"
     };
 
     if (!getApps().length) {
@@ -36,6 +38,7 @@ const PreRegister: React.FC = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prevState => ({ ...prevState, [name]: value }));
+    setFeedbackMessage(null); // Clear feedback when user starts typing
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -62,68 +65,112 @@ const PreRegister: React.FC = () => {
         <meta name="description" content="Pre-register for the Gen AI Summit - Join us for cutting-edge discussions on artificial intelligence." />
         <link rel="icon" href="/GenAI.svg" />
       </Head>
+      
       <main className={styles.main}>
-        <h1>Pre-register for Gen AI Summit</h1>
-        <form onSubmit={handleSubmit} className={styles.form}>
-          <div className={styles.formGroup}>
-            <label htmlFor="name">Full Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="company">Company</label>
-            <input
-              type="text"
-              id="company"
-              name="company"
-              value={formData.company}
-              onChange={handleChange}
-            />
-          </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="jobTitle">Job Title</label>
-            <input
-              type="text"
-              id="jobTitle"
-              name="jobTitle"
-              value={formData.jobTitle}
-              onChange={handleChange}
-            />
-          </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="interests">Areas of Interest</label>
-            <textarea
-              id="interests"
-              name="interests"
-              value={formData.interests}
-              onChange={handleChange}
-              placeholder="E.g., Machine Learning, Natural Language Processing, Computer Vision"
-            />
-          </div>
-          <button type="submit" className={styles.submitButton}>Pre-Register</button>
-          {feedbackMessage && (
-            <div className={`${styles.feedbackMessage} ${feedbackMessage.isError ? styles.error : styles.success}`}>
-              {feedbackMessage.text}
+        <div className={styles.formContainer}>
+          <h1>Pre-register</h1>
+          <form onSubmit={handleSubmit} className={styles.form}>
+            <div className={styles.formGroup}>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Full Name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
             </div>
-          )}
-        </form>
+            
+            <div className={styles.formGroup}>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email Address"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            
+            <div className={styles.formGroup}>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                placeholder="Company Name"
+                value={formData.company}
+                onChange={handleChange}
+              />
+            </div>
+            
+            <div className={styles.formGroup}>
+              <input
+                type="text"
+                id="jobTitle"
+                name="jobTitle"
+                placeholder="Job Title"
+                value={formData.jobTitle}
+                onChange={handleChange}
+              />
+            </div>
+            
+            <div className={styles.formGroup}>
+              <input
+                id="interests"
+                name="interests"
+                placeholder="Area of interest (e.g. Machine Learning, Natural Language Processing...)"
+                value={formData.interests}
+                onChange={handleChange}
+              />
+            </div>
+            
+            <button type="submit" className={styles.submitButton}>
+              Pre-register
+            </button>
+            
+            {feedbackMessage && (
+              <div className={`${styles.feedbackMessage} ${feedbackMessage.isError ? styles.error : styles.success}`}>
+                {feedbackMessage.text}
+              </div>
+            )}
+          </form>
+        </div>
+
+<div className={styles.imageGallery}>
+          <div className={styles.imageWrapper}>
+            <Image 
+              src="/preRegister1.webp" 
+              alt="Speaker 1" 
+              fill 
+              priority
+              sizes="(max-width: 640px) 100vw,
+                     (max-width: 1024px) 33vw,
+                     50vw"
+            />
+          </div>
+          <div className={styles.imageWrapper}>
+            <Image 
+              src="/preRegister2.jpg" 
+              alt="Speaker 2" 
+              fill
+              sizes="(max-width: 640px) 100vw,
+                     (max-width: 1024px) 33vw,
+                     50vw"
+            />
+          </div>
+          <div className={styles.imageWrapper}>
+            <Image 
+              src="/preRegister3.jpg" 
+              alt="Speaker 3" 
+              fill
+              sizes="(max-width: 640px) 100vw,
+                     (max-width: 1024px) 33vw,
+                     50vw"
+            />
+          </div>
+        </div>
       </main>
     </div>
   )

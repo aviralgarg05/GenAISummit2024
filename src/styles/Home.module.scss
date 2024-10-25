@@ -5,5 +5,29 @@
 }
 
 .main {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
    width: 100%;
+   padding: 40px 0;
+}
+
+.landingSection{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 40px;
+   gap: 40px;
+
+   h1{
+      font-size: 120px;
+      font-weight: normal;
+   }
+
+   p{
+      font-size: 30px;
+      font-weight: normal;
+   }
 }

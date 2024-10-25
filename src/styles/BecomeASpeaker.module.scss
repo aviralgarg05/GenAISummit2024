@@ -1,0 +1,153 @@
+.container {
+    width: 100vw;
+    background-color: #111111;
+    padding: 4rem;
+}
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    >div {
+        flex: 1;
+        max-width: 1000px;
+    }
+
+    h2 {
+        color: white;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        font-weight: normal;
+    }
+
+    p {
+        color: #999;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+}
+
+.form {
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    max-width: 500px;
+}
+
+.inputWrapper {
+    flex: 1;
+    position: relative;
+}
+
+.input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #333;
+    border-radius: 6px;
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+
+    &::placeholder {
+        color: #666;
+    }
+
+    &:focus {
+        outline: none;
+        border-color: #666;
+    }
+
+    &.errorInput {
+        border-color: #fc4d4d !important;
+        background-color: rgba(252, 77, 77, 0.1);
+    }
+}
+
+.submitButton {
+    background: #ff7527;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+
+    &:hover {
+        background: darken(#ff7527, 5%);
+    }
+
+    &:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+}
+
+.errorText {
+    position: absolute;
+    bottom: -1.5rem;
+    left: 0;
+    color: #fc4d4d;
+    font-size: 0.85rem;
+}
+
+.successText {
+    position: absolute;
+    bottom: -1.5rem;
+    left: 0;
+    color: #4CAF50;
+    font-size: 0.85rem;
+}
+
+// Tablet styles
+@media (max-width: 768px) {
+    .container {
+        padding: 3rem 0;
+    }
+
+    .content {
+        flex-direction: column;
+        padding: 0 1.5rem;
+
+        >div {
+            max-width: 100%;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+    }
+
+    .form {
+        max-width: 100%;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .submitButton {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 2rem 0;
+    }
+
+    .content {
+        padding: 0 1rem;
+
+        h2 {
+            font-size: 1.75rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+        }
+    }
+}

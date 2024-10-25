@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #f5e6d3;
+    background-color: #FFF8EF;
     position: fixed;
     top: 0;
     left: 0;
@@ -25,18 +25,35 @@
         padding: 0;
 
         li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-left: 1.5rem;
 
             a {
                 text-decoration: none;
-                color: #333;
-                font-size: 1rem;
+                font-size: 1.2rem;
                 transition: color 0.3s ease;
                 cursor: pointer;
+                color: black;
 
                 &:hover {
                     color: #ff6b6b;
                 }
+            }
+
+            button{
+                background: linear-gradient(to right, #FF7527 0%, #FC4D4D 50%, #FF7527 100%);
+                border: none;
+                border-radius: 50px;
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-width: 100px;
+                color: white;
+                cursor: pointer;
+                font-size: 1.1rem;
             }
         }
     }
@@ -70,7 +87,7 @@
             height: 100vh;
             width: 250px;
             flex-direction: column;
-            background-color: #f5e6d3;
+            background-color: #FFF8EF;
             padding: 2rem;
             transition: right 0.3s ease;
 

@@ -8,9 +8,41 @@ html,
 body {
     width: 100%;
     overflow-x: hidden;
-        background-color: #f5e6d3;
+    background-color: #FFF8EF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 body {
-        background-color: #f5e6d3;
+    background-color: #FFF8EF;
+}
+
+.animate-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity, transform;
+}
+
+.animate-section.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#home,
+#about,
+#speakers,
+#themes,
+#committee {
+    scroll-margin-top: 80px;
+    position: relative;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-section {
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
 }

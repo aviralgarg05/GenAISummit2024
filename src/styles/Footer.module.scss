@@ -1,179 +1,121 @@
 .footer {
-  background: linear-gradient(135deg, #ff7f50, #ff6b6b);
+  background: linear-gradient(to right, #FF7527 0%, #FC4D4D 50%, #FF7527 100%);
   color: white;
-  padding: 3rem 5% 2rem;
-  border-radius: 30px 30px 0 0;
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem 5%;
+  width: 100%;
 
   .content {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 2rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
   }
 
-  .leftSection {
-    flex: 1;
-    max-width: 50%;
+  .navigation {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
 
-    .logoContainer {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1.5rem;
-
-      .logo {
-        height: 50px;
-        margin-right: 2rem;
-      }
-
-      .ajeshLogo {
-        height: 100px;
-      }
-    }
-
-    .tagline {
+    a {
+      color: white;
+      text-decoration: none;
       font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.4;
-    }
+      transition: opacity 0.3s ease;
 
-    .preRegisterButton {
-      background-color: white;
-      color: #ff6b6b;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 25px;
-      font-weight: bold;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .logoSection {
+    display: flex;
+    gap: 20px;
+    .logo {
+      height: 60px;
+      object-fit: contain;
+    }
+  }
+
+  .socialLinks {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+
+    a {
+      color: white;
+      transition: opacity 0.3s ease;
 
       &:hover {
-        background-color: #f0f0f0;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        opacity: 0.8;
       }
     }
-  }
-
-  .rightSection {
-    text-align: right;
-
-    h3 {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-
-    .socialIcons {
-      display: flex;
-      justify-content: flex-end;
-      gap: 1.5rem;
-
-      a {
-        color: white;
-        transition: opacity 0.3s ease;
-
-        &:hover {
-          opacity: 0.8;
-        }
-      }
-    }
-  }
-
-  .divider {
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.3);
-    margin: 2rem 0;
   }
 
   .copyright {
     text-align: center;
-    font-size: 0.9rem;
-    opacity: 0.8;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
 
-@media (max-width: 968px) {
-  .footer {
-    padding: 2.5rem 5% 1.5rem;
-
-    .leftSection {
-      max-width: 60%;
-    }
-  }
-}
-
+// Tablet styles
 @media (max-width: 768px) {
   .footer {
-    padding: 2rem 5% 1rem;
-    border-radius: 20px 20px 0 0;
+    padding: 1.5rem 4%;
 
-    .content {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
+    .navigation {
+      gap: 1.5rem;
 
-    .leftSection, .rightSection {
-      width: 100%;
-      max-width: 100%;
-      margin-bottom: 2rem;
-    }
-
-    .leftSection {
-      .logoContainer {
-        justify-content: center;
-      }
-
-      .tagline {
-        font-size: 1rem;
-      }
-
-      .preRegisterButton {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
+      a {
+        font-size: 0.85rem;
       }
     }
 
-    .rightSection {
-      text-align: center;
-
-      .socialIcons {
-        justify-content: center;
+    .logoSection {
+      .logo {
+        height: 35px;
       }
+    }
+
+    .socialLinks {
+      gap: 1.2rem;
     }
   }
 }
 
+// Mobile styles
 @media (max-width: 480px) {
   .footer {
-    padding: 1.5rem 5% 1rem;
+    padding: 1.5rem 3%;
 
-    .leftSection {
-      .logoContainer {
-        flex-direction: column;
-        gap: 1rem;
+    .content {
+      gap: 1.5rem;
+    }
 
-        .logo, .ajeshLogo {
-          height: 35px;
-        }
-      }
+    .navigation {
+      gap: 1rem;
+      flex-direction: column;
+      align-items: center;
 
-      .tagline {
-        font-size: 0.9rem;
+      a {
+        font-size: 0.8rem;
       }
     }
 
-    .rightSection {
-      h3 {
-        font-size: 1.1rem;
+    .logoSection {
+      .logo {
+        height: 30px;
       }
+    }
+
+    .socialLinks {
+      gap: 1rem;
     }
 
     .copyright {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
     }
   }
 }
