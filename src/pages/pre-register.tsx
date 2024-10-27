@@ -138,7 +138,7 @@ const PreRegister: React.FC = () => {
           </form>
         </div>
 
-<div className={styles.imageGallery}>
+{/*<div className={styles.imageGallery}>
           <div className={styles.imageWrapper}>
             <Image 
               src="/preRegister1.webp" 
@@ -170,7 +170,7 @@ const PreRegister: React.FC = () => {
                      50vw"
             />
           </div>
-        </div>
+        </div> */}
       </main>
     </div>
   )

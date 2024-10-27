@@ -42,8 +42,8 @@ export default function Home() {
         </div>
         */}
 
-        <div id="speakers">
-          <AnimatedSection delay={300}>
+        <div id="sessions">
+          <AnimatedSection delay={200}>
             <SpeakerSessions/>
           </AnimatedSection>
         </div>
@@ -55,19 +55,19 @@ export default function Home() {
         </div>
 
         <div id="become-speaker">
-          <AnimatedSection delay={300}>
+          <AnimatedSection delay={400}>
             <BecomeASpeaker/>
           </AnimatedSection>
         </div>
 
         <div id="themes">
-          <AnimatedSection delay={400}>
+          <AnimatedSection delay={500}>
             <Themes />
           </AnimatedSection>
         </div>
 
         <div id="committee">
-          <AnimatedSection delay={500}>
+          <AnimatedSection delay={600}>
             <AdvisoryCommittee />
           </AnimatedSection>
         </div>

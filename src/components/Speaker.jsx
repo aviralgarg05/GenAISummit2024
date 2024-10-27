@@ -1,127 +1,76 @@
-import React, { useState } from 'react';
-import styles from '../styles/Speakers.module.scss';
+import React from 'react';
 import Image from 'next/image';
-import { Linkedin } from 'lucide-react';
+import styles from '../styles/Speakers.module.scss';
 
-const speakersData = [
+const speakers = [
   {
-    id: 1,
     name: "Ramesh Kailasam",
     title: "CEO - Indiatech",
-    image: "/Ramesh.png",
-    linkedin: "https://www.linkedin.com/in/rameesh/?originalSubdomain=in"
+    image: "/image1.png"
   },
   {
-    id: 2,
     name: "Sunil Dhaiya Executive",
     title: "VP - Wadhwani Foundation",
-    image: "/Sunil.png",
-    linkedin: "https://www.linkedin.com/in/sunil-dahiya-4414355"
+    image: "/image2.png"
   },
   {
-    id: 3,
     name: "Mr. Rishikesh Patankar",
     title: "VP - National Skill Council",
-    image: "/Rishikesh.png",
-    linkedin: "https://www.linkedin.com/in/atulgohad/?originalSubdomain=in"
+    image: "/image3.png"
   },
   {
-    id: 4,
     name: "Atul Gohad",
-    title: "Leader, Emerging Technologies,Bosch Global Software Technologies",
-    image: "/Atul.png",
-    linkedin: "https://www.linkedin.com/in/atul-gohad/"
+    title: "Leader, Emerging Technologies, Bosch Global Software Technologies",
+    image: "/image4.png"
   },
   {
-    id: 5,
     name: "Kumar Anurag Pratap",
     title: "Vice President, Digital Inclusion & Sustainability Leader, Capgemini",
-    image: "/Anurag.png",
-    linkedin: "https://www.linkedin.com/in/anuragpratap/"
+    image: "/image5.png"
   },
   {
-    id: 6,
     name: "Geetha Adinarayan",
     title: "IBM Distinguished Engineer,CTO,Product Engineering",
-    image: "/Geetha.png",
-    linkedin: "https://www.linkedin.com/in/geetha-adinarayan/"
+    image: "/image6.png"
   },
   {
-    id: 7,
     name: "Richa Mukherjee",
     title: "Senior Director - PayU",
-    image: "/Richa.png",
-    linkedin: "https://www.linkedin.com/in/richa-mukherjee-0b331999/?originalSubdomain=in"
+    image: "/image7.png"
   },
   {
-    id: 8,
     name: "Mr. Sahhil Kumar",
     title: "CEO - Quick Pay",
-    image: "/Sahil.png",
-    linkedin: "https://www.linkedin.com/in/sahhil-kumar-b4b0a1100/?originalSubdomain=in"
+    image: "/image8.png"
   },
   {
-    id: 9,
     name: "Dr N.Panigrahi",
     title: "DRDO",
-    image: "/Sahil.png",
-    linkedin: "https://www.linkedin.com/in/dr-n-panigrahi/"
+    image: "/image8.png"
   }
 ];
 
 const Speakers = () => {
-  const [expandedCard, setExpandedCard] = useState(0);
-
-  const rows = [
-    speakersData.slice(0, 3),
-    speakersData.slice(3, 6),
-    speakersData.slice(6, 9)
-  ];
-
-  const handleLinkedInClick = (e, url) => {
-    e.stopPropagation(); 
-    window.open(url, '_blank');
-  };
-
   return (
     <section className={styles.speakers}>
-      <div className={styles.container}>
-        <h2>Speakers</h2>
-        {rows.map((row, rowIndex) => (
-          <div key={rowIndex} className={styles.speakerRow}>
-            {row.map((speaker) => (
-              <div
-                key={speaker.id}
-                className={`${styles.speakerCard} ${expandedCard === speaker.id ? styles.expanded : ''}`}
-                onMouseEnter={() => setExpandedCard(speaker.id)}
-              >
-                <div className={styles.imageOverlay} />
-                <Image
-                  src={speaker.image}
-                  alt={speaker.name}
-                  fill
-                  className={styles.backgroundImage}
-                  priority={rowIndex === 0}
-                />
-                <div className={styles.content}>
-                  <div>
-                    <h3>{speaker.name}</h3>
-                    <p>{speaker.title}</p>
-                  </div>
-                  {expandedCard === speaker.id && (
-                    <a
-                      href={speaker.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.linkedinIcon}
-                      onClick={(e) => handleLinkedInClick(e, speaker.linkedin)}
-                    >
-                      <Linkedin size={20} />
-                    </a>
-                  )}
-                </div>
-              </div>
-            ))}
+      <h2>Speakers</h2>
+      <div className={styles.speakersGrid}>
+        {speakers.map((speaker, index) => (
+          <div key={index} className={styles.speakerCard}>
+            <div className={styles.speakerInfo}>
+              <h3>{speaker.name}</h3>
+              <p>{speaker.title}</p>
+            </div>
+            <div className={styles.imageWrapper}>
+              <Image
+                src={speaker.image}
+                alt={speaker.name}
+                width={400}
+                height={400}
+                className={styles.speakerImage}
+                priority={index === 0}
+              />
+            </div>
           </div>
         ))}
       </div>

@@ -57,12 +57,10 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(3, 1fr);
-        gap: 1rem;
         position: relative;
 
         .advisorBox {
             position: relative;
-            aspect-ratio: 1;
             overflow: hidden;
             transition: all 0.3s ease;
             cursor: pointer;
@@ -117,10 +115,6 @@
 @media (max-width: 1200px) {
     .advisoryCommittee {
         padding: 2rem 150px;
-
-        .advisorGrid {
-            gap: 0.8rem;
-        }
     }
 }
 

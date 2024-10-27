@@ -38,6 +38,7 @@ const Navbar = () => {
               block: 'start'
             });
           }
+          setIsOpen(false); // Close menu after navigation and scrolling
         }, 100);
       });
     } else {
@@ -49,12 +50,13 @@ const Navbar = () => {
           block: 'start'
         });
       }
+      setIsOpen(false); // Close menu after scrolling
     }
-    setIsOpen(false);
   };
 
   const handleNavClick = (sectionId) => (e) => {
     e.preventDefault();
+    setIsOpen(false); // Immediately start closing the menu
     scrollToSection(sectionId);
   };
 
@@ -81,6 +83,11 @@ const Navbar = () => {
         <li>
           <a href="#about" onClick={handleNavClick('about')}>
             About
+          </a>
+        </li>
+        <li>
+          <a href="#sessions" onClick={handleNavClick('sessions')}>
+            Sessions
           </a>
         </li>
         <li>
