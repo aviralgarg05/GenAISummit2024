@@ -10,6 +10,7 @@ import Speakers from '@/components/Speaker'
 import Themes from '@/components/Themes'
 import AnimatedSection from '@/components/AnimatedSection';
 import BecomeASpeaker from './../components/BecomeASpeaker';
+import SpeakerSessions from '../components/SpeakerSessions';
 
 export default function Home() {
   return (
@@ -34,9 +35,16 @@ export default function Home() {
           </AnimatedSection>
         </div>
 
-        <div id="who-should-attend">
+       {/* <div id="who-should-attend">
           <AnimatedSection delay={200}>
             <WhoShouldAttend />
+          </AnimatedSection>
+        </div>
+        */}
+
+        <div id="speakers">
+          <AnimatedSection delay={300}>
+            <SpeakerSessions/>
           </AnimatedSection>
         </div>
 

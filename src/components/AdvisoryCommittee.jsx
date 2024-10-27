@@ -1,3 +1,4 @@
+// AdvisoryCommittee.tsx
 import React, { useState } from 'react';
 import styles from '../styles/AdvisoryCommittee.module.scss';
 import Image from 'next/image';
@@ -58,8 +59,8 @@ const AdvisoryCommittee = () => {
             </div>
           ))}
         </div>
-       <div className={styles.advisorGrid}>
-          {advisors.slice(0, 7).map((advisor, index) => (
+        <div className={styles.advisorGrid}>
+          {advisors.map((advisor, index) => (
             <div 
               key={index} 
               className={styles.advisorBox}
@@ -70,11 +71,14 @@ const AdvisoryCommittee = () => {
                 src={advisor.image} 
                 alt={advisor.name}
                 fill
-                sizes="(max-width: 768px) 100vw,
-                       40vw"
+                sizes="(max-width: 768px) 100vw, 40vw"
                 style={{ objectFit: 'cover' }}
                 priority={index === 0}
               />
+              <div className={styles.mobileInfo}>
+                <h3>{advisor.name}</h3>
+                <p>{advisor.title}</p>
+              </div>
             </div>
           ))}
         </div>

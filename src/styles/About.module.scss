@@ -1,228 +1,260 @@
-.about {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    background-color: #FFF8EF;
-    padding: 6rem 0;
+// About.module.scss
 
-    .container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 2rem;
+.container {
+    margin: 0 auto;
+    padding: 8rem 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem; // Increased gap between sections
+    background-color: #FDF8F6;
+    width: 100%;
+}
+
+// Common styles for sections
+.whatSection,
+.whySection,
+.whoSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; // Changed to flex-start
+    gap: 20rem; // Increased gap between content and title
+}
+
+.content {
+    flex: 1;
+    max-width: 70%; // Adjusted for better content width
+}
+
+.titleContainer {
+    flex: 1;
+    max-width: 30%;
+}
+
+// Title styles
+.whatTitle,
+.whyTitle,
+.whoTitle {
+    font-size: 12rem; // Increased font size
+    font-weight: normal;
+    color: #FF6B4A;
+    line-height: 1;
+    margin: 0;
+
+    .subtitle {
+        display: block;
+        font-size: 2.5rem;
+        color: #FF6B4A;
+        font-style: italic;
+        margin-top: -1rem; // Adjust space between title and subtitle
+    }
+}
+
+// What section specific styles
+.whatSection {
+
+    .mainText,
+    .subText {
+        font-size: 1.25rem;
+        line-height: 1.6;
+        color: #333;
+        margin-bottom: 2rem;
     }
 
-    .cardWrapper {
-        display: flex;
-        gap: 2rem;
-        width: 100%;
+    .subText {
+        color: #666;
+        margin-bottom: 0;
     }
+}
 
-    .card {
-        flex: 1;
-        background: white;
-        border-radius: 24px;
-        overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+// Why section specific styles
+.whySection {
+    flex-direction: row-reverse;
 
-        &:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
+    .whyList {
+        list-style: none;
+        padding: 0;
+        margin: 0;
 
-        .cardContent {
-            padding: 2.5rem;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            font-weight: normal;
-            margin-bottom: 1.5rem;
+        li {
+            font-size: 1.25rem;
             color: #333;
-        }
-
-        p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #666;
-            margin-bottom: 2rem;
-            flex-grow: 1;
-        }
-
-        &:first-child {
-            background: linear-gradient(135deg, #ff7f50, #ff6b6b);
-            
-            h2, p {
-                color: white;
-            }
-
-            .preregister {
-                display: inline-flex;
-                align-items: center;
-                gap: 0.5rem;
-                padding: 0.8rem 1.5rem;
-                background-color: white;
-                color: #ff6b6b;
-                border: 2px solid transparent;
-                border-radius: 100px;
-                cursor: pointer;
-                font-size: 1rem;
-                font-weight: 500;
-                transition: all 0.3s ease;
-
-                .icon {
-                    transition: transform 0.3s ease;
-                }
-
-                &:hover {
-                    border-color: white;
-                    background-color: transparent;
-                    color: white;
-
-                    .icon {
-                        transform: translateX(4px);
-                    }
-                }
-            }
-        }
-
-        &:last-child {
-            background-color: white;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-
-    ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            flex-grow: 1;
-    
-            li {
-                display: flex;
-                align-items: flex-start;
-                margin-bottom: 1rem;
-                font-size: 1.1rem;
-                color: #444;
-                gap: 0.5rem; 
-    
-                .bullet {
-                    color: #FF7527;
-                    font-size: 1.2rem;
-                    line-height: 1.2;
-                    min-width: 8px; 
-                }
-    
-                span:last-child {
-                    flex: 1;
-                    line-height: 1.4;
-                    padding-top: 2px;
-                }
-    
-                &:last-child {
-                    margin-bottom: 0;
-                }
-            }
-            }
+            line-height: 1.8;
+            position: relative;
+            margin-bottom: 0.5rem;
         }
     }
 }
 
-@media (max-width: 1024px) {
-    .about {
-        padding: 4rem 0;
+// Who section specific styles
+.whoSection {
+    .attendeeTypes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
 
-        .container {
-            padding: 0 1.5rem;
+    .attendeeType {
+        background: #FF6B4A;
+        color: white;
+        padding: 1rem 2.5rem;
+        border-radius: 3rem;
+        font-size: 1.5rem;
+        white-space: nowrap;
+
+        &:nth-child(odd) {
+            // Changed to odd for correct alternating pattern
+            background: #FF4B4B;
         }
+    }
+}
 
-        .card {
-            .cardContent {
-                padding: 2rem;
-            }
+// Responsive styles
+@media (max-width: 1400px) {
+    .container {
+        padding: 4rem;
+    }
 
-            h2 {
-                font-size: 2rem;
-                margin-bottom: 1.25rem;
-            }
+    .whatSection,
+    .whySection,
+    .whoSection {
+        gap: 8rem;
+    }
 
-            p, ul li {
-                font-size: 1rem;
-            }
+    .whatTitle,
+    .whyTitle,
+    .whoTitle {
+        font-size: 10rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        gap: 8rem;
+    }
+
+    .whatSection,
+    .whySection,
+    .whoSection {
+        gap: 6rem;
+    }
+
+    .whatTitle,
+    .whyTitle,
+    .whoTitle {
+        font-size: 8rem;
+
+        .subtitle {
+            font-size: 2rem;
         }
+    }
+}
+
+@media (max-width: 992px) {
+
+    .whatTitle,
+    .whyTitle,
+    .whoTitle {
+        font-size: 6rem;
+    }
+
+    .content,
+    .titleContainer {
+        max-width: 50%;
     }
 }
 
 @media (max-width: 768px) {
-    .about {
-        padding: 3rem 0;
+    .container {
+        padding: 3rem;
+        gap: 6rem;
+    }
 
-        .container {
-            padding: 0 1rem;
+    .whatSection,
+    .whySection,
+    .whoSection {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .content,
+    .titleContainer {
+        max-width: 100%;
+    }
+
+    .whatTitle,
+    .whyTitle,
+    .whoTitle {
+        font-size: 5rem;
+        text-align: left;
+
+        .subtitle {
+            font-size: 1.75rem;
+        }
+    }
+
+    // Mobile order adjustment
+    .whatSection,
+    .whySection,
+    .whoSection {
+        .titleContainer {
+            order: -1; // This ensures title appears above content
+        }
+    }
+
+    .whoSection {
+        .attendeeTypes {
+            gap: 1rem;
         }
 
-        .cardWrapper {
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .card {
-            .cardContent {
-                padding: 1.5rem;
-            }
-
-            h2 {
-                font-size: 1.75rem;
-                margin-bottom: 1rem;
-            }
-
-            p {
-                margin-bottom: 1.5rem;
-            }
-
-            &:first-child {
-                .preregister {
-                    width: 100%;
-                    justify-content: center;
-                    padding: 0.7rem 1.2rem;
-                }
-            }
-
-            &:last-child {
-                ul li {
-                    margin-bottom: 0.75rem;
-
-                    .bullet {
-                        margin-right: 0.75rem;
-                    }
-                }
-            }
+        .attendeeType {
+            font-size: 1.1rem;
+            padding: 0.75rem 1.5rem;
         }
     }
 }
 
 @media (max-width: 480px) {
-    .about {
-        padding: 2rem 0;
+    .container {
+        padding: 2rem;
+        gap: 4rem;
+    }
 
-        .card {
-            .cardContent {
-                padding: 1.25rem;
-            }
+    .whatTitle,
+    .whyTitle,
+    .whoTitle {
+        font-size: 4rem;
 
-            h2 {
-                font-size: 1.5rem;
-            }
+        .subtitle {
+            font-size: 1.5rem;
+            margin-top: -0.5rem;
+        }
+    }
 
-            p, ul li {
-                font-size: 0.95rem;
-            }
+    .whatSection,
+    .whySection,
+    .whoSection {
+        gap: 2rem;
+    }
 
-            &:first-child {
-                .preregister {
-                    font-size: 0.9rem;
-                }
-            }
+    .whatSection {
+
+        .mainText,
+        .subText {
+            font-size: 1.1rem;
+        }
+    }
+
+    .whySection {
+        .whyList li {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+    }
+
+    .whoSection {
+        .attendeeType {
+            font-size: 1rem;
+            padding: 0.5rem 1.25rem;
         }
     }
 }

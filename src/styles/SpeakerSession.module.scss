@@ -1,0 +1,244 @@
+// SpeakerSessions.module.scss
+
+.container {
+    margin: 0 auto;
+    padding: 4rem 280px;
+    background-color: #1E1E1E;
+    width: 100%;
+}
+
+.mainTitle {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 4rem;
+    line-height: 1.6;
+    max-width: 900px;
+}
+
+.sessionsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem; // Increased gap between sessions
+    position: relative;
+}
+
+.sessionBlock {
+    width: 100%;
+    position: relative;
+    min-height: 200px; // Ensure minimum height for proper spacing
+}
+
+.firstSession,
+.secondSession,
+.thirdSession {
+    display: flex;
+    align-items: center; // Center align items vertically
+    gap: 4rem; // Consistent gap between number and content
+    position: relative;
+}
+
+.textContent {
+    flex: 1;
+    max-width: 75%;
+}
+
+.title {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+.description {
+    font-size: 1.1rem;
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.numberCircle {
+    width: 220px;
+    height: 220px;
+    background: transparent;
+    border: 2px solid #FF6B4A;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FF6B4A;
+    font-size: 6rem;
+    font-weight: normal;
+    flex-shrink: 0;
+    position: absolute;
+    top: 50%; // Center vertically
+    transform: translateY(-50%); // Center vertically
+}
+
+.firstSession {
+    padding-right: 160px; // Increased padding for better spacing
+
+    .numberCircle {
+        right: 0;
+    }
+
+    .textContent {
+        margin-right: auto;
+    }
+}
+
+.secondSession {
+    padding-left: 160px; // Increased padding for better spacing
+
+    .numberCircle {
+        left: 0;
+    }
+
+    .textContent {
+        margin-left: auto;
+    }
+}
+
+.thirdSession {
+    padding-right: 160px; // Increased padding for better spacing
+
+    .numberCircle {
+        right: 0;
+    }
+
+    .textContent {
+        margin-right: auto;
+    }
+}
+
+// Responsive styles
+@media (max-width: 1200px) {
+    .container {
+        padding: 3rem;
+    }
+
+    .numberCircle {
+        width: 100px;
+        height: 100px;
+        font-size: 3rem;
+    }
+
+    .firstSession,
+    .secondSession,
+    .thirdSession {
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 2rem;
+    }
+
+    .sessionsContainer {
+        gap: 6rem; // Increased gap for better spacing
+    }
+
+    .sessionBlock {
+        padding-top: 100px; // Increased padding to accommodate the circle
+        position: relative;
+        min-height: auto;
+    }
+
+    .firstSession,
+    .secondSession,
+    .thirdSession {
+        flex-direction: column;
+        align-items: flex-start; // Align items to start
+        padding: 0;
+        text-align: left;
+        gap: 2rem;
+        position: relative; // Ensure relative positioning
+    }
+
+    .textContent {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .numberCircle {
+        position: absolute;
+        top: -100px; // Move further up
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+
+    .firstSession .numberCircle,
+    .secondSession .numberCircle,
+    .thirdSession .numberCircle {
+        top: -100px; // Consistent positioning for all circles
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto; // Reset right positioning
+    }
+
+    .secondSession {
+        padding-left: 0; // Remove desktop padding
+
+        .textContent {
+            margin-left: 0; // Reset margin
+        }
+    }
+
+    .title {
+        font-size: 1.5rem;
+        margin-top: 0;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    .mainTitle {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .sessionBlock {
+        padding-top: 80px; // Adjusted padding
+    }
+
+    .numberCircle {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+        top: -80px; // Adjusted positioning
+    }
+
+    .firstSession .numberCircle,
+    .secondSession .numberCircle,
+    .thirdSession .numberCircle {
+        top: -80px; // Consistent positioning for smaller screens
+    }
+}
