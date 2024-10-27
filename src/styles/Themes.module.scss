@@ -115,6 +115,11 @@
         transform: translateX(-50%);
     }
 }
+@media (max-width: 1440px) {
+    .themes {
+        padding: 3rem;
+    }
+}
 
 @media (max-width: 1024px) {
     .themes {

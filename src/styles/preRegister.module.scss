@@ -1,13 +1,14 @@
 .preRegister {
-    width: 100vw;
     min-height: 100vh;
     background-color: #ffffff;
-    padding: 10rem 2rem 0 2rem;
+    display: flex;
 
     .main {
         max-width: 1200px;
         margin: 0 auto;
         display: flex;
+        justify-content: center;
+        align-items: center;
         gap: 4rem;
 
         h1 {
@@ -17,8 +18,21 @@
         }
 
         .formContainer {
-            flex: 1;
+            flex: 2;
+            min-width: 40vw;
             max-width: 500px;
+        }
+        .contacts{
+            display: flex;
+            position: relative;
+            align-self: center;
+            gap: 2rem;
+            top: 20px;
+        }
+        .preRegisterContent{
+            position: relative;
+            align-items: center;
+            gap: 2rem;
         }
 
         .form {
@@ -155,6 +169,7 @@
         padding: 4rem 1.5rem;
 
         .main {
+            padding-top: 50px;
             flex-direction: column;
 
             .formContainer {
@@ -178,10 +193,11 @@
         padding: 3rem 1rem;
 
         .main {
+            padding-top: 50px;
             gap: 2rem;
 
             h1 {
-                font-size: 1.75rem;
+                font-size: 2rem;
                 margin-bottom: 1.5rem;
             }
 

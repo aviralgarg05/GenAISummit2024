@@ -4,6 +4,7 @@ import styles from '@/styles/preRegister.module.scss'
 import { initializeApp, getApps, FirebaseApp } from "firebase/app";
 import { getFirestore, collection, addDoc, Firestore } from "firebase/firestore";
 import Image from 'next/image';
+import {Envelope, Phone} from 'phosphor-react';
 
 let app: FirebaseApp | undefined;
 let db: Firestore | undefined;
@@ -35,6 +36,13 @@ const PreRegister: React.FC = () => {
     }
   }, []);
 
+    const handleCallClick = () => {
+      window.location.href = `tel:+916230356822`;
+    };
+
+    const handleMailClick = () => {
+      window.location.href = `mailto:connect@genaisummit.in`;
+    };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prevState => ({ ...prevState, [name]: value }));
@@ -137,8 +145,19 @@ const PreRegister: React.FC = () => {
             )}
           </form>
         </div>
+        <div className={styles.preRegisterContent}>
+          <span>
+          Pre-register now for the GenAI Summit 2024, happening this December in Delhi! This exciting event will bring together AI innovators, industry leaders, and enthusiasts for a day of inspiring talks, hands-on workshops, and networking with the brightest minds in the field. While official bookings will be live soon, pre-registering now ensures you&apos;re first to know as soon as they open. Don&apos;t miss your chance to be part of this transformative experience in Generative AI—sign up today and stay tuned for further updates!
 
-{/*<div className={styles.imageGallery}>
+          </span>
+              <div className={styles.contacts}>
+                <div className={styles.phone}>
+              <Phone size={45} cursor={"pointer"} onClick={handleCallClick} /></div>
+              <div className={styles.mail}>
+              <Envelope size={45} cursor={"pointer"} onClick={handleCallClick} /></div>
+              </div>
+        </div>
+{/* <div className={styles.imageGallery}>
           <div className={styles.imageWrapper}>
             <Image 
               src="/preRegister1.webp" 

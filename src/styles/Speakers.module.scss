@@ -88,15 +88,15 @@
 }
 
 // Responsive styles remain the same...
-@media (max-width: 1400px) {
+@media (max-width: 1440px) {
     .speakers {
-        padding: 4rem 200px;
+        padding: 4rem;
     }
 }
 
 @media (max-width: 1200px) {
     .speakers {
-        padding: 4rem 150px;
+        padding: 3rem;
 
         .speakersGrid {
             gap: 1.5rem;

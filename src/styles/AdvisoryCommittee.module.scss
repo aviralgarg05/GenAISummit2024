@@ -106,21 +106,21 @@
 }
 
 // Responsive styles
-@media (max-width: 1400px) {
+@media (max-width: 1440px) {
     .advisoryCommittee {
-        padding: 2rem 200px;
+        padding: 4rem;
     }
 }
 
 @media (max-width: 1200px) {
     .advisoryCommittee {
-        padding: 2rem 150px;
+        padding: 3rem;
     }
 }
 
 @media (max-width: 1024px) {
     .advisoryCommittee {
-        padding: 2rem 100px;
+        padding: 3rem;
 
         .content {
             gap: 2rem;
