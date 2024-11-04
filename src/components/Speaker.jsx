@@ -16,7 +16,7 @@ const speakers = [
   {
     name: "Mr. Rishikesh Patankar",
     title: "VP - National Skill Council",
-    image: "/image3.png"
+    image: "/image6.png"
   },
   {
     name: "Atul Gohad",

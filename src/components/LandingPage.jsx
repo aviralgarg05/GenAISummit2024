@@ -28,7 +28,7 @@ export function WavyBackgroundDemo() {
                 <span>GenAI</span>
                 <span>Summit</span>
               </div>
-              <span className={styles.yearAccent}>2024</span>
+              <span className={styles.yearAccent}>2025</span>
             </div>
             <p className={styles.tagline}>Elevate. Innovate. Accelerate.</p>
           </div>

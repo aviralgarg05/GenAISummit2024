@@ -10,9 +10,9 @@ export const WavyBackground = ({
   colors,
   waveWidth,
   backgroundFill,
-  blur = 2.5,
+  blur = 1,
   speed = "slow",
-  waveOpacity = 6,
+  waveOpacity = 10,
   ...props
 }: {
   children?: any;
@@ -38,7 +38,7 @@ export const WavyBackground = ({
   const getSpeed = () => {
     switch (speed) {
       case "slow":
-        return 0.001;
+        return 0.0005;
       case "fast":
         return 0.002;
       default:
@@ -72,10 +72,10 @@ export const WavyBackground = ({
     nt += getSpeed();
     for (i = 0; i < n; i++) {
       ctx.beginPath();
-      ctx.lineWidth = waveWidth || 3;
+      ctx.lineWidth = 100;
       ctx.strokeStyle = waveColors[i % waveColors.length];
-      for (x = 0; x < w; x += 5) {
-        var y = noise(x / 1600, 0.3 * i, nt) * 200;
+      for (x = 0; x < w; x += 15) {
+        var y = noise(x / 800, 0.9 * i, nt) * 200;
         ctx.lineTo(x, y + h * 0.5); // adjust for height, currently at 50% of the container
       }
       ctx.stroke();
@@ -88,7 +88,7 @@ export const WavyBackground = ({
     ctx.fillStyle = backgroundFill || "#FDF8F6";
     ctx.globalAlpha = waveOpacity || 10;
     ctx.fillRect(0, 0, w, h);
-    drawWave(25);
+    drawWave(5);
     animationId = requestAnimationFrame(render);
   };
 
@@ -112,7 +112,7 @@ export const WavyBackground = ({
   return (
     <div
       className={cn(
-        "h-screen flex flex-col items-center justify-center",
+        "h-screen flex flex-col items-center justify-center ",
         containerClassName
       )}
     >
