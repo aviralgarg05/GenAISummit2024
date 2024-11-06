@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from 'react'
-import Head from 'next/head'
-import styles from '@/styles/becomeSpeaker.module.scss'
-import { initializeApp, getApps, FirebaseApp } from "firebase/app";
-import { getFirestore, collection, addDoc, Firestore } from "firebase/firestore";
-import {Envelope, Phone} from 'phosphor-react';
-
-let app: FirebaseApp | undefined;
-let db: Firestore | undefined;
+import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
+import styles from '@/styles/becomeSpeaker.module.scss';
+import { Envelope, Phone } from 'phosphor-react';
+import { db } from '../lib/firebase';
+import { collection, addDoc, getDocs } from 'firebase/firestore';
 
 type Role = 'speaker' | 'sponsor';
 
@@ -38,22 +35,21 @@ const BecomeSpeakerSponsor: React.FC = () => {
   });
 
   const [feedbackMessage, setFeedbackMessage] = useState<{ text: string; isError: boolean } | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Test Firebase connection on component mount
   useEffect(() => {
-    const firebaseConfig = {
-      apiKey: "AIzaSyAaJEWMEsU0Mt6RI2E_43v0_a-KCpS8y9c",
-      authDomain: "genai-summit.firebaseapp.com",
-      projectId: "genai-summit",
-      storageBucket: "genai-summit.appspot.com",
-      messagingSenderId: "451993233683",
-      appId: "1:451993233683:web:5f8e95e2188770ffb4d2e6",
-      measurementId: "G-P440ENWW7V"
+    const testFirebaseConnection = async () => {
+      try {
+        const testCollection = collection(db, 'test_connection');
+        await getDocs(testCollection);
+        console.log('Firebase connection successful');
+      } catch (error) {
+        console.error('Firebase connection test failed:', error);
+      }
     };
 
-    if (!getApps().length) {
-      app = initializeApp(firebaseConfig);
-      db = getFirestore(app);
-    }
+    testFirebaseConnection();
   }, []);
 
   const handleCallClick = () => {
@@ -74,19 +70,39 @@ const BecomeSpeakerSponsor: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!db) {
-      console.error("Firestore is not initialized");
-      setFeedbackMessage({ text: "An error occurred. Please try again.", isError: true });
-      return;
-    }
-    
+    setIsSubmitting(true);
+    setFeedbackMessage(null);
+
     try {
-      const collectionName = formData.role === 'speaker' ? 'speakerApplications' : 'sponsorApplications';
-      await addDoc(collection(db, collectionName), formData);
+      console.log('Starting form submission...');
+      
+      // Prepare the document data
+      const docData = {
+        ...formData,
+        submittedAt: new Date().toISOString(),
+        status: 'pending'
+      };
+
+      console.log('Document data prepared:', docData);
+
+      // Get the appropriate collection reference
+      const collectionName = formData.role === 'speaker' ? 'speaker_applications' : 'sponsor_applications';
+      console.log('Using collection:', collectionName);
+      
+      const collectionRef = collection(db, collectionName);
+
+      // Attempt to add the document
+      console.log('Attempting to add document to Firestore...');
+      const docRef = await addDoc(collectionRef, docData);
+      
+      console.log('Document successfully added with ID:', docRef.id);
+      
+      // Show success message
       setFeedbackMessage({ 
         text: `Thank you for your interest in becoming a ${formData.role}! We'll contact you soon.`, 
         isError: false 
       });
+
       // Reset form
       setFormData({
         role: 'speaker',
@@ -101,8 +117,21 @@ const BecomeSpeakerSponsor: React.FC = () => {
         additionalRemarks: ''
       });
     } catch (error) {
-      console.error("Error adding document: ", error);
-      setFeedbackMessage({ text: "Submission failed. Please try again.", isError: true });
+      console.error("Error during form submission:", error);
+      // More detailed error message
+      let errorMessage = "Submission failed. ";
+      if (error instanceof Error) {
+        errorMessage += error.message;
+      } else {
+        errorMessage += "Please try again later.";
+      }
+      
+      setFeedbackMessage({ 
+        text: errorMessage, 
+        isError: true 
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -125,6 +154,7 @@ const BecomeSpeakerSponsor: React.FC = () => {
                 onChange={handleChange}
                 required
                 className={styles.roleSelect}
+                disabled={isSubmitting}
               >
                 <option value="speaker">Speaker</option>
                 <option value="sponsor">Sponsor</option>
@@ -139,6 +169,7 @@ const BecomeSpeakerSponsor: React.FC = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
+                disabled={isSubmitting}
               />
             </div>
             
@@ -150,6 +181,7 @@ const BecomeSpeakerSponsor: React.FC = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
+                disabled={isSubmitting}
               />
             </div>
             
@@ -161,6 +193,7 @@ const BecomeSpeakerSponsor: React.FC = () => {
                 value={formData.company}
                 onChange={handleChange}
                 required
+                disabled={isSubmitting}
               />
             </div>
             
@@ -172,6 +205,7 @@ const BecomeSpeakerSponsor: React.FC = () => {
                 value={formData.jobTitle}
                 onChange={handleChange}
                 required
+                disabled={isSubmitting}
               />
             </div>
 
@@ -183,6 +217,7 @@ const BecomeSpeakerSponsor: React.FC = () => {
                 value={formData.phoneNumber}
                 onChange={handleChange}
                 required
+                disabled={isSubmitting}
               />
             </div>
             
@@ -195,6 +230,7 @@ const BecomeSpeakerSponsor: React.FC = () => {
                     value={formData.previousExperience}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
                 
@@ -205,6 +241,7 @@ const BecomeSpeakerSponsor: React.FC = () => {
                     value={formData.topicProposal}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
               </>
@@ -218,6 +255,7 @@ const BecomeSpeakerSponsor: React.FC = () => {
                   value={formData.sponsorshipInterest}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting}
                 />
               </div>
             )}
@@ -228,15 +266,24 @@ const BecomeSpeakerSponsor: React.FC = () => {
                 placeholder="Additional Remarks"
                 value={formData.additionalRemarks}
                 onChange={handleChange}
+                disabled={isSubmitting}
               />
             </div>
             
-            <button type="submit" className={styles.submitButton}>
-              Submit Application
+            <button 
+              type="submit" 
+              className={styles.submitButton}
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Submitting...' : 'Submit Application'}
             </button>
             
             {feedbackMessage && (
-              <div className={`${styles.feedbackMessage} ${feedbackMessage.isError ? styles.error : styles.success}`}>
+              <div 
+                className={`${styles.feedbackMessage} ${
+                  feedbackMessage.isError ? styles.error : styles.success
+                }`}
+              >
                 {feedbackMessage.text}
               </div>
             )}
@@ -245,7 +292,7 @@ const BecomeSpeakerSponsor: React.FC = () => {
         
         <div className={styles.preRegisterContent}>
           <span>
-            Join us at the GenAI Summit 2024 this December in Delhi! We're looking for innovative speakers and sponsors to be part of this transformative event. As a speaker, share your expertise and insights with AI enthusiasts and industry leaders. As a sponsor, align your brand with the future of AI and connect with a highly engaged audience.
+            Join us at the GenAI Summit 2024 this December in Delhi! We&apos;re looking for innovative speakers and sponsors to be part of this transformative event. As a speaker, share your expertise and insights with AI enthusiasts and industry leaders. As a sponsor, align your brand with the future of AI and connect with a highly engaged audience.
           </span>
           <div className={styles.contacts}>
             <div className={styles.phone}>
@@ -258,7 +305,7 @@ const BecomeSpeakerSponsor: React.FC = () => {
         </div>
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default BecomeSpeakerSponsor
+export default BecomeSpeakerSponsor;

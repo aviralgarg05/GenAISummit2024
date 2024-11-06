@@ -5,7 +5,7 @@
 
     .main {
         max-width: 1200px;
-        margin: 0 auto;
+        margin: 6% auto;
         padding: 2rem;
         display: flex;
         justify-content: center;
@@ -148,13 +148,36 @@
         }
     }
 }
+@media (max-width: 1224px) {
+    .becomeSpeakerSponsor {
+        .main {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1.5rem;
+            gap: 2rem;
+            margin-top: 12%;
+
+            .formContainer {
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    }
+}
 
 @media (max-width: 1024px) {
     .becomeSpeakerSponsor {
         .main {
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
             padding: 2rem 1.5rem;
             gap: 2rem;
+            margin-top: 12%;
 
             .formContainer {
                 max-width: 100%;
@@ -171,6 +194,7 @@
     .becomeSpeakerSponsor {
         .main {
             padding: 1.5rem 1rem;
+            margin-top: 15%;
 
             h1 {
                 font-size: 2rem;
@@ -179,6 +203,14 @@
             .preRegisterContent {
                 padding: 1.5rem;
             }
+        }
+    }
+}
+
+@media (max-width: 470px) {
+    .becomeSpeakerSponsor {
+        .main {
+            margin-top: 20%;
         }
     }
 }
