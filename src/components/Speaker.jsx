@@ -6,27 +6,28 @@ const speakers = [
   {
     name: "Ramesh Kailasam",
     title: "CEO - Indiatech",
-    image: "/image1.png"
+    image: "/image4.png"
   },
   {
     name: "Sunil Dhaiya Executive",
     title: "VP - Wadhwani Foundation",
-    image: "/image2.png"
+    image: "/image5.png"
   },
   {
     name: "Mr. Rishikesh Patankar",
     title: "VP - National Skill Council",
     image: "/image6.png"
   },
-  {
-    name: "Atul Gohad",
-    title: "Leader, Emerging Technologies, Bosch Global Software Technologies",
-    image: "/image4.png"
-  },
+  
   {
     name: "Kumar Anurag Pratap",
     title: "Vice President, Digital Inclusion & Sustainability Leader, Capgemini",
-    image: "/image5.png"
+    image: "/image8.png"
+  },
+  {
+    name: "Richa Mukherjee",
+    title: "Senior Director - PayU",
+    image: "/richaspeaker.png"
   },
   {
     name: "Geetha Adinarayan",
@@ -34,14 +35,14 @@ const speakers = [
     image: "/image6.png"
   },
   {
-    name: "Richa Mukherjee",
-    title: "Senior Director - PayU",
-    image: "/image7.png"
-  },
-  {
     name: "Mr. Sahhil Kumar",
     title: "CEO - Quick Pay",
-    image: "/image8.png"
+    image: "/sahilspeakerfinal.png"
+  },
+  {
+    name: "Atul Gohad",
+    title: "Leader, Emerging Technologies, Bosch Global Software Technologies",
+    image: "/image7.png"
   },
   {
     name: "Dr N.Panigrahi",

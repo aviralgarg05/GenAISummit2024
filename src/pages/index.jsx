@@ -12,6 +12,7 @@ import AnimatedSection from '@/components/AnimatedSection';
 import BecomeASpeaker from './../components/BecomeASpeaker';
 import SpeakerSessions from '../components/SpeakerSessions';
 import { WavyBackgroundDemo } from '../components/LandingPage';
+import Contact from '../components/ContactUs';
 
 export default function Home() {
   return (
@@ -69,6 +70,11 @@ export default function Home() {
         <div id="committee">
           <AnimatedSection delay={600}>
             <AdvisoryCommittee />
+          </AnimatedSection>
+        </div>
+        <div id="contact">
+          <AnimatedSection delay={600}>
+            <Contact />
           </AnimatedSection>
         </div>
       </main>

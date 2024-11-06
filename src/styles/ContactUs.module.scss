@@ -1,0 +1,64 @@
+$coral: #F47458;
+$dark: #1A1A1A;
+$white: #FFFFFF;
+$gray: rgba(255, 255, 255, 0.7);
+
+.contactContainer {
+  width: 100vw;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background-color: $dark;
+}
+
+.contactTitle {
+  color: $white;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contactButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: transparent;
+  color: $white;
+  text-decoration: none;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  font-weight: 400;
+
+  &:hover {
+    background-color: $coral;
+    border-color: $coral;
+    color: $white;
+  }
+
+  span {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactContainer {
+    padding: 3rem 1rem;
+  }
+
+  .contactTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}

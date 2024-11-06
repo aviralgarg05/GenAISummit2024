@@ -66,6 +66,9 @@ const Navbar = () => {
         <Link href="/">
           <img src="/GenAI.svg" alt="GenAI Summit Logo" />
         </Link>
+        <Link href="/">
+          <img src="/ajeeshlogo.webp" alt="Ajeesh Logo" />
+        </Link>
       </div>
       
       <div className={styles.hamburger} onClick={toggleMenu}>
@@ -103,6 +106,11 @@ const Navbar = () => {
         <li>
           <a href="#committee" onClick={handleNavClick('committee')}>
             Committee
+          </a>
+        </li>
+        <li>
+          <a href="#contact" onClick={handleNavClick('contact')}>
+            Contact Us
           </a>
         </li>
         <li>

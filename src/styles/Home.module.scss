@@ -95,14 +95,14 @@
    left: 0;
    right: 0;
    background: linear-gradient(90deg, #FF7527 0%, #FC4D4D 50%, #FF7527 100%);
-   padding: 0.8rem 0;
+   padding: 1rem 0;
    z-index: 20;
 
    p {
       color: white;
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1rem, 1.5vw, 1.5rem);
-      font-weight: 300;
+      font-size: clamp(1.5rem, 1.5vw, 1.5rem);
+      font-weight: 400;
       text-align: center;
       margin: 0;
       letter-spacing: 0.05em;

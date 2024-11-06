@@ -35,7 +35,7 @@ export function WavyBackgroundDemo() {
         </div>
       </WavyBackground>
       <div className={styles.announceStrip}>
-        <p>Join us in December at Delhi</p>
+        <p>Join us in January at Delhi</p>
       </div>
     </div>
   );

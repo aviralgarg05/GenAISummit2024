@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import styles from '../styles/Themes.module.scss';
 
 const themes = [
-  { name: 'Fin-Tech', color: '#FF7F50' },
-  { name: 'Health-Tech', color: '#FF7F50' },
-  { name: 'Ed-Tech', color: '#FF7F50' },
-  { name: 'AI-Tech', color: '#FF7F50' }
+  { name: 'Fin-Tech', color: '#FC4D4D' },
+  { name: 'Health-Tech', color: '#FC4D4D' },
+  { name: 'Ed-Tech', color: '#FC4D4D' },
+  { name: 'AI-Tech', color: '#FC4D4D' }
 ];
 
 const scrollingThemes = [
@@ -25,13 +25,13 @@ const Themes = () => {
 
   return (
     <section className={styles.themes}>
-     {/* <div className={styles.scrollingStrip}>
+     <div className={styles.scrollingStrip}>
         <div className={styles.scrollContent}>
           {[...scrollingThemes, ...scrollingThemes].map((theme, index) => (
             <span key={index}>{theme}</span>
           ))}
         </div>
-      </div> */}
+      </div>
       <div className={styles.content}>
         <div className={styles.carouselContainer}>
           <div className={styles.carousel}>
