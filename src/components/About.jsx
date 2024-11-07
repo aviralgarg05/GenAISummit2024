@@ -12,11 +12,8 @@ const About = () => {
   ];
 
   const whyPoints = [
-    'Understand how GenAI is shaping the world.',
-    'Discuss and discover groundbreaking ideas.',
-    'Gain knowledge through interactive sessions.',
-    'Meet industry experts and professionals.',
-    'Boost your professional / academic career.'
+    'Join us to be a part of the conversation shaping the future of Artificial intelligence. Stay at the forefront of technological innovation and gain valuable insights to leverage Generative AI. This summit brings together key stakeholders who are instrumental in shaping the current impact of Generative AI and its potential to transform the future.',
+    ' It will serve as a collaborative platform for dialogue on innovation, strategic planning and seamless integration of GenAI into business operations.'
   ];
 
   return (
@@ -24,17 +21,12 @@ const About = () => {
       <div className={styles.whatSection}>
         <div className={styles.content}>
           <p className={styles.mainText}>
-            Generative AI is more than a technology. It&apos;s the engine driving the future of 
-            innovation. From automating complex processes to creating entirely new forms 
-            of content, GenAI is unlocking possibilities that were once the realm of science 
-            fiction.
+          Gain a 360° Outlook
           </p>
           <p className={styles.subText}>
-            This summit is your gateway to understanding how GenAI is not just adapting to 
-            the world but actively shaping it, from business strategies to everyday 
-            experiences.
-          </p>
-        </div>
+
+          A confluence of brilliant minds is about to take place. Pioneers from a diverse range of industries are gathering for * The Genai Summit *, a one-day conference dedicated to the forefront of generative artificial intelligence. From government and regulatory bodies to tech giants, entrepreneurs, and beyond, this summit will convene leaders from diverse fields, sparking discussions on the far-reaching impact of GenAI. It’s a platform for collaborative dialogue, fostering insights into how GenAI is reshaping industry diaspora.</p>
+                  </div>
         <div className={styles.titleContainer}>
           <h2 className={styles.whatTitle}>
             What

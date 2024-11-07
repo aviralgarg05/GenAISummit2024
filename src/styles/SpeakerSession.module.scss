@@ -48,7 +48,29 @@
 .textContent {
     flex: 1;
     max-width: 75%;
+
+    .attendeeTypes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .attendeeType {
+        background: #FF6B4A;
+        color: white;
+        padding: 0.5rem 1.5rem;
+        border-radius: 3rem;
+        font-size: 0.75rem;
+        white-space: nowrap;
+
+        &:nth-child(odd) {
+            // Changed to odd for correct alternating pattern
+            background: #FF4B4B;
+        }
+    }
 }
+
 
 .title {
     font-size: 1.75rem;
