@@ -1,4 +1,3 @@
-// SpeakerSessions.tsx
 import React from 'react';
 import styles from '../styles/SpeakerSession.module.scss';
 
@@ -12,18 +11,20 @@ const SpeakerSessions = () => {
   ];
   const FintechattendeeTypes = [
     'Goverment Leaders',
-    'Industry Experts',
-    'Policy Makers',
-    'Investors',
-    'Business Heads'
+    'Business Heads',
+    'Bankers',
+    'Regulatory Experts',
+    'Technology Giants',
+    'Entrepreneurs'
   ];
   const HealthcareattendeeTypes = [
-    'Goverment Leaders',
-    'Industry Experts',
-    'Policy Makers',
-    'Investors',
-    'Business Heads'
+    'Goverment Experts',
+    'Hospital Heads',
+    'Regulatory Experts',
+    'Technology Specialist',
+    'Entrepreneurs'
   ];
+
   const sessions = [
     {
       id: 1,
@@ -50,7 +51,7 @@ const SpeakerSessions = () => {
     <div className={styles.container}>
       <h1 className={styles.mainTitle}>Speaker Sessions</h1>
       <p className={styles.subtitle}>
-        The conference will present a series of innovative GenAI sessions providing a 360° outlook on the current trends in GenAI, including:
+        Welcome to the Enriching Sessions at  where industry leaders, innovators, and thought pioneers come together to explore cutting-edge technologies, share insights, and foster meaningful discussions that will shape the future of GenAi penetration in the industry diaspora.
       </p>
       
       <div className={styles.sessionsContainer}>

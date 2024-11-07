@@ -156,8 +156,8 @@ const BecomeSpeakerSponsor: React.FC = () => {
                 className={styles.roleSelect}
                 disabled={isSubmitting}
               >
-                <option value="speaker">Speaker</option>
-                <option value="sponsor">Sponsor</option>
+                <option value="speaker" style={{color:'black'}}>Speaker</option>
+                <option value="sponsor" style={{color:'black'}}>Sponsor</option>
               </select>
             </div>
             

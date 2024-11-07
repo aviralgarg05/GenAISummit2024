@@ -1,6 +1,6 @@
 .container {
     margin: 0 auto;
-    padding: 8rem 280px;
+    padding: 8rem 12rem;
     display: flex;
     flex-direction: column;
     gap: 6rem; // Increased gap between sections
@@ -136,6 +136,30 @@
 }
 
 // Responsive styles
+@media (max-width: 1640px) {
+
+    .container {
+        padding: 10rem;
+    }
+
+    .whatSection,
+    .whySection,
+    .whoSection {
+        gap: 8rem;
+    }
+
+    .whatTitle,
+    .whyTitle,
+    .whoTitle {
+        font-size: 10rem;
+    }
+
+    .attendeeType {
+        padding: 1rem 1rem;
+        font-size: 1.2rem;
+    }
+}
+
 @media (max-width: 1440px) {
 
     .container{

@@ -4,49 +4,54 @@ import styles from '../styles/Speakers.module.scss';
 
 const speakers = [
   {
-    name: "Ramesh Kailasam",
+    name: "Rameesh Kailasam",
     title: "CEO - Indiatech",
     image: "/image4.png"
   },
   {
-    name: "Sunil Dhaiya Executive",
-    title: "VP - Wadhwani Foundation",
+    name: "Sunil Dhaiya",
+    title: "Executive Vice President-Skilling , Wadhwani Foundation",
     image: "/image5.png"
   },
   {
     name: "Mr. Rishikesh Patankar",
-    title: "VP - National Skill Council",
+    title: "Vice President ,National Skill Development Corporation",
     image: "/image6.png"
+  },
+  {
+    name: "Pankaj Rai",
+    title: "Group Chief Data and Analytics Officer , Aditya Birla Group",
+    image: "/rai.png"
   },
   
   {
+    name: "Atul Gohad",
+    title: "Head , Generative AI ,Bosch Global Software Technologies",
+    image: "/image7.png"
+  },
+  {
     name: "Kumar Anurag Pratap",
-    title: "Vice President, Digital Inclusion & Sustainability Leader, Capgemini",
+    title: "Vice President , Digital Inclusion & Sustainability Leader , Capgemini",
     image: "/image8.png"
+  },
+  {
+    name: "Geetha Adinarayan",
+    title: " IBM Distinguished Engineer, CTO, Product Engineering, APAC",
+    image: "/image6.png"
   },
   {
     name: "Richa Mukherjee",
     title: "Senior Director - PayU",
-    image: "/richaspeaker.png"
-  },
-  {
-    name: "Geetha Adinarayan",
-    title: "IBM Distinguished Engineer,CTO,Product Engineering",
-    image: "/image6.png"
-  },
-  {
-    name: "Mr. Sahhil Kumar",
-    title: "CEO - Quick Pay",
     image: "/sahilspeakerfinal.png"
   },
   {
-    name: "Atul Gohad",
-    title: "Leader, Emerging Technologies, Bosch Global Software Technologies",
+    name: "Sahhil Kumar",
+    title: "CEO, Quick Pay",
     image: "/image7.png"
   },
   {
     name: "Dr N.Panigrahi",
-    title: "DRDO",
+    title: "Scientist  , Center for AI & Robotics, DRDO",
     image: "/image8.png"
   }
 ];
