@@ -47,7 +47,7 @@ const speakers = [
   {
     name: "Sahhil Kumar",
     title: "CEO, Quick Pay",
-    image: "/sahil.png"
+    image: "/Sahil.png"
   },
   // {
   //   name: "Dr N.Panigrahi",
