@@ -118,7 +118,7 @@ const SpeakerSessions = () => {
               </div>
             )}
             {index === 3 && (
-              <div className={styles.thirdSession}>
+              <div className={styles.secondSession}>
                 <div className={styles.textContent}>
                   <h2 className={styles.title}>{session.title}</h2>
                   <div className={styles.attendeeTypes}>

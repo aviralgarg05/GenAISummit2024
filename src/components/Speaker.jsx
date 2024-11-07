@@ -31,7 +31,7 @@ const speakers = [
   },
   {
     name: "Kumar Anurag Pratap",
-    title: "Vice President , Digital Inclusion & Sustainability Leader , Capgemini",
+    title: "VP , Digital Inclusion & Sustainability Leader , Capgemini",
     image: "/image8.png"
   },
   // {
@@ -42,12 +42,12 @@ const speakers = [
   {
     name: "Richa Mukherjee",
     title: "Senior Director - PayU",
-    image: "/sahilspeakerfinal.png"
+    image: "/richaspeaker.png"
   },
   {
     name: "Sahhil Kumar",
     title: "CEO, Quick Pay",
-    image: "/image7.png"
+    image: "/sahil.png"
   },
   // {
   //   name: "Dr N.Panigrahi",

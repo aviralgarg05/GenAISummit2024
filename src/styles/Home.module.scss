@@ -82,7 +82,7 @@
 .tagline {
    color: #000000;
    font-family: 'Poppins', sans-serif;
-   font-weight: 300;
+   font-weight: 400;
    font-size: clamp(1.5rem, 3vw, 2.5rem);
    margin: 6rem 0 0;
    text-align: center;
@@ -117,16 +117,37 @@
 
    .titleContainer {
       .topAccent {
-         top: -1.5rem;
+         font-size: 2rem;
+         top: -2rem;
+      }
+
+      .mainTitle span{
+         font-size: 6rem;
       }
 
       .yearAccent {
-         bottom: -1.5rem;
+         font-size: 2rem;
+         bottom: -2rem;
       }
    }
 
    .tagline {
-      margin-top: 3rem;
+      margin-top: 4rem;
+   }
+
+   .announceStrip{
+      p{
+         font-size: 2rem;
+      }
+   }
+}
+
+@media (max-width: 468px) {
+
+   .announceStrip {
+      p {
+         font-size: 1.5rem;
+      }
    }
 }
 
