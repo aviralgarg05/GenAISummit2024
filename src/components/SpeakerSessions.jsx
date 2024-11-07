@@ -24,6 +24,13 @@ const SpeakerSessions = () => {
     'Technology Specialist',
     'Entrepreneurs'
   ];
+  const PitchattendeeTypes = [
+    'Angel Investors',
+    'Goverment Experts',
+    'Business Heads',
+    'Tech Giants',
+    'Entrepreneurs'
+  ];
 
   const sessions = [
     {
@@ -55,9 +62,9 @@ const SpeakerSessions = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.mainTitle}>Speaker Sessions</h1>
+      <h1 className={styles.mainTitle}>SPEAKER SESSIONS</h1>
       <p className={styles.subtitle}>
-        Welcome to the Enriching Sessions at  where industry leaders, innovators, and thought pioneers come together to explore cutting-edge technologies, share insights, and foster meaningful discussions that will shape the future of GenAi penetration in the industry diaspora.
+        Welcome to the enriching sessions at  where industry leaders, innovators, and thought pioneers come together to explore cutting-edge technologies, share insights and foster meaningful discussions that will shape the future of GenAi penetration in the industry diaspora.
       </p>
       
       <div className={styles.sessionsContainer}>
@@ -122,7 +129,7 @@ const SpeakerSessions = () => {
                 <div className={styles.textContent}>
                   <h2 className={styles.title}>{session.title}</h2>
                   <div className={styles.attendeeTypes}>
-            {HealthcareattendeeTypes.map((type, index) => (
+            {PitchattendeeTypes.map((type, index) => (
               <span key={index} className={styles.attendeeType}>
                 {type}
               </span>
