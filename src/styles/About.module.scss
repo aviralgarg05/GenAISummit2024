@@ -125,7 +125,7 @@
         color: white;
         padding: 1rem 2.5rem;
         border-radius: 3rem;
-        font-size: 1.5rem;
+        font-size: 1.1rem;
         white-space: nowrap;
 
         &:nth-child(odd) {
@@ -316,7 +316,7 @@
         .whyList,
         .attendeeTypes {
             width: 100%;
-            max-width: 90%;
+            max-width: 100%;
             margin: 0 auto;
         }
     }
@@ -353,9 +353,10 @@
 
 @media (max-width: 480px) {
     .container {
-        padding: 1.5rem;
+        padding: 1.2rem;
         gap: 4rem;
     }
+
 
     .titleContainer {
         width: 100%;
@@ -378,6 +379,7 @@
         .subtitle {
             font-size: 1.5rem;
             margin-top: -0.5rem;
+            margin-right: 0.5rem;
             text-align: center;
         }
     }
@@ -393,10 +395,21 @@
             flex-direction: column;
             align-items: center;
 
-            .mainText,
-            .subText {
+
+            .mainText{
                 max-width: 95%;
                 text-align: center;
+                line-height: 1.2;
+                margin: 0 auto;
+            }
+
+        
+
+            .subText {
+                max-width: 95%;
+                font-size: 1.1rem;
+                text-align: center;
+                line-height: 1.2;
                 margin: 0 auto;
             }
         }
@@ -410,7 +423,7 @@
 
             li {
                 font-size: 1.1rem;
-                line-height: 1.6;
+                line-height: 1.2;
                 text-align: center;
             }
         }
@@ -424,7 +437,7 @@
         }
 
         .attendeeType {
-            font-size: 1rem;
+            font-size: 0.9rem;
             padding: 0.5rem 1.25rem;
         }
     }

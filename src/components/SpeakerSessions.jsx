@@ -43,6 +43,12 @@ const SpeakerSessions = () => {
       title: 'AI Driven Healthcare: Innovations for a healthier tomorrow',
       description: 'This session at the GenAI Summit convenes all critical stakeholders who are shaping the future of healthcare, including hospital CTOs/CIOs, regulatory experts, startup founders, technology innovators in this field.',
       description2: 'The session will serve as a collaborative forum for these key players to share their expertise and insights. It aims to ignite discussions on how advancements in generative AI are revolutionising the medical and healthcare sectors. Through this dialogue, participants will explore how gen AI can enhance patient care, streamline operations, and address regulatory challenges, ultimately driving the next wave of healthcare innovation.'
+    },
+    {
+      id: 4,
+      title: 'PitchDeck Pro: Present. Impress. Connect',
+      description: 'With a network of investors, venture capitalists, and business leaders from around the world, this platform allows you to present your start-up to the right people. Our platform attracts investors who are actively seeking new opportunities in diverse industries, including tech, healthcare, fintech, and more.',
+      // description2: 'The session will serve as a collaborative forum for these key players to share their expertise and insights. It aims to ignite discussions on how advancements in generative AI are revolutionising the medical and healthcare sectors. Through this dialogue, participants will explore how gen AI can enhance patient care, streamline operations, and address regulatory challenges, ultimately driving the next wave of healthcare innovation.'
     }
     
   ];
@@ -109,6 +115,23 @@ const SpeakerSessions = () => {
                   <p className={styles.description}>{session.description2}</p>
                 </div>
                 <div className={styles.numberCircle}>3</div>
+              </div>
+            )}
+            {index === 3 && (
+              <div className={styles.thirdSession}>
+                <div className={styles.textContent}>
+                  <h2 className={styles.title}>{session.title}</h2>
+                  <div className={styles.attendeeTypes}>
+            {HealthcareattendeeTypes.map((type, index) => (
+              <span key={index} className={styles.attendeeType}>
+                {type}
+              </span>
+            ))}
+          </div>
+                  <p className={styles.description}>{session.description}</p>
+                  <p className={styles.description}>{session.description2}</p>
+                </div>
+                <div className={styles.numberCircle}>4</div>
               </div>
             )}
           </div>

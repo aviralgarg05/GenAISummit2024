@@ -34,11 +34,11 @@ const speakers = [
     title: "Vice President , Digital Inclusion & Sustainability Leader , Capgemini",
     image: "/image8.png"
   },
-  {
-    name: "Geetha Adinarayan",
-    title: " IBM Distinguished Engineer, CTO, Product Engineering, APAC",
-    image: "/image6.png"
-  },
+  // {
+  //   name: "Geetha Adinarayan",
+  //   title: " IBM Distinguished Engineer, CTO, Product Engineering, APAC",
+  //   // image: "/image6.png"
+  // },
   {
     name: "Richa Mukherjee",
     title: "Senior Director - PayU",
@@ -49,11 +49,11 @@ const speakers = [
     title: "CEO, Quick Pay",
     image: "/image7.png"
   },
-  {
-    name: "Dr N.Panigrahi",
-    title: "Scientist  , Center for AI & Robotics, DRDO",
-    image: "/image8.png"
-  }
+  // {
+  //   name: "Dr N.Panigrahi",
+  //   title: "Scientist  , Center for AI & Robotics, DRDO",
+  //   // image: "/image8.png"
+  // }
 ];
 
 const Speakers = () => {

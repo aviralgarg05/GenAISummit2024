@@ -3,12 +3,15 @@ import styles from '../styles/About.module.scss';
 
 const About = () => {
   const attendeeTypes = [
-    'Seasoned Professional',
-    'Researcher',
-    'Tech Enthusiast',
-    'Developer',
-    'Business Leader',
-    'Data Scientist'
+    'Decision makers', 
+      'Technology heads',
+      'Business heads',
+      'Fintech Professional',
+      'Health care professional',
+      'Entrepreneurs',
+      'Start up enthusiasts',
+      'Tech Professionals',
+      'Researchers'
   ];
 
   const whyPoints = [
