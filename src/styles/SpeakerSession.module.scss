@@ -12,7 +12,6 @@
     font-weight: normal;
     color: #ffffff;
     font-weight: 600;
-    margin-bottom: 1.5rem;
 }
 
 .subtitle {
@@ -66,18 +65,28 @@
         white-space: nowrap;
 
         &:nth-child(odd) {
-            // Changed to odd for correct alternating pattern
             background: #FF4B4B;
         }
     }
 }
 
-.moretocome{
+.speakerHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.moretocome {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 4rem 0 0 0;
-    h3{
+    padding: 14px;
+    background-color: #ffffff;
+    border-radius: 4px;
+
+
+    h3 {
         color: #ff4048;
     }
 }

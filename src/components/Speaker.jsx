@@ -58,7 +58,12 @@ const speakers = [
 const Speakers = () => {
   return (
     <section className={styles.speakers}>
-      <h2>Speakers</h2>
+      <div className={styles.speakerHeader}>
+        <h2>Speakers</h2>
+        <div className={styles.moretocome}>
+          <h3>MORE TO JOIN</h3>
+        </div>
+      </div>
       <div className={styles.speakersGrid}>
         {speakers.map((speaker, index) => (
           <div key={index} className={styles.speakerCard}>
@@ -78,9 +83,6 @@ const Speakers = () => {
             </div>
           </div>
         ))}
-      </div>
-      <div className={styles.moretocome}>
-        <h3>More to Join...</h3>
       </div>
     </section>
   );

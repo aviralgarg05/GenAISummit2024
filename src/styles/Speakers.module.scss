@@ -6,7 +6,7 @@
         font-size: 2.5rem;
         font-weight: normal;
         color: #333;
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
         position: relative;
 
         &::after {
@@ -26,6 +26,7 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
         width: 100%;
+        margin-top: 3rem;
     }
 
     .speakerCard {
@@ -87,14 +88,22 @@
     }
 }
 
+.speakerHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .moretocome {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 4rem 0 2rem 0;
+    padding: 14px;
+    background-color: #ff4048;
+    border-radius: 4px;
+    
 
     h3 {
-        color: #ff4048;
+        color: #FFFFFF;
     }
 }
 

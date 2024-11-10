@@ -62,7 +62,12 @@ const SpeakerSessions = () => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.speakerHeader}>
       <h1 className={styles.mainTitle}>SPEAKER SESSIONS</h1>
+      <div className={styles.moretocome}>
+          <h3>MORE TO COME</h3>
+        </div>
+      </div>
       <p className={styles.subtitle}>
         Welcome to the enriching sessions at  where industry leaders, innovators, and thought pioneers come together to explore cutting-edge technologies, share insights and foster meaningful discussions that will shape the future of GenAi penetration in the industry diaspora.
       </p>
@@ -143,9 +148,6 @@ const SpeakerSessions = () => {
             )}
           </div>
         ))}
-      </div>
-      <div className={styles.moretocome}>
-        <h3>More to Come...</h3>
       </div>
     </div>
   );
