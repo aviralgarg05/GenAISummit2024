@@ -79,10 +79,14 @@
     .subText {
         font-size: 1rem;
         word-spacing: 120%;
-        line-height: 1.2;
+        line-height: 1.5rem;
         color: black;
-        font-weight: 200;
+        font-weight: 300;
         margin-bottom: 1.5rem;
+
+        b{
+            font-weight: 600;
+        }
     }
 
     .subText {
@@ -95,21 +99,18 @@
 .whySection {
     flex-direction: row-reverse;
 
-    .whyList {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-
-        li {
+    .subText {
             font-size: 1rem;
-        word-spacing: 120%;
-        font-weight: 200;
+            word-spacing: 120%;
+            line-height: 1.5rem;
             color: black;
-            line-height: 1.2;
-            position: relative;
-            margin-bottom: 0.5rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+    
+            b {
+                font-weight: 600;
+            }
         }
-    }
 }
 
 // Who section specific styles

@@ -23,37 +23,36 @@ const speakers = [
     title: "Group Chief Data and Analytics Officer , Aditya Birla Group",
     image: "/rai.png"
   },
-  
-  {
-    name: "Atul Gohad",
-    title: "Head , Generative AI ,Bosch Global Software Technologies",
-    image: "/image7.png"
-  },
   {
     name: "Kumar Anurag Pratap",
     title: "VP , Digital Inclusion & Sustainability Leader , Capgemini",
     image: "/image8.png"
   },
-  // {
-  //   name: "Geetha Adinarayan",
-  //   title: " IBM Distinguished Engineer, CTO, Product Engineering, APAC",
-  //   // image: "/image6.png"
-  // },
+   {
+     name: "Geetha Adinarayan",
+     title: "IBM Distinguished Engineer, CTO, Product Engineering, APAC",
+     image: "/Geetha.png"
+   },
   {
     name: "Richa Mukherjee",
     title: "Senior Director - PayU",
     image: "/richaspeaker.png"
   },
   {
+    name: "Atul Gohad",
+    title: "Head, Generative AI, Bosch Global Software Technologies",
+    image: "/image7.png"
+  },
+  {
     name: "Sahhil Kumar",
     title: "CEO, Quick Pay",
     image: "/Sahil.png"
   },
-  // {
-  //   name: "Dr N.Panigrahi",
-  //   title: "Scientist  , Center for AI & Robotics, DRDO",
-  //   // image: "/image8.png"
-  // }
+   {
+     name: "Dr N.Panigrahi",
+     title: "Outstanding  Scientist, Center for AI & Robotics, DRDO",
+     image: "/Pangu.png"
+   }
 ];
 
 const Speakers = () => {
@@ -79,6 +78,9 @@ const Speakers = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className={styles.moretocome}>
+        <h3>More to Join...</h3>
       </div>
     </section>
   );

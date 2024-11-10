@@ -138,8 +138,8 @@ const BecomeSpeakerSponsor: React.FC = () => {
   return (
     <div className={styles.becomeSpeakerSponsor}>
       <Head>
-        <title>Gen AI Summit | Become a Speaker/Sponsor</title>
-        <meta name="description" content="Apply to become a speaker or sponsor at the Gen AI Summit - Share your expertise or support the future of AI." />
+        <title>GenAI Summit | Become a Speaker/Sponsor</title>
+        <meta name="description" content="Apply to become a speaker or sponsor at the GenAI Summit - Share your expertise or support the future of AI." />
         <link rel="icon" href="/GenAI.svg" />
       </Head>
       

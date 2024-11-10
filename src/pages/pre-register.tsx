@@ -69,8 +69,8 @@ const PreRegister: React.FC = () => {
   return (
     <div className={styles.preRegister}>
       <Head>
-        <title>Gen AI - Summit | Pre Register</title>
-        <meta name="description" content="Pre-register for the Gen AI Summit - Join us for cutting-edge discussions on artificial intelligence." />
+        <title>GenAI - Summit | Pre Register</title>
+        <meta name="description" content="Pre-register for the GenAI Summit - Join us for cutting-edge discussions on artificial intelligence." />
         <link rel="icon" href="/GenAI.svg" />
       </Head>
       

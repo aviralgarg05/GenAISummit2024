@@ -144,6 +144,9 @@ const SpeakerSessions = () => {
           </div>
         ))}
       </div>
+      <div className={styles.moretocome}>
+        <h3>More to Come...</h3>
+      </div>
     </div>
   );
 };

@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Gen AI - Summit</title>
+        <title>GenAI - Summit</title>
         <meta name="description" content="Summit website description" />
         <link rel="icon" href="/GenAI.svg" />
       </Head>

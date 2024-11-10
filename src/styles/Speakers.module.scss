@@ -87,6 +87,17 @@
     }
 }
 
+.moretocome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0 2rem 0;
+
+    h3 {
+        color: #ff4048;
+    }
+}
+
 // Responsive styles remain the same...
 @media (max-width: 1440px) {
     .speakers {
