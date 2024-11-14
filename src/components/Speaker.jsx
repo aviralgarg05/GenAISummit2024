@@ -52,6 +52,11 @@ const speakers = [
      name: "Dr N.Panigrahi",
      title: "Outstanding  Scientist, Center for AI & Robotics, DRDO",
      image: "/Pangu.png"
+   },
+   {
+     name: "Nikhil Malhotra",
+     title: "Chief Innovation Officer , Global Head of AI  and Emerging Technologies,Tech Mahindra",
+     image: "/nikhil.png"
    }
 ];
 
