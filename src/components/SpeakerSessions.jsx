@@ -3,14 +3,14 @@ import styles from '../styles/SpeakerSession.module.scss';
 
 const SpeakerSessions = () => {
   const AISynergyattendeeTypes = [
-    'Goverment Leaders',
+    'Government Leaders',
     'Industry Experts',
     'Policy Makers',
     'Investors',
     'Business Heads'
   ];
   const FintechattendeeTypes = [
-    'Goverment Leaders',
+    'Government Leaders',
     'Business Heads',
     'Bankers',
     'Regulatory Experts',
@@ -18,7 +18,7 @@ const SpeakerSessions = () => {
     'Entrepreneurs'
   ];
   const HealthcareattendeeTypes = [
-    'Goverment Experts',
+    'Government Experts',
     'Hospital Heads',
     'Regulatory Experts',
     'Technology Specialist',
@@ -26,9 +26,16 @@ const SpeakerSessions = () => {
   ];
   const PitchattendeeTypes = [
     'Angel Investors',
-    'Goverment Experts',
+    'Government Experts',
     'Business Heads',
     'Tech Giants',
+    'Entrepreneurs'
+  ];
+  const BuildingattendeeTypes = [
+    'Angel Investors',
+    'Government Experts',
+    'Business Heads',
+    'Policy Makers',
     'Entrepreneurs'
   ];
 
@@ -36,7 +43,7 @@ const SpeakerSessions = () => {
     {
       id: 1,
       title: 'AI Synergy: Fueling the Startup Ecosystem',
-      description: 'This session at a joint conference will critical stakeholders who are shaping the startup ecosystem, encompassing policy makers, AI-builders, investors and industry experts.',
+      description: 'This session at a joint conference will have critical stakeholders who are shaping the startup ecosystem, encompassing policy makers, AI-builders, investors and industry experts.',
       description2: 'This session will serve as a forum for all key stakeholders to share their specialized knowledge and extensive experience together. It aims to cultivate a dialogue exploring how collaborative efforts among these pivotal players will result the future of startups and entrepreneurship in the digital realm.'
     },
     {
@@ -54,8 +61,12 @@ const SpeakerSessions = () => {
     {
       id: 4,
       title: 'PitchDeck Pro: Present. Impress. Connect',
-      description: 'With a network of investors, venture capitalists, and business leaders from around the world, this platform allows you to present your start-up to the right people. Our platform attracts investors who are actively seeking new opportunities in diverse industries, including tech, healthcare, fintech, and more.',
-      // description2: 'The session will serve as a collaborative forum for these key players to share their expertise and insights. It aims to ignite discussions on how advancements in generative AI are revolutionising the medical and healthcare sectors. Through this dialogue, participants will explore how gen AI can enhance patient care, streamline operations, and address regulatory challenges, ultimately driving the next wave of healthcare innovation.'
+      description: 'With a network of investors, venture capitalists, and business leaders from around the world, this platform allows you to present your start-up to the right people. Our platform attracts investors who are actively seeking new opportunities in diverse industries, including tech, healthcare, fintech, and more.'
+    },
+    {
+      id:5,
+      title: 'Building the AI Economy - A Roundtable with Policymakers, Industry and Investors',
+      description: 'An exclusive roundtable discussion convening entrepreneurs, government officials, industry specialists, and investors to explore the dynamic landscape of Generative AI. This intimate gathering aims to facilitate meaningful connections and foster productive dialogue on the latest advancements and opportunities in this transformative field. A discussion to charter the way forward to stay a step ahead in the Generative AI arena.'
     }
     
   ];
@@ -69,7 +80,7 @@ const SpeakerSessions = () => {
         </div>
       </div>
       <p className={styles.subtitle}>
-        Welcome to the enriching sessions at  where industry leaders, innovators, and thought pioneers come together to explore cutting-edge technologies, share insights and foster meaningful discussions that will shape the future of GenAi penetration in the industry diaspora.
+        Welcome to the enriching sessions at  where industry leaders, innovators, and thought pioneers come together to explore cutting-edge technologies, share insights and foster meaningful discussions that will shape the future of GenAI penetration in the industry diaspora.
       </p>
       
       <div className={styles.sessionsContainer}>
@@ -144,6 +155,23 @@ const SpeakerSessions = () => {
                   <p className={styles.description}>{session.description2}</p>
                 </div>
                 <div className={styles.numberCircle}>4</div>
+              </div>
+            )}
+            {index === 4 && (
+              <div className={styles.firstSession}>
+                <div className={styles.textContent}>
+                  <h2 className={styles.title}>{session.title}</h2>
+                  <div className={styles.attendeeTypes}>
+            {BuildingattendeeTypes.map((type, index) => (
+              <span key={index} className={styles.attendeeType}>
+                {type}
+              </span>
+            ))}
+          </div>
+                  <p className={styles.description}>{session.description}</p>
+                  <p className={styles.description}>{session.description2}</p>
+                </div>
+                <div className={styles.numberCircle}>5</div>
               </div>
             )}
           </div>

@@ -35,8 +35,12 @@ export function WavyBackgroundDemo() {
         </div>
       </WavyBackground>
       <div className={styles.announceStrip}>
-        <p>Join us in January at Delhi</p>
+        <p>Join us on 11<span className={styles.date}>th</span> January at Eros Hotel New Delhi</p>
       </div>
     </div>
   );
 }
+
+// session 5 
+// Building the AI Economy - A Roundtable with Policymakers, Industry and Investors ( By Invite)
+// An exclusive roundtable discussion convening entrepreneurs, government officials, industry specialists, and investors to explore the dynamic landscape of Generative AI. This intimate gathering aims to facilitate meaningful connections and foster productive dialogue on the latest advancements and opportunities in this transformative field. A discussion to charter the way forward to stay a step ahead in the Generative AI arena .

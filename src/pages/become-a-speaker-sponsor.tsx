@@ -292,7 +292,7 @@ const BecomeSpeakerSponsor: React.FC = () => {
         
         <div className={styles.preRegisterContent}>
           <span>
-            Join us at the GenAI Summit 2024 this December in Delhi! We&apos;re looking for innovative speakers and sponsors to be part of this transformative event. As a speaker, share your expertise and insights with AI enthusiasts and industry leaders. As a sponsor, align your brand with the future of AI and connect with a highly engaged audience.
+            Join us at the GenAI Summit 2025 this January in Eros Hotel New Delhi! We&apos;re looking for innovative speakers and sponsors to be part of this transformative event. As a speaker, share your expertise and insights with AI enthusiasts and industry leaders. As a sponsor, align your brand with the future of AI and connect with a highly engaged audience.
           </span>
           <div className={styles.contacts}>
             <div className={styles.phone}>
