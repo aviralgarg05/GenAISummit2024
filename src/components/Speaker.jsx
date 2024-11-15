@@ -57,6 +57,16 @@ const speakers = [
      name: "Nikhil Malhotra",
      title: "Chief Innovation Officer , Global Head of AI  and Emerging Technologies,Tech Mahindra",
      image: "/nikhil.png"
+   },
+   {
+     name: "Abhinav Sharma",
+     title: "CTO & Director- Artificial Intelligence & Automation Leader , Cisco Systems",
+     image: "/abhinav.png"
+   },
+   {
+     name: "Gaurav Anand",
+     title: "Head of Data & Analytics at DIAGEO India",
+     image: "/gaurav.png"
    }
 ];
 
