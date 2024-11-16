@@ -28,46 +28,52 @@ const speakers = [
     title: "VP , Digital Inclusion & Sustainability Leader , Capgemini",
     image: "/image8.png"
   },
-   {
-     name: "Geetha Adinarayan",
-     title: "IBM Distinguished Engineer, CTO, Product Engineering, APAC",
-     image: "/Geetha.png"
-   },
   {
-    name: "Richa Mukherjee",
-    title: "Senior Director - PayU",
-    image: "/richaspeaker.png"
-  },
-  {
-    name: "Atul Gohad",
-    title: "Head, Generative AI, Bosch Global Software Technologies",
-    image: "/image7.png"
-  },
-  {
-    name: "Sahhil Kumar",
-    title: "CEO, Quick Pay",
-    image: "/Sahil.png"
-  },
-   {
      name: "Dr N.Panigrahi",
      title: "Outstanding  Scientist, Center for AI & Robotics, DRDO",
      image: "/Pangu.png"
    },
+    {
+        name: "Nikhil Malhotra",
+        title: "Chief Innovation Officer , Global Head of AI  and Emerging Technologies,Tech Mahindra",
+        image: "/nikhil.png"
+    },
+    {
+        name: "Gaurav Anand",
+        title: "Head of Data & Analytics at DIAGEO India",
+        image: "/gaurav.png"
+    },
+    {
+    name: "Atul Gohad",
+    title: "Head, Generative AI, Bosch Global Software Technologies",
+    image: "/image7.png"
+    },
+
    {
-     name: "Nikhil Malhotra",
-     title: "Chief Innovation Officer , Global Head of AI  and Emerging Technologies,Tech Mahindra",
-     image: "/nikhil.png"
+     name: "Geetha Adinarayan",
+     title: "IBM Distinguished Engineer, CTO, Product Engineering, APAC",
+     image: "/Geetha.png"
    },
    {
      name: "Abhinav Sharma",
      title: "CTO & Director- Artificial Intelligence & Automation Leader , Cisco Systems",
      image: "/abhinav.png"
    },
-   {
-     name: "Gaurav Anand",
-     title: "Head of Data & Analytics at DIAGEO India",
-     image: "/gaurav.png"
-   }
+  {
+    name: "Richa Mukherjee",
+    title: "Senior Director - PayU",
+    image: "/richaspeaker.png"
+  },
+  
+  {
+    name: "Sahhil Kumar",
+    title: "CEO, Quick Pay",
+    image: "/Sahil.png"
+  },
+   
+   
+   
+   
 ];
 
 const Speakers = () => {
