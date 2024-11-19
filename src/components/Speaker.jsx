@@ -70,6 +70,11 @@ const speakers = [
     title: "CEO, Quick Pay",
     image: "/Sahil.png"
   },
+  {
+    name: "Nikhil Bhushan",
+    title: "Nikhil Bhushan CTO Starbucks Mumbai",
+    image: "/NikhilBhushan.png"
+  },
    
    
    
