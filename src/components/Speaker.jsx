@@ -35,7 +35,7 @@ const speakers = [
    },
    {
     name: "Nikhil Bhushan",
-    title: "Nikhil Bhushan CTO Starbucks Mumbai",
+    title: "CTO Starbucks Mumbai",
     image: "/NikhilBhushan.png"
   },
     {
