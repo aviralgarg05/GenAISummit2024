@@ -33,6 +33,11 @@ const speakers = [
      title: "Outstanding  Scientist, Center for AI & Robotics, DRDO",
      image: "/Pangu.png"
    },
+   {
+    name: "Nikhil Bhushan",
+    title: "Nikhil Bhushan CTO Starbucks Mumbai",
+    image: "/NikhilBhushan.png"
+  },
     {
         name: "Nikhil Malhotra",
         title: "Chief Innovation Officer , Global Head of AI  and Emerging Technologies,Tech Mahindra",
@@ -70,11 +75,7 @@ const speakers = [
     title: "CEO, Quick Pay",
     image: "/Sahil.png"
   },
-  {
-    name: "Nikhil Bhushan",
-    title: "Nikhil Bhushan CTO Starbucks Mumbai",
-    image: "/NikhilBhushan.png"
-  },
+  
    
    
    
