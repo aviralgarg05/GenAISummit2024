@@ -1,33 +1,25 @@
-# Force HTTPS
+# Enable rewrite engine
 RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# React Router Support
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteBase /
-    RewriteRule ^index\.html$ - [L]
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME} !-l
-    RewriteRule . /index.html [L]
-</IfModule>
+# Handle requests to root
+RewriteBase /
 
-# Set correct permissions
-<FilesMatch "\.(css|js|jpg|jpeg|png|gif|ico|html|svg|woff|woff2|ttf|eot)$">
-    Order Allow,Deny
-    Allow from all
+# If requested resource isn't a file
+RewriteCond %{REQUEST_FILENAME} !-f
+# If requested resource isn't a directory
+RewriteCond %{REQUEST_FILENAME} !-d
+# Then rewrite to index.html
+RewriteRule ^ index.html [QSA,L]
+
+# Allow all static files
+<FilesMatch "\.(html|htm|js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$">
+    Require all granted
 </FilesMatch>
 
 # Prevent directory listing
 Options -Indexes
 
-# Set default index file
-DirectoryIndex index.html
-
-# Handle Common Security Headers
+# Set security headers
 Header set X-Content-Type-Options "nosniff"
 Header set X-XSS-Protection "1; mode=block"
 Header set X-Frame-Options "SAMEORIGIN"
-Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
