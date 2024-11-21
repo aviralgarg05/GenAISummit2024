@@ -1,8 +1,9 @@
 {
-    "name": "react-static-site",
+    "name": "saksham27verma/genaisummit2024",
     "description": "Static React Website",
     "type": "project",
     "require": {
         "php": ">=7.4"
-    }
+    },
+    "license": "proprietary"
 }
