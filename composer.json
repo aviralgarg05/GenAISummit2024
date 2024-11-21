@@ -1,0 +1,8 @@
+{
+    "name": "react-static-site",
+    "description": "Static React Website",
+    "type": "project",
+    "require": {
+        "php": ">=7.4"
+    }
+}
