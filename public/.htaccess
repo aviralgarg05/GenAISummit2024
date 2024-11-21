@@ -1,25 +1,35 @@
+# Set default index
+DirectoryIndex index.html
+
 # Enable rewrite engine
 RewriteEngine On
-
-# Handle requests to root
 RewriteBase /
 
-# If requested resource isn't a file
+# If requested resource exists as a file or directory, skip next rules
 RewriteCond %{REQUEST_FILENAME} !-f
-# If requested resource isn't a directory
 RewriteCond %{REQUEST_FILENAME} !-d
-# Then rewrite to index.html
-RewriteRule ^ index.html [QSA,L]
 
-# Allow all static files
-<FilesMatch "\.(html|htm|js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$">
+# Otherwise forward it to index.html
+RewriteRule . index.html [L]
+
+# Allow access to assets
+<FilesMatch "\.(html|htm|js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|json)$">
+    Order Allow,Deny
+    Allow from all
     Require all granted
 </FilesMatch>
 
 # Prevent directory listing
 Options -Indexes
 
-# Set security headers
-Header set X-Content-Type-Options "nosniff"
-Header set X-XSS-Protection "1; mode=block"
-Header set X-Frame-Options "SAMEORIGIN"
+# Set correct MIME types
+AddType application/javascript .js
+AddType text/css .css
+AddType image/svg+xml .svg
+
+# Enable CORS for fonts and other assets
+<IfModule mod_headers.c>
+    <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font.css|css|js)$">
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+</IfModule>
