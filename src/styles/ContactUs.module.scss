@@ -14,8 +14,15 @@ $gray: rgba(255, 255, 255, 0.7);
   color: $white;
   font-size: 2.5rem;
   font-weight: 500;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   text-align: center;
+}
+
+.contactDescription {
+  color: $gray;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 1rem;
 }
 
 .contactGrid {
@@ -26,11 +33,14 @@ $gray: rgba(255, 255, 255, 0.7);
   margin: 0 auto;
 }
 
+.contactItem {
+  display: flex;
+}
+
 .contactButton {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
+  width: 200%;
   background-color: transparent;
   color: $white;
   text-decoration: none;
@@ -46,10 +56,16 @@ $gray: rgba(255, 255, 255, 0.7);
     border-color: $coral;
     color: $white;
   }
+}
 
-  span {
-    font-size: 1rem;
-  }
+.icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.75rem;
+}
+
+.contactInfo {
+  font-size: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -59,6 +75,11 @@ $gray: rgba(255, 255, 255, 0.7);
 
   .contactTitle {
     font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .contactDescription {
     margin-bottom: 2rem;
   }
 }
+
