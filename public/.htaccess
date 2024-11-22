@@ -6,11 +6,11 @@ RewriteEngine On
 RewriteBase /
 
 # If requested resource exists as a file or directory, skip next rules
-RewriteCond index.jsx !-f
-RewriteCond index.jsx !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 
 # Otherwise forward it to index.html
-RewriteRule . index.html [L]
+RewriteRule . index.jsx [L]
 
 RewriteEngine On
 RewriteCond %{HTTPS} !=off
