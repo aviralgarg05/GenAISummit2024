@@ -88,7 +88,7 @@ const speakers = [
   {
     name: "Rajnish Virmani",
     title: "CIO Advisor - India, Zoom",
-    image: "/rajnish.png"
+    image: "/Sahil.png"
   },
   {
     name: "Rakshit Kalra",
