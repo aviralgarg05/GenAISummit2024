@@ -6,8 +6,8 @@ RewriteEngine On
 RewriteBase /
 
 # If requested resource exists as a file or directory, skip next rules
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond index.jsx !-f
+RewriteCond index.jsx !-d
 
 # Otherwise forward it to index.html
 RewriteRule . index.html [L]
