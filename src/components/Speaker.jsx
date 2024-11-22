@@ -6,94 +6,94 @@ const speakers = [
   {
     name: "Rameesh Kailasam",
     title: "CEO - Indiatech",
-    // image: "/image4.png"
+    image: "/image4.png"
   },
   {
     name: "Sunil Dhaiya",
     title: "Executive Vice President-Skilling , Wadhwani Foundation",
-    // image: "/image5.png"
+    image: "/image5.png"
   },
   {
     name: "Mr. Rishikesh Patankar",
     title: "Vice President ,National Skill Development Corporation",
-    // image: "/image6.png"
+    image: "/image6.png"
   },
   {
     name: "Pankaj Rai",
     title: "Group Chief Data and Analytics Officer , Aditya Birla Group",
-    // image: "/rai.png"
+    image: "/rai.png"
   },
   {
     name: "Kumar Anurag Pratap",
     title: "VP , Digital Inclusion & Sustainability Leader , Capgemini",
-    // image: "/image8.png"
+    image: "/image8.png"
   },
   {
      name: "Dr N.Panigrahi",
      title: "Outstanding  Scientist, Center for AI & Robotics, DRDO",
-    //  image: "/Pangu.png"
+     image: "/Pangu.png"
    },
    {
     name: "Nikhil Bhushan",
     title: "CTO Starbucks Mumbai",
-    // image: "/NikhilBhushan.png"
+    image: "/NikhilBhushan.png"
   },
     {
         name: "Nikhil Malhotra",
         title: "Chief Innovation Officer , Global Head of AI  and Emerging Technologies,Tech Mahindra",
-        // image: "/nikhil.png"
+        image: "/nikhil.png"
     },
     {
         name: "Gaurav Anand",
         title: "Head of Data & Analytics at DIAGEO India",
-        // image: "/gaurav.png"
+        image: "/gaurav.png"
     },
     {
     name: "Atul Gohad",
     title: "Head, Generative AI, Bosch Global Software Technologies",
-    // image: "/image7.png"
+    image: "/image7.png"
     },
 
    {
      name: "Geetha Adinarayan",
      title: "IBM Distinguished Engineer, CTO, Product Engineering, APAC",
-     // image: "/Geetha.png"
+     image: "/Geetha.png"
    },
    {
      name: "Abhinav Sharma",
      title: "CTO & Director- Artificial Intelligence & Automation Leader , Cisco Systems",
-     //   image: "/abhinav.png"
+     image: "/abhinav.png"
    },
   {
     name: "Richa Mukherjee",
     title: "Senior Director - PayU",
-    //    image: "/richaspeaker.png"
+    image: "/richaspeaker.png"
   },
   
   {
     name: "Sahhil Kumar",
     title: "CEO, Quick Pay",
-          image: "/Sahil.png"
+    image: "/Sahil.png"
   },
   {
     name: "Amit Verma",
     title: "Chief Technology Officer, Hindustan Times Digital",
-    image: "/amit.png"
+    // image: "/amit.png"
   },
   {
     name: "Anant Kharad",
     title: "Vice President at TH Healthcare & Life Sciences, Investment Banking",
-    image: "/anant.png"
+    // image: "/anant.png"
   },
   {
     name: "Rajnish Virmani",
     title: "CIO Advisor - India, Zoom",
-    image: "/rajnish.png"
+    // image: "/rajnish.png"
   },
   {
     name: "Rakshit Kalra",
     title: "CTO, AxisCards",
-    image: "/rakshit.png"
+    // image: "/rakshit.png"
   },
   
   
