@@ -75,26 +75,26 @@ const speakers = [
     title: "CEO, Quick Pay",
     image: "/Sahil.png"
   },
-  // {
-  //   name: "Amit Verma",
-  //   title: "Chief Technology Officer, Hindustan Times Digital",
-  //   // image: "/amit.png"
-  // },
-  // {
-  //   name: "Anant Kharad",
-  //   title: "Vice President at TH Healthcare & Life Sciences, Investment Banking",
-  //   // image: "/anant.png"
-  // },
+  {
+    name: "Amit Verma",
+    title: "Chief Technology Officer, Hindustan Times Digital",
+    // image: "/amit.png"
+  },
+  {
+    name: "Anant Kharad",
+    title: "Vice President at TH Healthcare & Life Sciences, Investment Banking",
+    // image: "/anant.png"
+  },
   // {
   //   name: "Rajnish Virmani",
   //   title: "CIO Advisor - India, Zoom",
   //   // image: "/rajnish.png"
   // },
-  // {
-  //   name: "Rakshit Kalra",
-  //   title: "CTO, AxisCards",
-  //   // image: "/rakshit.png"
-  // },
+  {
+    name: "Rakshit Kalra",
+    title: "CTO, AxisCards",
+    // image: "/rakshit.png"
+  },
   
   
   
