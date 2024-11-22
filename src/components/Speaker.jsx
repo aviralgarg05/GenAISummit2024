@@ -90,11 +90,11 @@ const speakers = [
   //   title: "CIO Advisor - India, Zoom",
   //   image: "/Sahil.png"
   // },
-  {
-    name: "Rakshit Kalra",
-    title: "CTO, AxisCards",
-    image: "/rakshit.png"
-  },
+  // {
+  //   name: "Rakshit Kalra",
+  //   title: "CTO, AxisCards",
+  //   image: "/rakshit.png"
+  // },
   
   
   
