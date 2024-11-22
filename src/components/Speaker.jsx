@@ -78,12 +78,12 @@ const speakers = [
   {
     name: "Amit Verma",
     title: "Chief Technology Officer, Hindustan Times Digital",
-    image: "/amit.png"
+    image: "/Sahil.png"
   },
   {
     name: "Anant Kharad",
     title: "Vice President at TH Healthcare & Life Sciences, Investment Banking",
-    image: "/anant.png"
+    image: "/Sahil.png"
   },
   // {
   //   name: "Rajnish Virmani",
@@ -93,7 +93,7 @@ const speakers = [
   {
     name: "Rakshit Kalra",
     title: "CTO, AxisCards",
-    image: "/rakshit.png"
+    image: "/Sahil.png"
   },
   
   
