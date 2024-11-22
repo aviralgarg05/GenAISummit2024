@@ -85,11 +85,11 @@ const speakers = [
     title: "Vice President at TH Healthcare & Life Sciences, Investment Banking",
     image: "/Sahil.png"
   },
-  {
-    name: "Rajnish Virmani",
-    title: "CIO Advisor - India, Zoom",
-    image: "/Sahil.png"
-  },
+  // {
+  //   name: "Rajnish Virmani",
+  //   title: "CIO Advisor - India, Zoom",
+  //   image: "/Sahil.png"
+  // },
   {
     name: "Rakshit Kalra",
     title: "CTO, AxisCards",
