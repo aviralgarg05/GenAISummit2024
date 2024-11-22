@@ -12,6 +12,11 @@ RewriteCond %{REQUEST_FILENAME} !-d
 # Otherwise forward it to index.html
 RewriteRule . index.html [L]
 
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
 # Allow access to assets
 <FilesMatch "\.(html|htm|js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|json)$">
     Order Allow,Deny
