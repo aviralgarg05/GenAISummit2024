@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import styles from '../styles/Navbar.module.scss';
+import Image from 'next/image';
 
 const Navbar = () => {
   const router = useRouter();
@@ -64,10 +65,10 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <div className={styles.logo}>
         <Link href="/">
-          <img src="/GenAI.svg" alt="GenAI Summit Logo" />
+          <Image src="/GenAI.svg" width={100} height={100} alt="GenAI Summit Logo" />
         </Link>
         <Link href="/">
-          <img src="/ajeeshlogo.webp" alt="Ajeesh Logo" />
+          <Image src="/ajeeshlogo.webp" width={100} height={100} alt="Ajeesh Logo" />
         </Link>
       </div>
       

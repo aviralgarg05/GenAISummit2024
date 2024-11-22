@@ -83,21 +83,27 @@ export const WavyBackground = ({
     }
   };
 
-  let animationId: number;
+  // Create a ref to store animationId
+  const animationIdRef = useRef<number>();
+
   const render = () => {
     ctx.fillStyle = backgroundFill || "#FDF8F6";
     ctx.globalAlpha = waveOpacity || 10;
     ctx.fillRect(0, 0, w, h);
     drawWave(5);
-    animationId = requestAnimationFrame(render);
+    // Store the animationId in the ref instead of a regular variable
+    animationIdRef.current = requestAnimationFrame(render);
   };
 
   useEffect(() => {
     init();
     return () => {
-      cancelAnimationFrame(animationId);
+      // Use the ref in cleanup
+      if (animationIdRef.current) {
+        cancelAnimationFrame(animationIdRef.current);
+      }
     };
-  }, []);
+  }, [init]);
 
   const [isSafari, setIsSafari] = useState(false);
   useEffect(() => {

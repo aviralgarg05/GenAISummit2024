@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '../styles/Footer.module.scss';
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Footer = () => {
   return (
@@ -17,8 +18,8 @@ const Footer = () => {
         </nav>
 
         <div className={styles.logoSection}>
-          <img src="/GenAI.svg" alt="GenAI Summit 2024" className={styles.logo} />
-          <img src="/Ajeesh.svg" alt="GenAI Summit 2024" className={styles.logo} />
+          <Image src="/GenAI.svg" width={100} height={100} alt="GenAI Summit 2024" className={styles.logo} />
+          <Image src="/Ajeesh.svg" width={100} height={100} alt="GenAI Summit 2024" className={styles.logo} />
         </div>
 
         <div className={styles.socialLinks}>
