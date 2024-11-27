@@ -95,11 +95,11 @@ const speakers = [
     title: "CTO, AxisCards",
     image: "/rakshit.png"
   },
-  {
-   name: "Shri Panneerselvam Madanagopal",
-   title: "CEO, Meity Startup Hub",
-   image: "/meity.png"
- },
+//   {
+//    name: "Shri Panneerselvam Madanagopal",
+//    title: "CEO, Meity Startup Hub",
+//    image: "/meity.png"
+//  },
   
   
   
