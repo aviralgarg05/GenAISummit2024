@@ -147,7 +147,7 @@ const PreRegister: React.FC = () => {
         </div>
         <div className={styles.preRegisterContent}>
           <span>
-          Pre-register now for the GenAI Summit 2025, happening this December in Delhi! This exciting event will bring together AI innovators, industry leaders, and enthusiasts for a day of inspiring talks, hands-on workshops, and networking with the brightest minds in the field. While official bookings will be live soon, pre-registering now ensures you&apos;re first to know as soon as they open. Don&apos;t miss your chance to be part of this transformative experience in Generative AI—sign up today and stay tuned for further updates!
+          Pre-register now for the GenAI Summit 2025, happening this January in Delhi! This exciting event will bring together AI innovators, industry leaders, and enthusiasts for a day of inspiring talks, hands-on workshops, and networking with the brightest minds in the field. While official bookings will be live soon, pre-registering now ensures you&apos;re first to know as soon as they open. Don&apos;t miss your chance to be part of this transformative experience in Generative AI—sign up today and stay tuned for further updates!
 
           </span>
               <div className={styles.contacts}>
