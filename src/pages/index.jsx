@@ -13,6 +13,7 @@ import BecomeASpeaker from './../components/BecomeASpeaker';
 import SpeakerSessions from '../components/SpeakerSessions';
 import { WavyBackgroundDemo } from '../components/LandingPage';
 import Contact from '../components/ContactUs';
+import BuyTickets from '../components/BuyTicket';
 
 export default function Home() {
   return (
@@ -29,6 +30,12 @@ export default function Home() {
             <WavyBackgroundDemo/>
           </AnimatedSection>
         </div>
+
+        {/* <div id="Buy">
+          <AnimatedSection delay={0}>
+            <BuyTickets/>
+          </AnimatedSection>
+        </div> */}
 
         <div id="about">
           <AnimatedSection delay={100}>

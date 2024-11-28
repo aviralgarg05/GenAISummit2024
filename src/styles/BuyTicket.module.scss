@@ -1,0 +1,196 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 80px;
+  padding: 32px 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 48px;
+  font-weight: 400;
+  color: #000;
+}
+
+.earlyBirdHeader {
+  margin-bottom: 32px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #000;
+  }
+
+  span {
+    color: #666;
+    font-size: 1.125rem;
+  }
+}
+
+.ticketsContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  margin-bottom: 64px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.ticketSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ticketImage {
+  width: 100%;
+  position: relative;
+
+  .ticketImg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.ticketDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.passInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  h3 {
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: #000;
+  }
+}
+
+.price {
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: #000;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #666;
+
+  li {
+    font-size: 1.125rem;
+    margin-bottom: 8px;
+  }
+}
+
+.buyButton {
+  align-self: flex-end;
+  background-color: #FF7557;
+  color: white;
+  border: none;
+  padding: 12px 48px;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #FF6447;
+  }
+}
+
+.priceAlert {
+  text-align: center;
+  margin: 64px 0;
+  
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #000;
+  }
+}
+
+.divider {
+  width: 80%;
+  height: 1px;
+  background-color: #ddd;
+  margin: 50px auto;
+}
+
+.otherPasses {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 20px;
+  gap: 64px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+.verticalDivider {
+  width: 1px;
+  background-color: #ddd;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.passType {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .passInfo {
+    h3 {
+      font-size: 2rem;
+      font-weight: 400;
+      color: #000;
+      margin-bottom: 8px;
+
+      span {
+        display: block;
+        font-size: 1rem;
+        color: #666;
+        font-weight: normal;
+        margin-top: 4px;
+      }
+    }
+
+    p {
+      color: #666;
+      font-size: 1rem;
+      margin: 0;
+    }
+  }
+
+  .price {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #000;
+    text-align: right;
+  }
+}
+
