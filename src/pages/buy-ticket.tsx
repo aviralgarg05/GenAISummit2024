@@ -1,10 +1,14 @@
 import React from 'react';
+import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/BuyTicket.module.scss';
 
 const BuyTickets = () => {
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Buy Ticket(s)</title>
+      </Head>
       <h1 className={styles.title}>Buy Ticket(s)</h1>
       
       <div className={styles.earlyBirdHeader}>

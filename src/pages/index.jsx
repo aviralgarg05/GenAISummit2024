@@ -13,7 +13,7 @@ import BecomeASpeaker from './../components/BecomeASpeaker';
 import SpeakerSessions from '../components/SpeakerSessions';
 import { WavyBackgroundDemo } from '../components/LandingPage';
 import Contact from '../components/ContactUs';
-import BuyTickets from '../components/BuyTicket';
+
 
 export default function Home() {
   return (
