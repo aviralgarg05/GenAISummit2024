@@ -38,7 +38,7 @@ const BuyTickets = () => {
             </div>
             <div className={styles.passInfo}>
               <div className={styles.price}>Rs. 6,000</div>
-              <button className={styles.buyButton}>Buy</button>
+              <button className={styles.buyButton}>To be available soon</button>
             </div>
           </div>
         </div>
@@ -61,7 +61,7 @@ const BuyTickets = () => {
             </div>
             <div className={styles.passInfo}>
               <div className={styles.price}>Rs. 5,400 onwards</div>
-              <button className={styles.buyButton}>Buy</button>
+              <button className={styles.buyButton}>To be available soon</button>
             </div>
           </div>
         </div>
