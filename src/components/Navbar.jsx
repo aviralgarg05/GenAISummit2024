@@ -12,7 +12,7 @@ const Navbar = () => {
   useEffect(() => {
     // Check if we're on the home page
     setIsHome(router.pathname === '/');
-    
+
     const handleResize = () => {
       if (window.innerWidth > 768 && isOpen) {
         setIsOpen(false);
@@ -34,7 +34,7 @@ const Navbar = () => {
         setTimeout(() => {
           const element = document.getElementById(sectionId);
           if (element) {
-            element.scrollIntoView({ 
+            element.scrollIntoView({
               behavior: 'smooth',
               block: 'start'
             });
@@ -46,7 +46,7 @@ const Navbar = () => {
       // If on home page, scroll directly
       const element = document.getElementById(sectionId);
       if (element) {
-        element.scrollIntoView({ 
+        element.scrollIntoView({
           behavior: 'smooth',
           block: 'start'
         });
@@ -71,13 +71,13 @@ const Navbar = () => {
           <Image src="/ajeeshlogo.webp" width={100} height={100} alt="Ajeesh Logo" />
         </Link>
       </div>
-      
+
       <div className={styles.hamburger} onClick={toggleMenu}>
         <span></span>
         <span></span>
         <span></span>
       </div>
-      
+
       <ul className={`${styles.navLinks} ${isOpen ? styles.open : ''}`}>
         <li>
           <a href="#home" onClick={handleNavClick('home')}>
@@ -115,8 +115,8 @@ const Navbar = () => {
           </a>
         </li>
         <li>
-          <Link href="/pre-register">
-            <button className={styles.preRegisterBtn}>Pre-Register</button>
+          <Link href="/buy-pass">
+            <button className={styles.preRegisterBtn}>Buy Pass</button>
           </Link>
         </li>
       </ul>

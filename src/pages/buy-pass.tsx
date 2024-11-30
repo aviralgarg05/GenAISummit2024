@@ -10,12 +10,12 @@ const BuyTickets = () => {
         <title>Buy Ticket(s)</title>
       </Head>
       <h1 className={styles.title}>Buy Ticket(s)</h1>
-      
+
       <div className={styles.earlyBirdHeader}>
         <h2>Early Bird Passes</h2>
         <span>Available till 15 December 2025</span>
       </div>
-      
+
       <div className={styles.ticketsContainer}>
         {/* Individual Pass */}
         <div className={styles.ticketSection}>
@@ -31,16 +31,15 @@ const BuyTickets = () => {
           <div className={styles.ticketDetails}>
             <div className={styles.passInfo}>
               <h3>Individual Pass</h3>
-              <div className={styles.price}>Rs. 6,000</div>
+              <p>All access, 3 days<br />
+                Food access on all 3 days</p>
             </div>
-            {/* <ul className={styles.features}>
-              <li>All access, 3 days</li>
-              <li>Food access on all 3 days</li>
-            </ul> */}
-            <button className={styles.buyButton}>Buy</button>
+            <div className={styles.passInfo}>
+              <div className={styles.price}>Rs. 6,000</div>
+              <button className={styles.buyButton}>Buy</button>
+            </div>
           </div>
         </div>
-
         {/* Group Pass */}
         <div className={styles.ticketSection}>
           <div className={styles.ticketImage}>
@@ -54,19 +53,19 @@ const BuyTickets = () => {
           </div>
           <div className={styles.ticketDetails}>
             <div className={styles.passInfo}>
-              <h3>Group Passes</h3>
-              <div className={styles.price}>Rs. 5,400 onwards</div>
+              <h3>Group Pass</h3>
+              <p>All features as Individual Pass<br />
+                Special discounts based on tickets bought</p>
             </div>
-            {/* <ul className={styles.features}>
-              <li>All features as Individual Pass</li>
-              <li>Special discounts based on tickets bought</li>
-            </ul> */}
-            <button className={styles.buyButton}>Buy</button>
+            <div className={styles.passInfo}>
+              <div className={styles.price}>Rs. 5,400 onwards</div>
+              <button className={styles.buyButton}>Buy</button>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className={styles.divider}></div>
+      {/*} <div className={styles.divider}></div> */}
 
       <div className={styles.priceAlert}>
         <h2>Hurry! Prices will go up soon.</h2>
