@@ -37,7 +37,7 @@ const BuyTickets = () => {
                 Food access on all 3 days</p>
             </div>
             <div className={styles.passInfo}>
-              <div className={styles.price}>Rs. 6,000</div>
+              <div className={styles.price}>Rs. 6,000 onwards</div>
               <button className={styles.buyButton}>To be available soon</button>
             </div>
           </div>
