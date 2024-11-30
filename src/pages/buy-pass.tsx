@@ -8,6 +8,8 @@ const BuyTickets = () => {
     <div className={styles.container}>
       <Head>
         <title>Buy Ticket(s)</title>
+        <meta name="description" content="Summit website description" />
+        <link rel="icon" href="/GenAI.svg" />
       </Head>
       <h1 className={styles.title}>Buy Ticket(s)</h1>
 
