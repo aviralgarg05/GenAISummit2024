@@ -119,6 +119,11 @@ const Navbar = () => {
             <button className={styles.preRegisterBtn}>Buy Tickets</button>
           </Link>
         </li>
+        <li>
+          <Link href="/become-a-speaker-sponsor">
+            <button className={styles.sponsorBtn}>Become a Sponsor</button>
+          </Link>
+        </li>
       </ul>
     </nav>
   );
