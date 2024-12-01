@@ -1,0 +1,72 @@
+// Agenda.module.scss
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.timelineContainer {
+    width: 100%;
+  }
+  
+  .timelineText {
+    color: #1f2937; // text-neutral-800
+    font-size: 0.75rem;
+    line-height: 1rem;
+    margin-bottom: 2rem;
+    font-weight: normal;
+  
+    @media (min-width: 768px) {
+      font-size: 0.875rem;
+    }
+  
+    &.darkMode {
+      color: #e5e5e5; // dark:text-neutral-200
+    }
+  
+    &.smallMargin {
+      margin-bottom: 1rem;
+    }
+  }
+  
+  .imageGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .gridImage {
+    border-radius: 0.5rem;
+    object-fit: cover;
+    height: 5rem;
+    width: 100%;
+    box-shadow: 0 0 24px rgba(34, 42, 53, 0.06),
+                0 1px 1px rgba(0, 0, 0, 0.05),
+                0 0 0 1px rgba(34, 42, 53, 0.04),
+                0 0 4px rgba(34, 42, 53, 0.08),
+                0 16px 68px rgba(47, 48, 55, 0.05),
+                0 1px 0 rgba(255, 255, 255, 0.1) inset;
+  
+    @media (min-width: 768px) {
+      height: 11rem;
+    }
+  
+    @media (min-width: 1024px) {
+      height: 15rem;
+    }
+  }
+  
+  .checklistItem {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    color: #374151; // text-neutral-700
+    font-size: 0.75rem;
+    line-height: 1rem;
+  
+    @media (min-width: 768px) {
+      font-size: 0.875rem;
+    }
+  
+    &.darkMode {
+      color: #d1d5db; // dark:text-neutral-300
+    }
+  }

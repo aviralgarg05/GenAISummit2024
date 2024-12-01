@@ -11,7 +11,7 @@ const BuyTickets = () => {
         <meta name="description" content="Summit website description" />
         <link rel="icon" href="/GenAI.svg" />
       </Head>
-      <h1 className={styles.title}>Buy Ticket(s)</h1>
+      <h1 className={styles.title}>Buy Ticket(s)<span className={styles.earlyBirdSubtitle} style={{color: '#FD5943'}}>[Tickets will be available soon]</span></h1>
 
       <div className={styles.earlyBirdHeader}>
         <h2>Early Bird Passes</h2>
@@ -33,8 +33,8 @@ const BuyTickets = () => {
           <div className={styles.ticketDetails}>
             <div className={styles.passInfo}>
               <h3>Individual Pass</h3>
-              <p>All access, 3 days<br />
-                Food access on all 3 days</p>
+              {/* <p>All access, 3 days<br />
+                Food access on all 3 days</p> */}
             </div>
             <div className={styles.passInfo}>
               <div className={styles.price}>Rs. 6,000 onwards</div>
@@ -56,8 +56,8 @@ const BuyTickets = () => {
           <div className={styles.ticketDetails}>
             <div className={styles.passInfo}>
               <h3>Group Pass</h3>
-              <p>All features as Individual Pass<br />
-                Special discounts based on tickets bought</p>
+              <p>10% on 3-5 Tickets bought<br />
+                15% on 6-8 Tickets bought</p>
             </div>
             <div className={styles.passInfo}>
               <div className={styles.price}>Rs. 5,400 onwards</div>

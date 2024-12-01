@@ -116,7 +116,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link href="/buy-pass">
-            <button className={styles.preRegisterBtn}>Buy Pass</button>
+            <button className={styles.preRegisterBtn}>Buy Tickets</button>
           </Link>
         </li>
       </ul>

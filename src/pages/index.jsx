@@ -36,6 +36,11 @@ export default function Home() {
             <BuyTickets/>
           </AnimatedSection>
         </div> */}
+        {/* <div id="about">
+          <AnimatedSection delay={100}>
+            <TimelineDemo />
+          </AnimatedSection>
+        </div> */}
 
         <div id="about">
           <AnimatedSection delay={100}>
