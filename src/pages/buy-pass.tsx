@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/BuyTicket.module.scss';
+import Link from 'next/link';
 
 const BuyTickets = () => {
   return (
@@ -11,11 +12,14 @@ const BuyTickets = () => {
         <meta name="description" content="Summit website description" />
         <link rel="icon" href="/GenAI.svg" />
       </Head>
-      <h1 className={styles.title}>Buy Ticket(s)<span className={styles.earlyBirdSubtitle} style={{color: '#FD5943'}}>[Tickets will be available soon]</span></h1>
-
+     <h1 className={styles.title}>Buy Ticket(s)<span className={styles.earlyBirdSubtitle} style={{color: '#FD5943'}}>[Tickets will be available soon]</span></h1>
+     <p className={styles.preRegisterContent}>Pre-register here to get notified when booking is live</p>
+      <Link href="/pre-register">
+      <button className={styles.PreRegistrationBtn}>Pre-Register
+        </button></Link>
       <div className={styles.earlyBirdHeader}>
         <h2>Early Bird Passes</h2>
-        <span>Available till 15 December 2025</span>
+        <span>Available till 15 December 2024</span>
       </div>
 
       <div className={styles.ticketsContainer}>

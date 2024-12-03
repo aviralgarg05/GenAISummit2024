@@ -20,12 +20,40 @@
   }
 }
 
+.preRegisterContent{
+  font-size: 20px;
+  color: #000;
+}
+.PreRegistrationBtn{
+  background: linear-gradient(to right, #FF7527 0%, #FC4D4D 50%, #FF7527 100%);
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+  align-items: center;
+  min-width: 100px;
+  text-decoration:none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.1rem;
+  &:hover{
+      outline: 1px solid #ff2a00;
+      background: white;
+      color: #ff2a00;
+  }
+}
 .earlyBirdSubtitle {
   font-size: 24px;
   color: #FD5943;
   font-weight: bold;
 }
+.titleContainer{
+  display: flex;
 
+}
 .title {
   font-size: 48px;
   margin-bottom: 48px;
