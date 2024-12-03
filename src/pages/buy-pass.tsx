@@ -64,7 +64,7 @@ const BuyTickets = () => {
                 15% on 6-8 Tickets bought</p>
             </div>
             <div className={styles.passInfo}>
-              <div className={styles.price}>Rs. 5,400 onwards</div>
+              <div className={styles.price}></div>
               <button className={styles.buyButton}>To be available soon</button>
             </div>
           </div>
