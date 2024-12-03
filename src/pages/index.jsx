@@ -13,6 +13,8 @@ import BecomeASpeaker from './../components/BecomeASpeaker';
 import SpeakerSessions from '../components/SpeakerSessions';
 import { WavyBackgroundDemo } from '../components/LandingPage';
 import Contact from '../components/ContactUs';
+import EventList from '../components/Agenda';
+import Agenda from '../components/Agenda';
 
 
 export default function Home() {
@@ -31,14 +33,10 @@ export default function Home() {
           </AnimatedSection>
         </div>
 
-        {/* <div id="Buy">
-          <AnimatedSection delay={0}>
-            <BuyTickets/>
-          </AnimatedSection>
-        </div> */}
+        
         {/* <div id="about">
           <AnimatedSection delay={100}>
-            <TimelineDemo />
+            <Agenda />
           </AnimatedSection>
         </div> */}
 

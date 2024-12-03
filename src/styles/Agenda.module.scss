@@ -1,72 +1,227 @@
-// Agenda.module.scss
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-.timelineContainer {
-    width: 100%;
-  }
-  
-  .timelineText {
-    color: #1f2937; // text-neutral-800
-    font-size: 0.75rem;
-    line-height: 1rem;
-    margin-bottom: 2rem;
-    font-weight: normal;
-  
-    @media (min-width: 768px) {
-      font-size: 0.875rem;
-    }
-  
-    &.darkMode {
-      color: #e5e5e5; // dark:text-neutral-200
-    }
-  
-    &.smallMargin {
-      margin-bottom: 1rem;
-    }
-  }
-  
-  .imageGrid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-  
-  .gridImage {
-    border-radius: 0.5rem;
-    object-fit: cover;
-    height: 5rem;
-    width: 100%;
-    box-shadow: 0 0 24px rgba(34, 42, 53, 0.06),
-                0 1px 1px rgba(0, 0, 0, 0.05),
-                0 0 0 1px rgba(34, 42, 53, 0.04),
-                0 0 4px rgba(34, 42, 53, 0.08),
-                0 16px 68px rgba(47, 48, 55, 0.05),
-                0 1px 0 rgba(255, 255, 255, 0.1) inset;
-  
-    @media (min-width: 768px) {
-      height: 11rem;
-    }
-  
-    @media (min-width: 1024px) {
-      height: 15rem;
-    }
-  }
-  
-  .checklistItem {
+.eventList {
     display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 98vw;
+    margin: 0 auto;
+    padding: 1rem;
+
+    @media (max-width: 768px) {
+        padding: 0.75rem;
+        gap: 1rem;
+    }
+}
+
+.titleheading {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+.eventCard {
+    border-radius: 1rem;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    
+    @media (max-width: 768px) {
+        padding: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+        padding: 1.25rem;
+    }
+    
+    // Base styles for all cards
+    .title {
+        color: inherit;
+    }
+    
+    .timeLocation {
+        color: inherit;
+        opacity: 0.9;
+    }
+    
+    .description {
+        color: inherit;
+        opacity: 0.9;
+    }
+    
+    .speakerName {
+        color: inherit;
+    }
+    
+    .speakerRole {
+        opacity: 0.8;
+    }
+    
+    // Variant specific styles
+    &.coral-red {
+        background-color: #FF4B55;
+        color: white;
+        
+        .speakerRole {
+            color: white;
+        }
+    }
+    
+    &.white-red {
+        background-color: #FDF8F6;
+        color: #333;
+        border: 2px solid #FF4B55;
+        
+        .speakerRole {
+            color: #FF4B55;
+        }
+    }
+    
+    &.orange {
+        background-color: #FF7A50;
+        color: white;
+        
+        .speakerRole {
+            color: white;
+        }
+    }
+    
+    &.white-orange {
+        background-color: #FDF8F6;
+        color: #333;
+        border: 2px solid #FF7A50;
+        
+        .speakerRole {
+            color: #FF7A50;
+        }
+    }
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+.title {
+    font-size: 1.75rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+
+    @media (max-width: 768px) {
+        font-size: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 1.25rem;
+    }
+}
+
+.timeLocation {
+    align-items: flex-end;
+    display: flex;
+    justify-content: end;
+    align-self: end;
     gap: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+
+    @media (max-width: 768px) {
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+    }
+}
+
+.separator {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.description {
+    font-size: 0.95rem;
+    width: 60%;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+
+    @media (max-width: 1024px) {
+        width: 75%;
+    }
+
+    @media (max-width: 768px) {
+        width: 100%;
+        font-size: 0.9rem;
+        margin-bottom: 1.25rem;
+    }
+}
+
+.speaker {
+    display: flex;
     align-items: center;
-    color: #374151; // text-neutral-700
-    font-size: 0.75rem;
-    line-height: 1rem;
-  
-    @media (min-width: 768px) {
-      font-size: 0.875rem;
+    gap: 1rem;
+
+    @media (max-width: 480px) {
+        gap: 0.75rem;
     }
-  
-    &.darkMode {
-      color: #d1d5db; // dark:text-neutral-300
+}
+
+.speakerImage {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    
+    @media (max-width: 768px) {
+        width: 50px;
+        height: 50px;
     }
-  }
+
+    @media (max-width: 480px) {
+        width: 45px;
+        height: 45px;
+    }
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.speakerInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    @media (max-width: 480px) {
+        gap: 0.15rem;
+    }
+}
+
+.speakerName {
+    font-size: 1.1rem;
+    font-weight: 500;
+
+    @media (max-width: 768px) {
+        font-size: 1rem;
+    }
+}
+
+.speakerRole {
+    font-size: 0.9rem;
+
+    @media (max-width: 768px) {
+        font-size: 0.85rem;
+    }
+}
+
+// Add responsive container queries for modern browsers
+@container (max-width: 500px) {
+    .titleheading {
+        flex-direction: column;
+    }
+
+    .description {
+        width: 100%;
+    }
+}
