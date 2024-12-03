@@ -23,10 +23,9 @@ const Footer = () => {
         </div>
 
         <div className={styles.socialLinks}>
-          <a href="#" aria-label="Facebook"><Facebook size={20} /></a>
           <a href="#" aria-label="Twitter"><Twitter size={20} /></a>
           <a href="#" aria-label="Instagram"><Instagram size={20} /></a>
-          <a href="#" aria-label="LinkedIn"><Linkedin size={20} /></a>
+          <a href="https://www.linkedin.com/company/the-gen-ai-summit-2025/" aria-label="LinkedIn"><Linkedin size={20} /></a>
         </div>
       </div>
 
