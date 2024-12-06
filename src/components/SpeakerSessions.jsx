@@ -46,7 +46,7 @@ It aims to cultivate a dialogue to explore the skills, mindset, and strategies e
 Final */
 {
   id: 1,
-  title: '⁠BUILDING THE ENTREPRENEURS TOMORROW IN THE AI AGE',
+  title: '⁠BUILDING THE ENTREPRENEURS OF TOMORROW IN THE AGE OF AI',
   description: 'This session will have eminent contributors shaping the startup ecosystem. It aims to cultivate a dialogue to explore the skills, mindset, and strategies entrepreneurs need to thrive in this new era—leveraging AI for innovation.',
 
 },
@@ -58,13 +58,13 @@ Final */
     // },
     {
       id: 2,
-      title: 'SKILLS FOR TOMORROW: THRIVING IN THE AGE OF AI ',
+      title: 'SKILLS SHAPING THE FUTURE ',
       description: 'This session will serve as a platform for the key stakeholders to share their insights on the skills required to empower individuals to succeed in tomorrow’s evolving landscape of AI skilling. ',
       // description2: 'It will serve as a platform for these industry leaders to exchange specialised knowledge and insights, focusing on how AI is transforming financial services—enhancing customer experience, optimising risk management, ensuring regulatory compliance, and driving financial inclusion.'
     },
     {
       id: 3,
-      title: 'UNDERSTANDING TODAY, SHAPING TOMORROW',
+      title: 'UNDERSTANDING TODAY, SHAPING TOMORROW - THE TECHNOLOGIES DRIVING THE AI REVOLUTION',
       description: 'This session will serve as a forum for the Technology leaders to share their specialized knowledge on the technologies transforming the world now and driving the future tomorrow.',
       // description2: 'The session will serve as a collaborative forum for these key players to share their expertise and insights. It aims to ignite discussions on how advancements in generative AI are revolutionising the medical and healthcare sectors. Through this dialogue, participants will explore how gen AI can enhance patient care, streamline operations, and address regulatory challenges, ultimately driving the next wave of healthcare innovation.'
     },
