@@ -157,39 +157,6 @@ const PreRegister: React.FC = () => {
               <Envelope size={45} cursor={"pointer"} onClick={handleCallClick} /></div>
               </div>
         </div>
-{/* <div className={styles.imageGallery}>
-          <div className={styles.imageWrapper}>
-            <Image 
-              src="/preRegister1.webp" 
-              alt="Speaker 1" 
-              fill 
-              priority
-              sizes="(max-width: 640px) 100vw,
-                     (max-width: 1024px) 33vw,
-                     50vw"
-            />
-          </div>
-          <div className={styles.imageWrapper}>
-            <Image 
-              src="/preRegister2.jpg" 
-              alt="Speaker 2" 
-              fill
-              sizes="(max-width: 640px) 100vw,
-                     (max-width: 1024px) 33vw,
-                     50vw"
-            />
-          </div>
-          <div className={styles.imageWrapper}>
-            <Image 
-              src="/preRegister3.jpg" 
-              alt="Speaker 3" 
-              fill
-              sizes="(max-width: 640px) 100vw,
-                     (max-width: 1024px) 33vw,
-                     50vw"
-            />
-          </div>
-        </div> */}
       </main>
     </div>
   )
