@@ -1,13 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import styles from '@/styles/preRegister.module.scss'
-import { initializeApp, getApps, FirebaseApp } from "firebase/app";
+import { initializeApp, getApps, FirebaseApp, getApp } from "firebase/app";
 import { getFirestore, collection, addDoc, Firestore } from "firebase/firestore";
 import Image from 'next/image';
 import {Envelope, Phone} from 'phosphor-react';
 
-let app: FirebaseApp | undefined;
-let db: Firestore | undefined;
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAaJEWMEsU0Mt6RI2E_43v0_a-KCpS8y9c",
+  authDomain: "genai-summit.firebaseapp.com",
+  projectId: "genai-summit",
+  storageBucket: "genai-summit.appspot.com",
+  messagingSenderId: "451993233683",
+  appId: "1:451993233683:web:5f8e95e2188770ffb4d2e6",
+  measurementId: "G-P440ENWW7V"
+};
+
+// Initialize Firebase outside of component
+const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 const PreRegister: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -19,43 +31,22 @@ const PreRegister: React.FC = () => {
   });
   const [feedbackMessage, setFeedbackMessage] = useState<{ text: string; isError: boolean } | null>(null);
 
-  useEffect(() => {
-    const firebaseConfig = {
-  apiKey: "AIzaSyAaJEWMEsU0Mt6RI2E_43v0_a-KCpS8y9c",
-  authDomain: "genai-summit.firebaseapp.com",
-  projectId: "genai-summit",
-  storageBucket: "genai-summit.appspot.com",
-  messagingSenderId: "451993233683",
-  appId: "1:451993233683:web:5f8e95e2188770ffb4d2e6",
-  measurementId: "G-P440ENWW7V"
-    };
+  const handleCallClick = () => {
+    window.location.href = `tel:+916230356822`;
+  };
 
-    if (!getApps().length) {
-      app = initializeApp(firebaseConfig);
-      db = getFirestore(app);
-    }
-  }, []);
+  const handleMailClick = () => {
+    window.location.href = `mailto:connect@genaisummit.in`;
+  };
 
-    const handleCallClick = () => {
-      window.location.href = `tel:+916230356822`;
-    };
-
-    const handleMailClick = () => {
-      window.location.href = `mailto:connect@genaisummit.in`;
-    };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prevState => ({ ...prevState, [name]: value }));
-    setFeedbackMessage(null); // Clear feedback when user starts typing
+    setFeedbackMessage(null);
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!db) {
-      console.error("Firestore is not initialized");
-      setFeedbackMessage({ text: "An error occurred. Please try again.", isError: true });
-      return;
-    }
     try {
       await addDoc(collection(db, "preregistrations"), formData);
       setFeedbackMessage({ text: "Pre-registration successful!", isError: false });
@@ -147,15 +138,16 @@ const PreRegister: React.FC = () => {
         </div>
         <div className={styles.preRegisterContent}>
           <span>
-          Pre-register now for the GenAI Summit 2025, happening this January in Delhi! This exciting event will bring together AI innovators, industry leaders, and enthusiasts for a day of inspiring talks, hands-on workshops, and networking with the brightest minds in the field. While official bookings will be live soon, pre-registering now ensures you&apos;re first to know as soon as they open. Don&apos;t miss your chance to be part of this transformative experience in Generative AI—sign up today and stay tuned for further updates!
-
+            Pre-register now for the GenAI Summit 2025, happening this January in Delhi! This exciting event will bring together AI innovators, industry leaders, and enthusiasts for a day of inspiring talks, hands-on workshops, and networking with the brightest minds in the field. While official bookings will be live soon, pre-registering now ensures you&apos;re first to know as soon as they open. Don&apos;t miss your chance to be part of this transformative experience in Generative AI—sign up today and stay tuned for further updates!
           </span>
-              <div className={styles.contacts}>
-                <div className={styles.phone}>
-              <Phone size={45} cursor={"pointer"} onClick={handleCallClick} /></div>
-              <div className={styles.mail}>
-              <Envelope size={45} cursor={"pointer"} onClick={handleCallClick} /></div>
-              </div>
+          <div className={styles.contacts}>
+            <div className={styles.phone}>
+              <Phone size={45} cursor={"pointer"} onClick={handleCallClick} />
+            </div>
+            <div className={styles.mail}>
+              <Envelope size={45} cursor={"pointer"} onClick={handleMailClick} />
+            </div>
+          </div>
         </div>
       </main>
     </div>
