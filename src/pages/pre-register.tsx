@@ -4,7 +4,7 @@ import styles from '@/styles/preRegister.module.scss'
 import { initializeApp, getApps, FirebaseApp, getApp } from "firebase/app";
 import { getFirestore, collection, addDoc, Firestore } from "firebase/firestore";
 import Image from 'next/image';
-import {Envelope, Phone} from 'phosphor-react';
+import { Envelope, Phone } from 'phosphor-react';
 
 // Firebase configuration
 const firebaseConfig = {
@@ -18,18 +18,39 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase outside of component
-const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
-const db = getFirestore(app);
+let app: FirebaseApp;
+let db: Firestore;
+
+try {
+  app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
+  db = getFirestore(app);
+} catch (error) {
+  console.error("Error initializing Firebase:", error);
+}
+
+interface FormData {
+  name: string;
+  email: string;
+  company: string;
+  jobTitle: string;
+  interests: string;
+}
+
+interface FeedbackMessage {
+  text: string;
+  isError: boolean;
+}
 
 const PreRegister: React.FC = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     company: '',
     jobTitle: '',
     interests: '',
   });
-  const [feedbackMessage, setFeedbackMessage] = useState<{ text: string; isError: boolean } | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [feedbackMessage, setFeedbackMessage] = useState<FeedbackMessage | null>(null);
 
   const handleCallClick = () => {
     window.location.href = `tel:+916230356822`;
@@ -37,6 +58,21 @@ const PreRegister: React.FC = () => {
 
   const handleMailClick = () => {
     window.location.href = `mailto:connect@genaisummit.in`;
+  };
+
+  const validateForm = (): boolean => {
+    if (!formData.name.trim()) {
+      setFeedbackMessage({ text: "Please enter your name", isError: true });
+      return false;
+    }
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setFeedbackMessage({ text: "Please enter a valid email address", isError: true });
+      return false;
+    }
+    
+    return true;
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -47,13 +83,54 @@ const PreRegister: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    if (isSubmitting) {
+      return;
+    }
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    setFeedbackMessage(null);
+
     try {
-      await addDoc(collection(db, "preregistrations"), formData);
-      setFeedbackMessage({ text: "Pre-registration successful!", isError: false });
-      setFormData({ name: '', email: '', company: '', jobTitle: '', interests: '' });
+      if (!db) {
+        throw new Error("Firebase database not initialized");
+      }
+
+      const submissionData = {
+        ...formData,
+        timestamp: new Date().toISOString(),
+        submitted_from: window.location.href
+      };
+
+      const docRef = await addDoc(collection(db, "preregistrations"), submissionData);
+      
+      if (docRef.id) {
+        setFeedbackMessage({ 
+          text: "Pre-registration successful! We'll contact you soon.", 
+          isError: false 
+        });
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          jobTitle: '',
+          interests: ''
+        });
+      } else {
+        throw new Error("Failed to get document reference");
+      }
     } catch (error) {
-      console.error("Error adding document: ", error);
-      setFeedbackMessage({ text: "Pre-registration failed. Please try again.", isError: true });
+      console.error("Error during form submission:", error);
+      setFeedbackMessage({ 
+        text: "An error occurred. Please try again in a few moments.", 
+        isError: true 
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -61,7 +138,10 @@ const PreRegister: React.FC = () => {
     <div className={styles.preRegister}>
       <Head>
         <title>GenAI - Summit | Pre Register</title>
-        <meta name="description" content="Pre-register for the GenAI Summit - Join us for cutting-edge discussions on artificial intelligence." />
+        <meta 
+          name="description" 
+          content="Pre-register for the GenAI Summit - Join us for cutting-edge discussions on artificial intelligence." 
+        />
         <link rel="icon" href="/GenAI.svg" />
       </Head>
       
@@ -78,6 +158,7 @@ const PreRegister: React.FC = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
+                disabled={isSubmitting}
               />
             </div>
             
@@ -90,6 +171,7 @@ const PreRegister: React.FC = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
+                disabled={isSubmitting}
               />
             </div>
             
@@ -101,6 +183,7 @@ const PreRegister: React.FC = () => {
                 placeholder="Company Name"
                 value={formData.company}
                 onChange={handleChange}
+                disabled={isSubmitting}
               />
             </div>
             
@@ -112,6 +195,7 @@ const PreRegister: React.FC = () => {
                 placeholder="Job Title"
                 value={formData.jobTitle}
                 onChange={handleChange}
+                disabled={isSubmitting}
               />
             </div>
             
@@ -122,15 +206,25 @@ const PreRegister: React.FC = () => {
                 placeholder="Area of interest (e.g. Machine Learning, Natural Language Processing...)"
                 value={formData.interests}
                 onChange={handleChange}
+                disabled={isSubmitting}
               />
             </div>
             
-            <button type="submit" className={styles.submitButton}>
-              Pre-register
+            <button 
+              type="submit" 
+              className={styles.submitButton}
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Submitting...' : 'Pre-register'}
             </button>
             
             {feedbackMessage && (
-              <div className={`${styles.feedbackMessage} ${feedbackMessage.isError ? styles.error : styles.success}`}>
+              <div 
+                className={`${styles.feedbackMessage} ${
+                  feedbackMessage.isError ? styles.error : styles.success
+                }`}
+                role="alert"
+              >
                 {feedbackMessage.text}
               </div>
             )}
@@ -138,14 +232,28 @@ const PreRegister: React.FC = () => {
         </div>
         <div className={styles.preRegisterContent}>
           <span>
-            Pre-register now for the GenAI Summit 2025, happening this January in Delhi! This exciting event will bring together AI innovators, industry leaders, and enthusiasts for a day of inspiring talks, hands-on workshops, and networking with the brightest minds in the field. While official bookings will be live soon, pre-registering now ensures you&apos;re first to know as soon as they open. Don&apos;t miss your chance to be part of this transformative experience in Generative AI—sign up today and stay tuned for further updates!
+            Pre-register now for the GenAI Summit 2025, happening this January in Delhi! 
+            This exciting event will bring together AI innovators, industry leaders, and 
+            enthusiasts for a day of inspiring talks, hands-on workshops, and networking 
+            with the brightest minds in the field. While official bookings will be live soon, 
+            pre-registering now ensures you&apos;re first to know as soon as they open. 
+            Don&apos;t miss your chance to be part of this transformative experience in 
+            Generative AI—sign up today and stay tuned for further updates!
           </span>
           <div className={styles.contacts}>
             <div className={styles.phone}>
-              <Phone size={45} cursor={"pointer"} onClick={handleCallClick} />
+              <Phone 
+                size={45} 
+                cursor={"pointer"} 
+                onClick={handleCallClick} 
+              />
             </div>
             <div className={styles.mail}>
-              <Envelope size={45} cursor={"pointer"} onClick={handleMailClick} />
+              <Envelope 
+                size={45} 
+                cursor={"pointer"} 
+                onClick={handleMailClick} 
+              />
             </div>
           </div>
         </div>
