@@ -13,7 +13,7 @@ const BuyTickets = () => {
         <link rel="icon" href="/GenAI.svg" />
       </Head>
      <h1 className={styles.title}>Buy Ticket(s)<span className={styles.earlyBirdSubtitle} style={{color: '#FD5943'}}>[Tickets will be available soon]</span></h1>
-     <p className={styles.preRegisterContent}>Pre-register here to get notified when booking is live</p>
+     <p className={styles.preRegisterContent}>Register here and we shall send you the payment link</p>
       <Link href="/pre-register">
       <button className={styles.PreRegistrationBtn}>Pre-Register
         </button></Link>
