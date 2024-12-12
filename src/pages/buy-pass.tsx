@@ -12,10 +12,9 @@ const BuyTickets = () => {
         <meta name="description" content="Summit website description" />
         <link rel="icon" href="/GenAI.svg" />
       </Head>
-     <h1 className={styles.title}>Buy Ticket(s)<span className={styles.earlyBirdSubtitle} style={{color: '#FD5943'}}>[Tickets will be available soon]</span></h1>
-     <p className={styles.preRegisterContent}>Register here and we shall send you the payment link</p>
-      <Link href="/pre-register">
-      <button className={styles.PreRegistrationBtn}>Pre-Register
+     <p className={styles.preRegisterContent}>Register here and we shall send you the payment link at your Email address</p>
+      <Link href="/pre-register" style={{textDecoration:'none'}}> 
+      <button  className={styles.PreRegistrationBtn}>Register
         </button></Link>
       <div className={styles.earlyBirdHeader}>
         <h2>Early Bird Passes</h2>
@@ -42,7 +41,7 @@ const BuyTickets = () => {
             </div>
             <div className={styles.passInfo}>
               <div className={styles.price}>Rs. 6,000 onwards</div>
-              <button className={styles.buyButton}>To be available soon</button>
+              {/* <button className={styles.buyButton}>To be available soon</button> */}
             </div>
           </div>
         </div>
@@ -65,7 +64,7 @@ const BuyTickets = () => {
             </div>
             <div className={styles.passInfo}>
               <div className={styles.price}></div>
-              <button className={styles.buyButton}>To be available soon</button>
+              {/* <button className={styles.buyButton}>To be available soon</button> */}
             </div>
           </div>
         </div>

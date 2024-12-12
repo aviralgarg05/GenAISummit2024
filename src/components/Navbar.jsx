@@ -10,7 +10,6 @@ const Navbar = () => {
   const [isHome, setIsHome] = useState(true);
 
   useEffect(() => {
-    // Check if we're on the home page
     setIsHome(router.pathname === '/');
 
     const handleResize = () => {
@@ -19,9 +18,19 @@ const Navbar = () => {
       }
     };
 
+    // Close menu on route change
+    const handleRouteChange = () => {
+      setIsOpen(false);
+    };
+
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [isOpen, router.pathname]);
+    router.events.on('routeChangeStart', handleRouteChange);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      router.events.off('routeChangeStart', handleRouteChange);
+    };
+  }, [isOpen, router.pathname, router.events]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -29,7 +38,6 @@ const Navbar = () => {
 
   const scrollToSection = (sectionId) => {
     if (!isHome) {
-      // If not on home page, first navigate to home then scroll
       router.push('/').then(() => {
         setTimeout(() => {
           const element = document.getElementById(sectionId);
@@ -39,11 +47,10 @@ const Navbar = () => {
               block: 'start'
             });
           }
-          setIsOpen(false); // Close menu after navigation and scrolling
+          setIsOpen(false);
         }, 100);
       });
     } else {
-      // If on home page, scroll directly
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({
@@ -51,13 +58,13 @@ const Navbar = () => {
           block: 'start'
         });
       }
-      setIsOpen(false); // Close menu after scrolling
+      setIsOpen(false);
     }
   };
 
   const handleNavClick = (sectionId) => (e) => {
     e.preventDefault();
-    setIsOpen(false); // Immediately start closing the menu
+    setIsOpen(false);
     scrollToSection(sectionId);
   };
 
@@ -72,6 +79,12 @@ const Navbar = () => {
         </Link>
       </div>
 
+      <div className={styles.mobileTicketButton} >
+        <Link href="/buy-pass" style={{textDecoration:'none'}}>
+          <button className={styles.buyTicketsBtn}>Buy Tickets</button>
+        </Link>
+      </div>
+
       <div className={styles.hamburger} onClick={toggleMenu}>
         <span></span>
         <span></span>
@@ -79,47 +92,47 @@ const Navbar = () => {
       </div>
 
       <ul className={`${styles.navLinks} ${isOpen ? styles.open : ''}`}>
-        <li>
+        <li onClick={() => setIsOpen(false)}>
           <a href="#home" onClick={handleNavClick('home')}>
             Home
           </a>
         </li>
-        <li>
+        <li onClick={() => setIsOpen(false)}>
           <a href="#about" onClick={handleNavClick('about')}>
             About
           </a>
         </li>
-        <li>
+        <li onClick={() => setIsOpen(false)}>
           <a href="#sessions" onClick={handleNavClick('sessions')}>
             Sessions
           </a>
         </li>
-        <li>
+        <li onClick={() => setIsOpen(false)}>
           <a href="#speakers" onClick={handleNavClick('speakers')}>
             Speakers
           </a>
         </li>
-        <li>
+        <li onClick={() => setIsOpen(false)}>
           <a href="#themes" onClick={handleNavClick('themes')}>
             Themes
           </a>
         </li>
-        <li>
+        <li onClick={() => setIsOpen(false)}>
           <a href="#committee" onClick={handleNavClick('committee')}>
             Committee
           </a>
         </li>
-        <li>
+        <li onClick={() => setIsOpen(false)}>
           <a href="#contact" onClick={handleNavClick('contact')}>
             Contact Us
           </a>
         </li>
-        <li>
+        <li className={styles.desktopOnly}>
           <Link href="/buy-pass">
             <button className={styles.preRegisterBtn}>Buy Tickets</button>
           </Link>
         </li>
-        <li>
+        <li onClick={() => setIsOpen(false)}>
           <Link href="/become-a-speaker-sponsor">
             <button className={styles.sponsorBtn}>Become a Sponsor</button>
           </Link>

@@ -31,6 +31,7 @@ try {
 interface FormData {
   name: string;
   email: string;
+  phone: string;  // Added phone field
   company: string;
   jobTitle: string;
   interests: string;
@@ -45,11 +46,13 @@ const PreRegister: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
+    phone: '',  // Added phone field
     company: '',
     jobTitle: '',
     interests: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);  // New state for tracking submission
   const [feedbackMessage, setFeedbackMessage] = useState<FeedbackMessage | null>(null);
 
   const handleCallClick = () => {
@@ -69,6 +72,12 @@ const PreRegister: React.FC = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       setFeedbackMessage({ text: "Please enter a valid email address", isError: true });
+      return false;
+    }
+    
+    // Optional phone validation (if provided)
+    if (formData.phone && !/^\+?[\d\s-]{10,}$/.test(formData.phone)) {
+      setFeedbackMessage({ text: "Please enter a valid phone number", isError: true });
       return false;
     }
     
@@ -109,6 +118,7 @@ const PreRegister: React.FC = () => {
       const docRef = await addDoc(collection(db, "preregistrations"), submissionData);
       
       if (docRef.id) {
+        setIsSubmitted(true);  // Show thank you page
         setFeedbackMessage({ 
           text: "Pre-registration successful! We'll contact you soon.", 
           isError: false 
@@ -116,6 +126,7 @@ const PreRegister: React.FC = () => {
         setFormData({
           name: '',
           email: '',
+          phone: '',
           company: '',
           jobTitle: '',
           interests: ''
@@ -134,6 +145,26 @@ const PreRegister: React.FC = () => {
     }
   };
 
+  // Thank you page component
+  const ThankYouPage = () => (
+    <div className={styles.thankYouPage}>
+      <h1>Thank You for Registering!</h1>
+      <div className={styles.thankYouContent}>
+        <p>Your registration for GenAI Summit 2025 has been successfully received.</p>
+        <p>We'll keep you updated about the event details and ticket availability.</p>
+
+        {/* <div className={styles.contacts}>
+          <div className={styles.phone}>
+            <Phone size={45} cursor="pointer" onClick={handleCallClick} />
+          </div>
+          <div className={styles.mail}>
+            <Envelope size={45} cursor="pointer" onClick={handleMailClick} />
+          </div>
+        </div> */}
+      </div>
+    </div>
+  );
+
   return (
     <div className={styles.preRegister}>
       <Head>
@@ -146,93 +177,110 @@ const PreRegister: React.FC = () => {
       </Head>
       
       <main className={styles.main}>
-        <div className={styles.formContainer}>
-          <h1>Pre-register</h1>
-          <form onSubmit={handleSubmit} className={styles.form}>
-            <div className={styles.formGroup}>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Full Name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                disabled={isSubmitting}
-              />
-            </div>
-            
-            <div className={styles.formGroup}>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Email Address"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                disabled={isSubmitting}
-              />
-            </div>
-            
-            <div className={styles.formGroup}>
-              <input
-                type="text"
-                id="company"
-                name="company"
-                placeholder="Company Name"
-                value={formData.company}
-                onChange={handleChange}
-                disabled={isSubmitting}
-              />
-            </div>
-            
-            <div className={styles.formGroup}>
-              <input
-                type="text"
-                id="jobTitle"
-                name="jobTitle"
-                placeholder="Job Title"
-                value={formData.jobTitle}
-                onChange={handleChange}
-                disabled={isSubmitting}
-              />
-            </div>
-            
-            <div className={styles.formGroup}>
-              <input
-                id="interests"
-                name="interests"
-                placeholder="Area of interest (e.g. Machine Learning, Natural Language Processing...)"
-                value={formData.interests}
-                onChange={handleChange}
-                disabled={isSubmitting}
-              />
-            </div>
-            
-            <button 
-              type="submit" 
-              className={styles.submitButton}
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? 'Submitting...' : 'Pre-register'}
-            </button>
-            
-            {feedbackMessage && (
-              <div 
-                className={`${styles.feedbackMessage} ${
-                  feedbackMessage.isError ? styles.error : styles.success
-                }`}
-                role="alert"
-              >
-                {feedbackMessage.text}
+        {!isSubmitted ? (
+          <div className={styles.formContainer}>
+            <h1>Pre-register</h1>
+            <form onSubmit={handleSubmit} className={styles.form}>
+              <div className={styles.formGroup}>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Full Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  disabled={isSubmitting}
+                />
               </div>
-            )}
-          </form>
-        </div>
+              
+              <div className={styles.formGroup}>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email Address"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  disabled={isSubmitting}
+                />
+              </div>
+
+              <div className={styles.formGroup}>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Phone Number (Optional)"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  disabled={isSubmitting}
+                />
+              </div>
+              
+              <div className={styles.formGroup}>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  placeholder="Company Name"
+                  value={formData.company}
+                  onChange={handleChange}
+                  disabled={isSubmitting}
+                />
+              </div>
+              
+              <div className={styles.formGroup}>
+                <input
+                  type="text"
+                  id="jobTitle"
+                  name="jobTitle"
+                  placeholder="Job Title"
+                  value={formData.jobTitle}
+                  onChange={handleChange}
+                  disabled={isSubmitting}
+                />
+              </div>
+              
+              <div className={styles.formGroup}>
+                <input
+                  id="interests"
+                  name="interests"
+                  placeholder="Area of interest (e.g. Machine Learning, Natural Language Processing...)"
+                  value={formData.interests}
+                  onChange={handleChange}
+                  disabled={isSubmitting}
+                />
+              </div>
+              
+              <button 
+                type="submit" 
+                className={styles.submitButton}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Submitting...' : 'Pre-register'}
+              </button>
+              
+              {feedbackMessage && (
+                <div 
+                  className={`${styles.feedbackMessage} ${
+                    feedbackMessage.isError ? styles.error : styles.success
+                  }`}
+                  role="alert"
+                >
+                  {feedbackMessage.text}
+                </div>
+              )}
+            </form>
+          </div>
+        ) : (
+          <ThankYouPage />
+        )}
+        
         <div className={styles.preRegisterContent}>
           <span>
-            Pre-register now for the GenAI Summit 2025, happening this January in Delhi! 
+            Register now for the GenAI Summit 2025, happening this January in Delhi! 
             This exciting event will bring together AI innovators, industry leaders, and 
             enthusiasts for a day of inspiring talks, hands-on workshops, and networking 
             with the brightest minds in the field. While official bookings will be live soon, 
