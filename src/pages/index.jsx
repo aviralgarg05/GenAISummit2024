@@ -13,6 +13,7 @@ import BecomeASpeaker from './../components/BecomeASpeaker';
 import SpeakerSessions from '../components/SpeakerSessions';
 import { WavyBackgroundDemo } from '../components/LandingPage';
 import Contact from '../components/ContactUs';
+import BuyTicketsSection from '../components/BuyTicketsSection';
 
 
 export default function Home() {
@@ -44,6 +45,12 @@ export default function Home() {
           </AnimatedSection>
         </div>
 
+        <div id="BuyTicketSection">
+          <AnimatedSection delay={100}>
+            <BuyTicketsSection />
+          </AnimatedSection>
+        </div>
+
        {/* <div id="who-should-attend">
           <AnimatedSection delay={200}>
             <WhoShouldAttend />
@@ -63,6 +70,12 @@ export default function Home() {
           </AnimatedSection>
         </div>
 
+        <div id="BuyTicketSection">
+          <AnimatedSection delay={400}>
+            <BuyTicketsSection />
+          </AnimatedSection>
+        </div>
+
         <div id="become-speaker">
           <AnimatedSection delay={400}>
             <BecomeASpeaker/>
@@ -78,6 +91,11 @@ export default function Home() {
         <div id="committee">
           <AnimatedSection delay={600}>
             <AdvisoryCommittee />
+          </AnimatedSection>
+        </div>
+        <div id="BuyTicketSection">
+          <AnimatedSection delay={300}>
+            <BuyTicketsSection />
           </AnimatedSection>
         </div>
         <div id="contact">

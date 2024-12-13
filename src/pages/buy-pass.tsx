@@ -12,7 +12,7 @@ const BuyTickets = () => {
         <meta name="description" content="Summit website description" />
         <link rel="icon" href="/GenAI.svg" />
       </Head>
-     <p className={styles.preRegisterContent}>Register here and we shall send you the payment link at your Email address</p>
+     <p className={styles.preRegisterContent}>Register here and we shall send you the payment link at your email address</p>
       <Link href="/pre-register" style={{textDecoration:'none'}}> 
       <button  className={styles.PreRegistrationBtn}>Register
         </button></Link>
