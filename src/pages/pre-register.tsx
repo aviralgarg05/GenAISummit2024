@@ -151,7 +151,7 @@ const PreRegister: React.FC = () => {
       <h1>Thank You for Registering!</h1>
       <div className={styles.thankYouContent}>
         <p>Your registration for GenAI Summit 2025 has been successfully received.</p>
-        <p>We'll keep you updated about the event details and ticket availability.</p>
+        <p>We&apos;ll keep you updated about the event details and ticket availability.</p>
 
         {/* <div className={styles.contacts}>
           <div className={styles.phone}>
