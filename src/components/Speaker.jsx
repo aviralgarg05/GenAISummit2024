@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import styles from '../styles/Speakers.module.scss';
 
-const speakers = [
+const allSpeakers = [
   {
     name: "Rameesh Kailasam",
     title: "CEO - Indiatech",
@@ -119,6 +119,46 @@ const speakers = [
 ];
 
 const Speakers = () => {
+  const [displayedSpeakers, setDisplayedSpeakers] = useState([]);
+  const [visibleCount, setVisibleCount] = useState(6);
+
+  // Function to load more speakers
+  const loadMoreSpeakers = useCallback(() => {
+    const nextSpeakers = allSpeakers.slice(0, visibleCount + 6);
+    setDisplayedSpeakers(nextSpeakers);
+    setVisibleCount(prevCount => 
+      prevCount + 6 <= allSpeakers.length ? prevCount + 6 : allSpeakers.length
+    );
+  }, [visibleCount]);
+
+  // Initial load of speakers
+  useEffect(() => {
+    setDisplayedSpeakers(allSpeakers.slice(0, 6));
+  }, []);
+
+  // Infinite scroll handler
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if user has scrolled to the bottom of the speakers section
+      const speakersSection = document.querySelector(`.${styles.speakers}`);
+      if (!speakersSection) return;
+
+      const { bottom } = speakersSection.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // If we're near the bottom and haven't loaded all speakers
+      if (bottom <= windowHeight && visibleCount < allSpeakers.length) {
+        loadMoreSpeakers();
+      }
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+    
+    // Cleanup listener
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [loadMoreSpeakers, visibleCount]);
+
   return (
     <section className={styles.speakers}>
       <div className={styles.speakerHeader}>
@@ -128,7 +168,7 @@ const Speakers = () => {
         </div>
       </div>
       <div className={styles.speakersGrid}>
-        {speakers.map((speaker, index) => (
+        {displayedSpeakers.map((speaker, index) => (
           <div key={`${speaker.name}-${index}`} className={styles.speakerCard}>
             <div className={styles.speakerInfo}>
               <h3>{speaker.name}</h3>
@@ -151,6 +191,11 @@ const Speakers = () => {
           </div>
         ))}
       </div>
+      {visibleCount < allSpeakers.length && (
+        <div className={styles.loadMore}>
+          Loading more speakers...
+        </div>
+      )}
     </section>
   );
 };
