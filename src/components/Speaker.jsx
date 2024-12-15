@@ -38,66 +38,84 @@ const speakers = [
     title: "CTO Starbucks ",
     image: "/NikhilBhushan.png"
   },
-    {
-        name: "Nikhil Malhotra",
-        title: "Chief Innovation Officer , Global Head of AI  and Emerging Technologies,Tech Mahindra",
-        image: "/nikhil.png"
-    },
-    {
-        name: "Gaurav Anand",
-        title: "Head of Data & Analytics at DIAGEO India",
-        image: "/gaurav.png"
-    },
-    {
-    name: "Atul Gohad",
-    title: "Head, Generative AI, Bosch Global Software Technologies",
-    image: "/image7.png"
-    },
+  {
+      name: "Nikhil Malhotra",
+      title: "Chief Innovation Officer , Global Head of AI  and Emerging Technologies,Tech Mahindra",
+      image: "/nikhil.png"
+  },
+  {
+      name: "Gaurav Anand",
+      title: "Head of Data & Analytics at DIAGEO India",
+      image: "/gaurav.png"
+  },
+  {
+  name: "Atul Gohad",
+  title: "Head, Generative AI, Bosch Global Software Technologies",
+  image: "/image7.png"
+  },
 
-   {
-     name: "Geetha Adinarayan",
-     title: "IBM Distinguished Engineer, CTO, Product Engineering, APAC",
-     image: "/Geetha.png"
-   },
-   {
-     name: "Abhinav Sharma",
-     title: "CTO & Director- Artificial Intelligence & Automation Leader , Cisco Systems",
-     image: "/abhinav.png"
-   },
-  {
-    name: "Richa Mukherjee",
-    title: "Senior Director - PayU",
-    image: "/richaspeaker.png"
-  },
-  
-  {
-    name: "Sahhil Kumar",
-    title: "CEO, Quick Pay",
-    image: "/Sahil.png"
-  },
-  {
-    name: "Amit Verma",
-    title: "Chief Technology Officer, Hindustan Times Digital",
-    image: "/amit.png"
-  },
-   {
-     name: "Rajnish Virmani",
-     title: "CIO Advisor - India, Zoom",
-     image: "/rajnish.png"
-   },
+ {
+   name: "Geetha Adinarayan",
+   title: "IBM Distinguished Engineer, CTO, Product Engineering, APAC",
+   image: "/Geetha.png"
+ },
+ {
+   name: "Abhinav Sharma",
+   title: "CTO & Director- Artificial Intelligence & Automation Leader , Cisco Systems",
+   image: "/abhinav.png"
+ },
+{
+  name: "Richa Mukherjee",
+  title: "Senior Director - PayU",
+  image: "/richaspeaker.png"
+},
+ 
+{
+  name: "Sahhil Kumar",
+  title: "CEO, Quick Pay",
+  image: "/Sahil.png"
+},
+{
+  name: "Amit Verma",
+  title: "Chief Technology Officer, Hindustan Times Digital",
+  image: "/amit.png"
+},
+ {
+   name: "Rajnish Virmani",
+   title: "CIO Advisor - India, Zoom",
+   image: "/rajnish.png"
+ },
 
-//   {
-//    name: "Shri Panneerselvam Madanagopal",
-//    title: "CEO, Meity Startup Hub",
-//    image: "/meity.png"
-//  },
-  
-  
-  
-   
-   
-   
-   
+ {
+  name: "Abhishek Lal",
+  title: "Chief Digital Officer, Marks & Spencer",
+  image: "/abhishekR.png"
+},
+   {
+  name: "Kamesh Sanghi",
+  title: "Dy. Country Director, American India Foundation",
+  image: "/kameshR.png"
+},
+   {
+  name: "Anand Vijay Jha",
+  title: "Vice President, Visa",
+  image: "/anandR.png"
+},
+   {
+  name: "Harneet Singh",
+  title: " Founder & Chief AI Officer, Rabitt AI",
+  image: "/harneetR.png"
+},
+   {
+  name: "Prafull Billore",
+  title: "MBA Chai Wala",
+  image: "/MBAr.png"
+},
+   {
+  name: "Kanishka Agiwal",
+  title: "Head, Service Lines, India & South Asia, Amazon Web Services(AWS)",
+  image: "/kanishkaR.png"
+},
 ];
 
 const Speakers = () => {
