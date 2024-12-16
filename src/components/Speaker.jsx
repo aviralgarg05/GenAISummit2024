@@ -96,11 +96,11 @@ const allSpeakers = [
   title: "Dy. Country Director, American India Foundation",
   image: "/kameshR.png"
 },
-   {
-  name: "Anand Vijay Jha",
-  title: "Vice President, Visa",
-  image: "/anandR.png"
-},
+//    {
+//   name: "Anand Vijay Jha",
+//   title: "Vice President, Visa",
+//   image: "/anandR.png"
+// },
    {
   name: "Harneet Singh",
   title: " Founder & Chief AI Officer, Rabitt AI",
