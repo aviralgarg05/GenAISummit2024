@@ -14,6 +14,7 @@ import SpeakerSessions from '../components/SpeakerSessions';
 import { WavyBackgroundDemo } from '../components/LandingPage';
 import Contact from '../components/ContactUs';
 import BuyTicketsSection from '../components/BuyTicketsSection';
+import Agenda from '../components/agenda';
 
 
 export default function Home() {
@@ -60,7 +61,7 @@ export default function Home() {
 
         <div id="sessions">
           <AnimatedSection delay={200}>
-            <SpeakerSessions/>
+            <Agenda />
           </AnimatedSection>
         </div>
 
