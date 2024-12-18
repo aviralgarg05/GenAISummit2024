@@ -211,7 +211,7 @@ const Agenda = () => {
     return (
         
         <div className={styles.eventList}>
-            <h1 className={styles.mainHeading}>Agenda</h1>
+            <h1 className={styles.mainHeading}>Sessions</h1>
             {eventData.map(event => (
                 <AgendaCard key={event.id} event={event} />
             ))}
