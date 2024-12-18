@@ -58,7 +58,7 @@ const eventData = [
             {
                 name: "Dr. N Panigrahi",
                 role: "Outstanding Scientist, Centre for AI & Robotics @ DRDO",
-                image: "/pangu.png"
+                image: "/Pangu.png"
             },{
                 name: "Kanishka Agiwal",
                 role: "Head, Service Lines, India & South Asia @ AWS",
