@@ -24,8 +24,8 @@ const Footer = () => {
 
         <div className={styles.socialLinks}>
           <a href="#" aria-label="Twitter"><Twitter size={20} /></a>
-          <a href="#" aria-label="Instagram"><Instagram size={20} /></a>
-          <a href="https://www.linkedin.com/company/the-gen-ai-summit-2025/" aria-label="LinkedIn"><Linkedin size={20} /></a>
+          <a href="https://www.instagram.com/genaisummit01?igsh=MW13aDhwM3o3NjFxMg==" aria-label="Instagram"><Instagram size={20} /></a>
+          <a href="https://www.linkedin.com/company/genaisummit2025/" aria-label="LinkedIn"><Linkedin size={20} /></a>
         </div>
       </div>
 

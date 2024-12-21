@@ -9,6 +9,11 @@ const allSpeakers = [
     image: "/image4.png"
   },
   {
+ name: "Prafull Billore",
+ title: "MBA Chai Wala",
+ image: "/MBAr.png"
+},
+  {
     name: "Sunil Dhaiya",
     title: "Executive Vice President-Skilling , Wadhwani Foundation",
     image: "/image5.png"
@@ -105,11 +110,6 @@ const allSpeakers = [
   name: "Harneet Singh",
   title: " Founder & Chief AI Officer, Rabitt AI",
   image: "/harneetR.png"
-},
-   {
-  name: "Prafull Billore",
-  title: "MBA Chai Wala",
-  image: "/MBAr.png"
 },
    {
   name: "Kanishka Agiwal",

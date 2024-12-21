@@ -25,11 +25,11 @@ const eventData = [
                 role: "Founder & Chief AI Officer @ Rabbitt AI",
                 image: "/harneetR.png"
             },
-            // {
-            //     name: "Bhavesh Jain",
-            //     role: "Investor",
-            //     image: "/abhinav.png"
-            // }
+            {
+                name: "Arijit Bhattacharyya",
+                role: "Angel Investor & CEO @ Coinnovateventures",
+                image: "/arijit2.png"
+            }
         ],
         variant: "coral-red"
     },
@@ -130,7 +130,7 @@ const eventData = [
     },
     {
         id: 5,
-        title: "Panel - Redefining skills for future",
+        title: "Redefining Skills for the AI Era: Creating the Future Workforce",
         time: "",
         location: "",
         description: "",

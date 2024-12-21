@@ -185,6 +185,7 @@ const PreRegister: React.FC = () => {
                 name="phone"
                 placeholder="Phone Number"
                 value={formData.phone}
+                required
                 onChange={handleChange}
                 disabled={isSubmitting}
               />
