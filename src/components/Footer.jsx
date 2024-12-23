@@ -15,6 +15,7 @@ const Footer = () => {
           <a href="#speakers">Speakers</a>
           <a href="#themes">Themes</a>
           <a href="#committee">Committee</a>
+          <a href="../privacy-policy">Privacy Policy</a>
         </nav>
 
         <div className={styles.logoSection}>

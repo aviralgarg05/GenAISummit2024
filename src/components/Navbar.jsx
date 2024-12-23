@@ -104,7 +104,7 @@ const Navbar = () => {
         </li>
         <li onClick={() => setIsOpen(false)}>
           <a href="#sessions" onClick={handleNavClick('sessions')}>
-            Sessions
+            Agenda
           </a>
         </li>
         <li onClick={() => setIsOpen(false)}>
