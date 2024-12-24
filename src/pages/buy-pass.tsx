@@ -1,10 +1,89 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/BuyTicket.module.scss';
 import Link from 'next/link';
 
 const BuyTickets = () => {
+    const [groupTickets, setGroupTickets] = useState(1);
+
+useEffect(() => {
+  const script = document.createElement("script");
+  script.src = "https://checkout.razorpay.com/v1/checkout.js";
+  script.async = true;
+  document.body.appendChild(script);
+
+  return () => {
+    document.body.removeChild(script);
+  };
+}, []);
+
+
+  const handleIndividualPayment = () => {
+    const options = {
+      key: "rzp_live_JCuO9eUag5dosL", 
+      amount: 6000 * 100, 
+      currency: "INR",
+      name: "Summit Tickets",
+      description: "Individual Pass",
+      handler: function (response: any) {
+        alert(`Payment successful. Payment ID: ${response.razorpay_payment_id}`);
+      },
+      prefill: {
+        name: "",
+        email: "",
+        contact: "",
+      },
+      notes: {
+        address: "Event venue",
+      },
+      theme: {
+        color: "#3399cc",
+      },
+    };
+
+    const razorpay = new (window as any).Razorpay(options);
+    razorpay.open();
+  };
+
+  const calculateGroupPrice = () => {
+    if (groupTickets >= 3 && groupTickets <= 5) {
+      return 6000 * groupTickets * 0.9; // 10% discount
+    } else if (groupTickets >= 6 && groupTickets <= 8) {
+      return 6000 * groupTickets * 0.85; // 15% discount
+    }
+    return 6000 * groupTickets;
+  };
+
+  const handleGroupPayment = () => {
+    const amount = calculateGroupPrice();
+
+    const options = {
+      key: "rzp_live_JCuO9eUag5dosL",
+      amount: amount * 100, // Amount in paise
+      currency: "INR",
+      name: "Summit Tickets",
+      description: `Group Pass - ${groupTickets} tickets`,
+      handler: function (response: any) {
+        alert(`Payment successful. Payment ID: ${response.razorpay_payment_id}`);
+      },
+      prefill: {
+        name: "",
+        email: "",
+        contact: "",
+      },
+      notes: {
+        address: "Event venue",
+      },
+      theme: {
+        color: "#3399cc",
+      },
+    };
+
+    const razorpay = new (window as any).Razorpay(options);
+    razorpay.open();
+  };
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -12,10 +91,10 @@ const BuyTickets = () => {
         <meta name="description" content="Summit website description" />
         <link rel="icon" href="/GenAI.svg" />
       </Head>
-     <p className={styles.preRegisterContent}>Register here and the payment link will be sent to you on your email</p>
+    {/* <p className={styles.preRegisterContent}>Register here and the payment link will be sent to you on your email</p>
       <Link href="/pre-register" style={{textDecoration:'none'}}> 
       <button  className={styles.PreRegistrationBtn}>Register
-        </button></Link>
+        </button></Link> */}
       <div className={styles.earlyBirdHeader}>
         <h2>Early Bird Passes</h2>
         <span>Available till 31 December 2024</span>
@@ -41,7 +120,7 @@ const BuyTickets = () => {
             </div>
             <div className={styles.passInfo}>
               <div className={styles.price}>Rs. 6,000 onwards</div>
-              {/* <button className={styles.buyButton}>To be available soon</button> */}
+              <button className={styles.buyButton} onClick={handleIndividualPayment}>Buy Now</button> 
             </div>
           </div>
         </div>
@@ -64,7 +143,13 @@ const BuyTickets = () => {
             </div>
             <div className={styles.passInfo}>
               <div className={styles.price}></div>
-              {/* <button className={styles.buyButton}>To be available soon</button> */}
+              <div className={styles.ticketQuantitySelector}>
+  <button onClick={() => setGroupTickets(Math.max(1, groupTickets - 1))}>-</button>
+  <input type="number" value={groupTickets} readOnly />
+  <button onClick={() => setGroupTickets(Math.min(8, groupTickets + 1))}>+</button>
+</div>
+
+              <button className={styles.buyButton} onClick={handleGroupPayment}>Buy Now</button> 
             </div>
           </div>
         </div>
