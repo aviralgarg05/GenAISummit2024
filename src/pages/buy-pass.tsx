@@ -18,7 +18,7 @@ const BuyTickets = () => {
         </button></Link>
       <div className={styles.earlyBirdHeader}>
         <h2>Early Bird Passes</h2>
-        <span>Available till 15 December 2024</span>
+        <span>Available till 31 December 2024</span>
       </div>
 
       <div className={styles.ticketsContainer}>
@@ -79,7 +79,7 @@ const BuyTickets = () => {
       <section className={styles.otherPasses}>
         <div className={styles.passType}>
           <div className={styles.passInfo}>
-            <h3>Regular Passes <span>16 Dec 2024 to 5 Jan 2025</span></h3>
+            <h3>Regular Passes <span>1 Jan 2025 to 5 Jan 2025</span></h3>
             <p>Group discounts reduce</p>
           </div>
           <div className={styles.price}>Rs. 7,000</div>
