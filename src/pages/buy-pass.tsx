@@ -91,10 +91,12 @@ useEffect(() => {
         <meta name="description" content="Summit website description" />
         <link rel="icon" href="/GenAI.svg" />
       </Head>
-    {/* <p className={styles.preRegisterContent}>Register here and the payment link will be sent to you on your email</p>
+     <p className={styles.preRegisterContent}>For Pre Registration , fill the following details</p>
       <Link href="/pre-register" style={{textDecoration:'none'}}> 
       <button  className={styles.PreRegistrationBtn}>Register
-        </button></Link> */}
+        </button></Link> 
+<p className={styles.preRegisterContent}>For final Registration , kindly purchase the tickets :</p>
+<br/>
       <div className={styles.earlyBirdHeader}>
         <h2>Early Bird Passes</h2>
         <span>Available till 31 December 2024</span>
