@@ -50,7 +50,7 @@ const Agenda = () => {
       role: 'CEO @ MBA Chaiwala',
       time: '10:20 a.m. - 10:35 a.m.',
       topic: 'Coming Soon',
-      image: '/mbaR.png'
+      image: '/MBAr.png'
     }
   ];
 
@@ -116,7 +116,7 @@ const Agenda = () => {
           designation: 'Outstanding Scientist, Centre for AI & Robotics',
           time: '12:05 p.m. - 12:15 p.m.',
           topic: 'Coming Soon',
-          image: '/pangu.png'
+          image: '/Pangu.png'
         },
         {
           type: 'speaker',
@@ -224,7 +224,7 @@ const Agenda = () => {
           designation: 'Chief Technological Officer',
           time: '03:15 p.m. - 03:25 p.m.',
           topic: 'Brewing Innovation: How AI is shaping the Future of Coffee and Retail',
-          image: '/nikhilBhushan.png'
+          image: '/NikhilBhushan.png'
         },
         {
           type: 'speaker',
