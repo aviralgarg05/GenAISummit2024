@@ -1,7 +1,7 @@
-// Agenda.jsx
 import styles from '../styles/Agenda.module.scss';
 import Image from 'next/image';
 import { Line } from './ui/Line';
+import { useState, useEffect } from 'react';
 
 const AgendaItem = ({ item }) => {
   if (item.type === 'break') {
@@ -34,9 +34,9 @@ const AgendaItem = ({ item }) => {
     </div>
   );
 };
-
 const Agenda = () => {
-  // Data structure for keynote speakers
+   const [visibleSections, setVisibleSections] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const keynoteSpeakers = [
     {
       name: 'Rameesh Kailasam',
@@ -301,6 +301,32 @@ const Agenda = () => {
     }
   ];
 
+   useEffect(() => {
+    setVisibleSections(agendaSections.slice(0,6)); // Load the first section initially
+  }, []);
+
+
+    const handleScroll = () => {
+    if (window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight - 200) {
+      loadMoreSections();
+    }
+  };
+
+  const loadMoreSections = () => {
+    if (currentIndex < agendaSections.length) {
+      const nextIndex = currentIndex + 1;
+      setVisibleSections((prev) => [...prev, agendaSections[nextIndex]]);
+      setCurrentIndex(nextIndex);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [handleScroll]);
+
   return (
     <div className={styles.agenda}>
       <div className={styles.Header}>
@@ -311,7 +337,7 @@ const Agenda = () => {
       <h1 className={styles.mainTitle}>Keynote Speaker</h1>
       
       <div className={styles.keynoteSpeakers}>
-        {keynoteSpeakers.map((speaker, index) => (
+               {keynoteSpeakers.map((speaker, index) => (
           <div key={index} className={styles.speakerCard}>
             <div className={styles.imageWrapper}>
               <Image
@@ -322,7 +348,7 @@ const Agenda = () => {
                 className={styles.speakerImage}
               />
             </div>
-            
+
             <div className={styles.speakerDetails}>
               <h3>{speaker.name}</h3>
               <p className={styles.role}>{speaker.role}</p>
@@ -339,23 +365,18 @@ const Agenda = () => {
       </div>
 
       {/* Dynamic Sessions Section */}
-      {agendaSections.map((section) => (
+      {visibleSections.map((section) => (
         <div key={section.id} className={styles.sessionContainer}>
-
           <Line />
           <div className={styles.sessionMainHeader}>
-          <div className={styles.sessionHeader}>
-            <span>🎯</span>
-            <h2>{section.type} {section.id}</h2>
-            <span>🎯</span>
+            <div className={styles.sessionHeader}>
+              <span>🎯</span>
+              <h2>{section.type} {section.id}</h2>
+              <span>🎯</span>
+            </div>
+            <h3 className={styles.sessionTitle}>{section.title}</h3>
           </div>
-
-          <h3 className={styles.sessionTitle}>{section.title}</h3>
-          {section.type === 'Panel' && section.time ? (
-        <div className={styles.panelTime}>{section.time}</div>
-      ) : null}
-          
-          </div><Line />
+          <Line />
 
           <div className={styles.sessionSpeakers}>
             {section.items.map((item, index) => (

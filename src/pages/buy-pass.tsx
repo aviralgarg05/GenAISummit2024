@@ -21,26 +21,28 @@ useEffect(() => {
 
   const handleIndividualPayment = () => {
     const options = {
-      key: "rzp_live_JCuO9eUag5dosL", 
-      amount: 6000 * 100, 
-      currency: "INR",
-      name: "Summit Tickets",
-      description: "Individual Pass",
-      handler: function (response: any) {
-        alert(`Payment successful. Payment ID: ${response.razorpay_payment_id}`);
-      },
-      prefill: {
-        name: "",
-        email: "",
-        contact: "",
-      },
-      notes: {
-        address: "Event venue",
-      },
-      theme: {
-        color: "#3399cc",
-      },
-    };
+  key: "rzp_live_JCuO9eUag5dosL",
+  amount: 6000 * 100, 
+  currency: "INR",
+  name: "Summit Tickets",
+  description: "Individual Pass",
+  receipt: `receipt_${new Date().getTime()}`, 
+  handler: function (response: { razorpay_payment_id: any; }) {
+    alert(`Payment successful. Payment ID: ${response.razorpay_payment_id}`);
+  },
+  prefill: {
+    name: "",
+    email: "",
+    contact: "",
+  },
+  notes: {
+    address: "Event venue",
+  },
+  theme: {
+    color: "#3399cc",
+  },
+};
+
 
     const razorpay = new (window as any).Razorpay(options);
     razorpay.open();
