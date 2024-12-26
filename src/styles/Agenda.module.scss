@@ -294,6 +294,7 @@
   }
   
   @media (max-width: 1024px) {
+
     .keynoteSpeakers {
       flex-direction: column;
       align-items: center;
@@ -303,6 +304,9 @@
       grid-template-columns: 1fr;
       text-align: center;
       gap: 1rem;
+    }
+    .sessionSpeakerImage{
+        justify-self: center;
     }
   
     .sessionTopic {
@@ -317,6 +321,7 @@
   }
   
   @media (max-width: 768px) {
+
     .agenda {
       padding: 1rem;
     }
