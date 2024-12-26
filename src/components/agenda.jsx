@@ -1,42 +1,23 @@
+import { useState, useEffect, useRef, useCallback } from 'react';
+import dynamic from 'next/dynamic';
 import styles from '../styles/Agenda.module.scss';
 import Image from 'next/image';
 import { Line } from './ui/Line';
-import { useState, useEffect } from 'react';
 
-const AgendaItem = ({ item }) => {
-  if (item.type === 'break') {
-    return (
-      <div className={styles.breakCard}>
-        <span className={styles.breakTitle}>{item.title}</span>
-        <span className={styles.breakTime}>{item.time}</span>
-      </div>
-    );
-  }
+const AgendaItem = dynamic(() => import('./AgendaItem'), {
+  loading: () => <p>Loading...</p>,
+  ssr: false
+});
 
-  return (
-    <div className={styles.sessionCard}>
-      <div className={styles.timeSlot}>{item.time}</div>
-      <div className={styles.cardContent}>
-        <Image
-          src={item.image}
-          alt={item.name}
-          width={80}
-          height={80}
-          className={styles.sessionSpeakerImage}
-        />
-        <div className={styles.speakerInfo}>
-          <h4>{item.name}</h4>
-          <p className={styles.company}>{item.company}</p>
-          <p className={styles.designation}>{item.designation}</p>
-        </div>
-        <div className={styles.sessionTopic}>{item.topic}</div>
-      </div>
-    </div>
-  );
-};
+const KeynoteSpeaker = dynamic(() => import('./KeynoteSpeaker'), {
+  loading: () => <p>Loading...</p>,
+  ssr: false
+});
+
 const Agenda = () => {
-   const [visibleSections, setVisibleSections] = useState([]);
+  const [visibleSections, setVisibleSections] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+
   const keynoteSpeakers = [
     {
       name: 'Rameesh Kailasam',
@@ -54,7 +35,6 @@ const Agenda = () => {
     }
   ];
 
-  // Data structure for all agenda items including sessions and breaks
   const agendaSections = [
     {
       id: 1,
@@ -299,74 +279,46 @@ const Agenda = () => {
       time: '5:00pm - 5:30pm',
       items:[]
     }
+    // ... (keep the existing agenda sections data)
   ];
 
-   useEffect(() => {
-    setVisibleSections(agendaSections.slice(0,6)); // Load the first section initially
-  }, []);
-
-
-    const handleScroll = () => {
-    if (window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight - 200) {
-      loadMoreSections();
-    }
-  };
-
-  const loadMoreSections = () => {
-    if (currentIndex < agendaSections.length) {
-      const nextIndex = currentIndex + 1;
-      setVisibleSections((prev) => [...prev, agendaSections[nextIndex]]);
-      setCurrentIndex(nextIndex);
-    }
-  };
+  const observer = useRef();
+  const lastElementRef = useCallback(node => {
+    if (observer.current) observer.current.disconnect();
+    observer.current = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && currentIndex < agendaSections.length - 1) {
+        setCurrentIndex(prevIndex => prevIndex + 1);
+        setVisibleSections(prev => [...prev, agendaSections[currentIndex + 1]]);
+      }
+    }, { rootMargin: '200px' });
+    if (node) observer.current.observe(node);
+  }, [currentIndex]);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [handleScroll]);
+    setVisibleSections(agendaSections.slice(0, 1));
+  }, []);
 
   return (
     <div className={styles.agenda}>
       <div className={styles.Header}>
-        <h1>Innauguration of the Summit 2025</h1>
+        <h1>Inauguration of the Summit 2025</h1>
         <p className={styles.headerText}>9:30 a.m. - 10:00 a.m.</p>
       </div>
-      {/* Keynote Speakers Section */}
+
       <h1 className={styles.mainTitle}>Keynote Speaker</h1>
-      
+
       <div className={styles.keynoteSpeakers}>
-               {keynoteSpeakers.map((speaker, index) => (
-          <div key={index} className={styles.speakerCard}>
-            <div className={styles.imageWrapper}>
-              <Image
-                src={speaker.image}
-                alt={speaker.name}
-                width={120}
-                height={120}
-                className={styles.speakerImage}
-              />
-            </div>
-
-            <div className={styles.speakerDetails}>
-              <h3>{speaker.name}</h3>
-              <p className={styles.role}>{speaker.role}</p>
-              <Line />
-              <p className={styles.time}>{speaker.time}</p>
-            </div>
-
-            <div className={styles.topicContainer}>
-              <p className={styles.topicLabel}>Speaker Topic:</p>
-              <p className={styles.topic}>{speaker.topic}</p>
-            </div>
-          </div>
+        {keynoteSpeakers.map((speaker, index) => (
+          <KeynoteSpeaker key={index} speaker={speaker} />
         ))}
       </div>
 
-      {/* Dynamic Sessions Section */}
-      {visibleSections.map((section) => (
-        <div key={section.id} className={styles.sessionContainer}>
+      {visibleSections.map((section, index) => (
+        <div 
+          key={section.id} 
+          className={styles.sessionContainer}
+          ref={index === visibleSections.length - 1 ? lastElementRef : null}
+        >
           <Line />
           <div className={styles.sessionMainHeader}>
             <div className={styles.sessionHeader}>
@@ -375,22 +327,27 @@ const Agenda = () => {
               <span>🎯</span>
             </div>
             <h3 className={styles.sessionTitle}>{section.title}</h3>
+            {section.type === 'Panel' && section.time ? (
+        <div className={styles.panelTime}>{section.time}</div>
+      ) : null}
           </div>
           <Line />
 
           <div className={styles.sessionSpeakers}>
-            {section.items.map((item, index) => (
-              <AgendaItem key={index} item={item} />
+            {section.items.map((item, itemIndex) => (
+              <AgendaItem key={itemIndex} item={item} />
             ))}
           </div>
         </div>
       ))}
+
       <div className={styles.Footer}>
         <h1>CEO Round Table</h1>
-        <p className={styles.footerText}>CEO&apos;s engage in a thought-provoking discussion on how to harness the power of GenAl to stay ahead in an increasingly competitive market.</p>
+        <p className={styles.footerText}>CEOs engage in a thought-provoking discussion on how to harness the power of GenAI to stay ahead in an increasingly competitive market.</p>
       </div>
     </div>
   );
 };
 
 export default Agenda;
+
