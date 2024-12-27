@@ -276,7 +276,7 @@ const Agenda = () => {
     },{
       type:'Panel',
       title: "The Ultimate Pitch: Seizing the Opportunity to Present Your Idea to Industry Experts",
-      time: '5:00pm - 5:30pm',
+      time: '5:00pm - 6:30pm',
       items:[]
     }
     // ... (keep the existing agenda sections data)
