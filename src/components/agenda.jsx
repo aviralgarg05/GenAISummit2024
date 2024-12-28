@@ -74,7 +74,7 @@ const Agenda = () => {
           company: 'VirtualInfocom',
           designation: 'Angel Investor & CEO, Coinnovateventures',
           time: '11:25 a.m. - 11:35 a.m.',
-          topic: 'Coming Soon',
+          topic: 'Investors Seek Scalable AI Solutions as Entreprenuers - Ride the Wave of Innovation in the Next Tech Frontier',
           image: '/arijit2.png'
         },
         {
@@ -104,7 +104,7 @@ const Agenda = () => {
           company: 'Cisco Systems',
           designation: 'CIO, Global Head of AI and Emerging Technologies',
           time: '12:20 p.m. - 12:30 p.m.',
-          topic: 'Coming Soon',
+          topic: 'The Rise of Agentic AI in 2025',
           image: '/abhinav.png'
         },
         {
