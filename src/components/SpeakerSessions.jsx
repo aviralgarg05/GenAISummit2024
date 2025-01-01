@@ -3,40 +3,40 @@ import styles from '../styles/SpeakerSession.module.scss';
 
 const SpeakerSessions = () => {
   const AISynergyattendeeTypes = [
-    'Government Leaders',
-    'Industry Experts',
-    'Policy Makers',
-    'Investors',
-    'Business Heads'
+    // 'Government Leaders',
+    // 'Industry Experts',
+    // 'Policy Makers',
+    // 'Investors',
+    // 'Business Heads'
   ];
   const FintechattendeeTypes = [
-    'Government Leaders',
-    'Business Heads',
-    'Bankers',
-    'Regulatory Experts',
-    'Technology Giants',
-    'Entrepreneurs'
+    // 'Government Leaders',
+    // 'Business Heads',
+    // 'Bankers',
+    // 'Regulatory Experts',
+    // 'Technology Giants',
+    // 'Entrepreneurs'
   ];
   const HealthcareattendeeTypes = [
-    'Government Experts',
-    'Hospital Heads',
-    'Regulatory Experts',
-    'Technology Specialist',
-    'Entrepreneurs'
+    // 'Government Experts',
+    // 'Hospital Heads',
+    // 'Regulatory Experts',
+    // 'Technology Specialist',
+    // 'Entrepreneurs'
   ];
   const PitchattendeeTypes = [
-    'Angel Investors',
-    'Government Experts',
-    'Business Heads',
-    'Tech Giants',
-    'Entrepreneurs'
+    // 'Angel Investors',
+    // 'Government Experts',
+    // 'Business Heads',
+    // 'Tech Giants',
+    // 'Entrepreneurs'
   ];
   const BuildingattendeeTypes = [
-    'Angel Investors',
-    'Government Experts',
-    'Business Heads',
-    'Policy Makers',
-    'Entrepreneurs'
+    // 'Angel Investors',
+    // 'Government Experts',
+    // 'Business Heads',
+    // 'Policy Makers',
+    // 'Entrepreneurs'
   ];
 
   const sessions = [
@@ -46,8 +46,8 @@ It aims to cultivate a dialogue to explore the skills, mindset, and strategies e
 Final */
 {
   id: 1,
-  title: '⁠BUILDING THE ENTREPRENEURS OF TOMORROW IN THE AGE OF AI',
-  description: 'This session will have eminent contributors shaping the startup ecosystem. It aims to cultivate a dialogue to explore the skills, mindset, and strategies entrepreneurs need to thrive in this new era—leveraging AI for innovation.',
+  title: 'NETWORKING SESSIONS',
+  description: 'Discuss, Engage, Immerse . Over morning tea, business lunch and evening tea',
 
 },
     // {
@@ -58,21 +58,26 @@ Final */
     // },
     {
       id: 2,
-      title: 'SKILLS SHAPING THE FUTURE ',
-      description: 'This session will serve as a platform for the key stakeholders to share their insights on the skills required to empower individuals to succeed in tomorrow’s evolving landscape of AI skilling. ',
+      title: 'SPEAKER INTERACTION',
+      description: 'Schedule 1-2-1 coversation with the industry experts',
       // description2: 'It will serve as a platform for these industry leaders to exchange specialised knowledge and insights, focusing on how AI is transforming financial services—enhancing customer experience, optimising risk management, ensuring regulatory compliance, and driving financial inclusion.'
     },
     {
       id: 3,
-      title: 'UNDERSTANDING TODAY, SHAPING TOMORROW - THE TECHNOLOGIES DRIVING THE AI REVOLUTION',
-      description: 'This session will serve as a forum for the Technology leaders to share their specialized knowledge on the technologies transforming the world now and driving the future tomorrow.',
+      title: 'ULTIMATE PITCH',
+      description: 'Seize the oppurtunity to present your idea to a Power-Packed panel of Experts',
       // description2: 'The session will serve as a collaborative forum for these key players to share their expertise and insights. It aims to ignite discussions on how advancements in generative AI are revolutionising the medical and healthcare sectors. Through this dialogue, participants will explore how gen AI can enhance patient care, streamline operations, and address regulatory challenges, ultimately driving the next wave of healthcare innovation.'
     },
     {
       id: 4,
-      title: ' ⁠PITCH PERFECT: PRESENT YOUR IDEAS WITH IMPACT',
-      description: "This is your opportunity to present your ideas and innovations to a rich panel of business leaders, technology experts, and investors. Whether you're seeking feedback, investors, or partnerships, this platform is designed to help you communicate your vision clearly and effectively. We’re excited to hear your pitches and support you in bringing your ideas to life."
+      title: 'CERTIFICATE OF PARTICIPATION',
+      description: "Get Recognized with a certificate of participation signed by the industry Experts"
     },
+    {
+      id:5,
+      title: 'GAIN A 360° PERSPECTIVE',
+      description: "Gain a 360-Degree insight into Current AI Trends from Tech Giants, Govt. leaders, Entreprenuers, Investors & Founders"
+    }
     // {
     //   id:5,
     //   title: 'Building the AI Economy - A Roundtable with Policymakers, Industry and Investors',
@@ -84,14 +89,12 @@ Final */
   return (
     <div className={styles.container}>
       <div className={styles.speakerHeader}>
-      <h1 className={styles.mainTitle}>SPEAKER SESSIONS</h1>
-      <div className={styles.moretocome}>
-          <h3>MORE TO COME</h3>
-        </div>
+      <h1 className={styles.mainTitle}>TAKEAWAYS FROM THE SUMMIT</h1>
+      
       </div>
-      <p className={styles.subtitle}>
+      {/* <p className={styles.subtitle}>
         Welcome to the enriching sessions at  where industry leaders, innovators, and thought pioneers come together to explore cutting-edge technologies, share insights and foster meaningful discussions that will shape the future of GenAI penetration in the industry diaspora.
-      </p>
+      </p> */}
       
       <div className={styles.sessionsContainer}>
         {sessions.map((session, index) => (
@@ -120,13 +123,7 @@ Final */
                 <div className={styles.numberCircle}>2</div>
                 <div className={styles.textContent}>
                   <h2 className={styles.title}>{session.title}</h2>
-                  <div className={styles.attendeeTypes}>
-            {FintechattendeeTypes.map((type, index) => (
-              <span key={index} className={styles.attendeeType}>
-                {type}
-              </span>
-            ))}
-          </div>
+                 
                   <p className={styles.description}>{session.description}</p>
                   <p className={styles.description}>{session.description2}</p>
                 </div>
@@ -137,13 +134,7 @@ Final */
               <div className={styles.thirdSession}>
                 <div className={styles.textContent}>
                   <h2 className={styles.title}>{session.title}</h2>
-                  <div className={styles.attendeeTypes}>
-            {HealthcareattendeeTypes.map((type, index) => (
-              <span key={index} className={styles.attendeeType}>
-                {type}
-              </span>
-            ))}
-          </div>
+                 
                   <p className={styles.description}>{session.description}</p>
                   <p className={styles.description}>{session.description2}</p>
                 </div>

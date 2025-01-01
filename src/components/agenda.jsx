@@ -300,6 +300,7 @@ const Agenda = () => {
 
   return (
     <div className={styles.agenda}>
+      <h1 className={styles.mainHeading}>Schedule</h1>
       <div className={styles.Header}>
         <h1>Inauguration of the Summit 2025</h1>
         <p className={styles.headerText}>9:30 a.m. - 10:00 a.m.</p>

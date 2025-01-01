@@ -42,7 +42,7 @@ export default function Home() {
 
         <div id="about">
           <AnimatedSection delay={100}>
-            <About />
+            <SpeakerSessions />
           </AnimatedSection>
         </div>
 
