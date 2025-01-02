@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import '@/styles/globals.scss';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
+import { Analytics } from "@vercel/analytics/react"
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -47,6 +48,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+    <Analytics />
       {/* Google Tag */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=AW-11493790682"
