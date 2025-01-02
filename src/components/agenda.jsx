@@ -343,7 +343,7 @@ const Agenda = () => {
       ))}
 
       <div className={styles.Footer}>
-        <h1>CEO Round Table</h1>
+        <h1 className={styles.footerHeading}>CEO Round Table</h1>
         <p className={styles.footerText}>CEOs engage in a thought-provoking discussion on how to harness the power of GenAI to stay ahead in an increasingly competitive market.</p>
       </div>
     </div>

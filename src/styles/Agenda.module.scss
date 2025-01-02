@@ -230,6 +230,11 @@
     color: #FF6B6B;
     font-size: 0.9rem;
   }
+
+  .footerHeading{
+    align-items: center;
+  }
+
   
   .cardContent {
     padding: 1.5rem;
@@ -299,15 +304,15 @@
   
   @media (max-width: 1024px) {
 
+    .footerHeading{
+      align-items: center;
+    }
+
     .keynoteSpeakers {
       flex-direction: column;
       align-items: center;
     }
-     .Footer{
-      h1{
-        align-items: center;
-      }
-     }
+     
     .cardContent {
       grid-template-columns: 1fr;
       text-align: center;
@@ -329,6 +334,10 @@
   }
   
   @media (max-width: 768px) {
+    .footerHeading{
+      align-items: center;
+    }
+
 
     .agenda {
       padding: 1rem;

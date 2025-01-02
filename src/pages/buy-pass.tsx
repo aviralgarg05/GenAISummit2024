@@ -198,7 +198,7 @@ const BuyTickets = () => {
       </div>
 
       <section className={styles.otherPasses}>
-        <div className={styles.passType}>
+        {/* <div className={styles.passType}>
           <div className={styles.passInfo}>
             <h3>
               Regular Passes <span>1 Jan 2025 to 5 Jan 2025</span>
@@ -206,14 +206,14 @@ const BuyTickets = () => {
             <p>Group discounts reduce</p>
           </div>
           <div className={styles.price}>Rs. 7,000</div>
-        </div>
+        </div> */}
 
-        <div className={styles.verticalDivider}></div>
+        {/* <div className={styles.verticalDivider}></div> */}
 
         <div className={styles.passType}>
           <div className={styles.passInfo}>
             <h3>
-              Late Passes <span>Available from 6 Jan 2025</span>
+              Late Passes <span>Available from 5 Jan 2025</span>
             </h3>
             <p>No group discounts</p>
           </div>
