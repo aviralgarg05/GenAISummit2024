@@ -213,7 +213,7 @@ const BuyTickets = () => {
         <div className={styles.passType}>
           <div className={styles.passInfo}>
             <h3>
-              Late Passes <span>Available from 5 Jan 2025</span>
+              Late Passes <span>Available from 5th Jan 2025</span>
             </h3>
             <p>No group discounts</p>
           </div>
