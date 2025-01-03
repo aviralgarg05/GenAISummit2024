@@ -15,6 +15,7 @@ import { WavyBackgroundDemo } from '../components/LandingPage';
 import Contact from '../components/ContactUs';
 import BuyTicketsSection from '../components/BuyTicketsSection';
 import Agenda from '../components/agenda';
+import SocialSidebar from '../components/socialSidebar';
 
 
 export default function Home() {
@@ -27,6 +28,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <div>
+          <SocialSidebar />
+        </div>
         <div id="home">
           <AnimatedSection delay={0}>
             <WavyBackgroundDemo/>
