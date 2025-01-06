@@ -39,6 +39,7 @@
     background-color: #FF6B6B;
     color: white;
     border-radius: 20rem;
+    text-align: center;
     justify-content: center;
     padding-top: 4rem;
     margin-bottom: 1rem;
@@ -304,8 +305,11 @@
   
   @media (max-width: 1024px) {
 
+
+
     .footerHeading{
       align-items: center;
+      text-align: center;
     }
 
     .keynoteSpeakers {
