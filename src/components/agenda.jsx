@@ -62,7 +62,7 @@ const Agenda = () => {
         {
           type: 'speaker',
           name: 'Harneet Singh',
-          company: 'Rebel AI',
+          company: 'Rabbit AI',
           designation: 'Founder and Chief AI Officer',
           time: '11:10 a.m. - 11:20 a.m.',
           topic: 'Coming Soon',

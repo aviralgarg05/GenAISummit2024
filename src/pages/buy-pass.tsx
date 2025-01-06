@@ -113,8 +113,8 @@ const BuyTickets = () => {
       <br />
       <div className={styles.earlyBirdHeader}>
         <div className={styles.earlyBirdHeader2}>
-          <h2>Early Bird Passes</h2>
-          <span>Available till 5th January 2025</span>
+          <h2>Registration Fee</h2>
+          <span>Open till 8th January 2025</span>
         </div>
         <div>
           <button className={styles.PreRegistrationBtn2}>New Year Offer</button>
@@ -193,12 +193,12 @@ const BuyTickets = () => {
 
       {/*} <div className={styles.divider}></div> */}
 
-      <div className={styles.priceAlert}>
+      {/*  <div className={styles.priceAlert}>
         <h2>Hurry! Prices will go up soon.</h2>
       </div>
 
       <section className={styles.otherPasses}>
-        {/* <div className={styles.passType}>
+         <div className={styles.passType}>
           <div className={styles.passInfo}>
             <h3>
               Regular Passes <span>1 Jan 2025 to 5 Jan 2025</span>
@@ -208,7 +208,7 @@ const BuyTickets = () => {
           <div className={styles.price}>Rs. 7,000</div>
         </div> */}
 
-        {/* <div className={styles.verticalDivider}></div> */}
+      {/* <div className={styles.verticalDivider}></div> 
 
         <div className={styles.passType}>
           <div className={styles.passInfo}>
@@ -219,7 +219,7 @@ const BuyTickets = () => {
           </div>
           <div className={styles.price}>Rs. 8,000</div>
         </div>
-      </section>
+      </section>*/}
       {paymentSuccess && (
         <div className={styles.popup}>
           <div className={styles.popupContent}>
