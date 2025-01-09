@@ -114,7 +114,7 @@ const BuyTickets = () => {
       <div className={styles.earlyBirdHeader}>
         <div className={styles.earlyBirdHeader2}>
           <h2>Registration Fee</h2>
-          <span>Open till 8th January 2025</span>
+          <span>Open till 10th January 2025</span>
         </div>
         <div>
           <button className={styles.PreRegistrationBtn2}>New Year Offer</button>
