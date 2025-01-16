@@ -9,12 +9,10 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.content}>
         <nav className={styles.navigation}>
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#sessions">Sessions</a>
-          <a href="#speakers">Speakers</a>
           <a href="#themes">Themes</a>
           <a href="#committee">Committee</a>
+          <a href="#highlights">Highlights</a>
+          <a href="#contact">Contact Us</a>
           <a href="../privacy-policy">Privacy Policy</a>
         </nav>
 
