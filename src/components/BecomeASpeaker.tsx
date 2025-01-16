@@ -13,9 +13,9 @@ const BecomeASpeaker = () => {
     <div className={styles.container}>
       <div className={styles.content}>
         <div>
-          <h2>Become a Speaker/Sponsor</h2>
+          <h2>Become a Sponsor</h2>
           <p>
-            Interested in becoming a speaker or sponsor at The GenAI Summit 2025? Join us in 
+            Interested in becoming a sponsor at The GenAI Summit 2025? Join us in 
             shaping the future of generative AI! Connect with innovators, share insights, and elevate 
             your brand among industry leaders. Apply today to make your mark!
           </p>
