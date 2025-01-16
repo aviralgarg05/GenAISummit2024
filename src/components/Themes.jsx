@@ -2,10 +2,21 @@ import React, { useState, useEffect } from 'react';
 import styles from '../styles/Themes.module.scss';
 
 const themes = [
-  { name: 'Fin-Tech', color: '#FC4D4D' },
-  { name: 'Health-Tech', color: '#FC4D4D' },
-  { name: 'Ed-Tech', color: '#FC4D4D' },
-  { name: 'AI-Tech', color: '#FC4D4D' }
+  { 
+    name: (
+      <>
+        Autonomous<br />
+        Systems
+      </>
+    ), 
+    color: '#FC4D4D' 
+  },
+  { name: 'Retail', color: '#FC4D4D' },
+  { name: 'Digital Media', color: '#FC4D4D' },
+  { name: 'Sustainability', color: '#FC4D4D' },
+  { name: 'Skilling', color: '#FC4D4D' },
+  { name: 'Entrepreneurship', color: '#FC4D4D' },
+  { name: 'Fin-Tech', color: '#FC4D4D' }
 ];
 
 const scrollingThemes = [

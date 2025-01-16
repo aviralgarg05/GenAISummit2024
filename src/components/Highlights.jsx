@@ -7,12 +7,12 @@ const Highlights = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Highlights - GenAI Summit</title>
+        <title>GenAI Summit</title>
         <meta name="description" content="Highlights from the GenAI Summit" />
         <link rel="icon" href="/GenAI.svg" />
       </Head>
 
-      <main className={styles.main}>
+      <div className={styles.main}>
         <Image
           src="/highlights.png"
           alt="GenAI Summit Highlights"
@@ -20,7 +20,7 @@ const Highlights = () => {
           height={1080}
           className={styles.highlightImage}
         />
-      </main>
+      </div>
     </div>
   );
 };

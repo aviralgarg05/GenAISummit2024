@@ -90,13 +90,14 @@
 }
 
 .announceStrip {
-   position: fixed;
+   position: absolute;
    bottom: 0;
    left: 0;
    right: 0;
    background: linear-gradient(90deg, #FF7527 0%, #FC4D4D 50%, #FF7527 100%);
-   padding: 1rem 0;
+   padding: 0.8rem 0; // Slightly reduced padding
    z-index: 20;
+   margin-bottom: 0;
 
    p {
       color: white;
@@ -107,6 +108,25 @@
       margin: 0;
       letter-spacing: 0.05em;
    }
+}
+
+.heroSection {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: -4rem; // Increased negative margin to pull sections closer
+}
+
+.highlightsSection {
+  width: 100%;
+  padding: 1rem 2rem 4rem; // Reduced top padding further
+  background: #f8f9fa;
+  position: relative;
+  z-index: 10;
+  margin-top: 0; // Remove any default margin
 }
 
 // Responsive adjustments
