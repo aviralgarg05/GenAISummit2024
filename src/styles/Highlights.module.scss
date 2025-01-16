@@ -2,6 +2,15 @@
   min-height: 100vh;
   background-color: #FDF8F6;
   padding-top: 80px; // Space for navbar
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+  }
 }
 
 .main {
@@ -9,9 +18,44 @@
   margin: 0 auto;
   padding: 2rem;
 }
+
 .highlightImage {
   width: 100%;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.highlights {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #f6f8fa 0%, #e9ecef 100%);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.statCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  h3 {
+    font-size: 3rem;
+    color: #2563eb;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #666;
+  }
 }
