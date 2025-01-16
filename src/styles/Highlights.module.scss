@@ -1,0 +1,17 @@
+.container {
+  min-height: 100vh;
+  background-color: #FDF8F6;
+  padding-top: 80px; // Space for navbar
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.highlightImage {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
