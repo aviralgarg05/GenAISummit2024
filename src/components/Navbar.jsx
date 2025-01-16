@@ -9,26 +9,6 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isHome, setIsHome] = useState(true);
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const navbarHeight = 80; // Adjust based on your navbar height
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
-
-  const handleNavClick = (sectionId) => (e) => {
-    e.preventDefault();
-    setIsOpen(false);
-    scrollToSection(sectionId);
-  };
-
   useEffect(() => {
     setIsHome(router.pathname === '/');
 
@@ -56,6 +36,38 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const scrollToSection = (sectionId) => {
+    if (!isHome) {
+      router.push('/').then(() => {
+        setTimeout(() => {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            element.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+          setIsOpen(false);
+        }, 100);
+      });
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+      setIsOpen(false);
+    }
+  };
+
+  const handleNavClick = (sectionId) => (e) => {
+    e.preventDefault();
+    setIsOpen(false);
+    scrollToSection(sectionId);
+  };
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.logo}>
@@ -67,6 +79,12 @@ const Navbar = () => {
         </Link>
       </div>
 
+      <div className={styles.mobileTicketButton} >
+        <Link href="/buy-pass" style={{textDecoration:'none'}}>
+          <button className={styles.buyTicketsBtn}>Buy Tickets</button>
+        </Link>
+      </div>
+
       <div className={styles.hamburger} onClick={() => setIsOpen(!isOpen)}>
         <span></span>
         <span></span>
@@ -74,6 +92,16 @@ const Navbar = () => {
       </div>
 
       <ul className={`${styles.navLinks} ${isOpen ? styles.open : ''}`}>
+        <li onClick={() => setIsOpen(false)}>
+          <a href="#about" onClick={handleNavClick('about')}>
+            About
+          </a>
+        </li>
+        <li onClick={() => setIsOpen(false)}>
+          <a href="#speakers" onClick={handleNavClick('speakers')}>
+            Speakers
+          </a>
+        </li>
         <li onClick={() => setIsOpen(false)}>
           <a href="#themes" onClick={handleNavClick('themes')}>
             Themes
@@ -85,9 +113,9 @@ const Navbar = () => {
           </a>
         </li>
         <li onClick={() => setIsOpen(false)}>
-          <a href="#highlights" onClick={handleNavClick('highlightsSection')}>
+          <Link href="/highlights">
             Highlights
-          </a>
+          </Link>
         </li>
         <li onClick={() => setIsOpen(false)}>
           <a href="#contact" onClick={handleNavClick('contact')}>
