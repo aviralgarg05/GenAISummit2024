@@ -1,17 +1,22 @@
 import { useEffect, useRef, useState } from 'react';
-import Head from 'next/head';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import WhoShouldAttend from '../components/WhoShouldAttend';
-import AdvisoryCommittee from '../components/AdvisoryCommittee';
-import styles from '../styles/Home.module.scss';
-import Themes from '@/components/Themes';
+import Head from 'next/head'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+import About from '../components/About'
+import WhoShouldAttend from '../components/WhoShouldAttend'
+import AdvisoryCommittee from '../components/AdvisoryCommittee'
+import styles from '../styles/Home.module.scss'
+import Speakers from '@/components/Speaker'
+import Themes from '@/components/Themes'
 import AnimatedSection from '@/components/AnimatedSection';
 import BecomeASpeaker from './../components/BecomeASpeaker';
+import SpeakerSessions from '../components/SpeakerSessions';
 import { WavyBackgroundDemo } from '../components/LandingPage';
 import Contact from '../components/ContactUs';
+import BuyTicketsSection from '../components/BuyTicketsSection';
+import Agenda from '../components/agenda';
 import SocialSidebar from '../components/socialSidebar';
-import Highlights from '@/components/Highlights';
+
 
 export default function Home() {
   return (
@@ -23,52 +28,83 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Navbar />
-        <SocialSidebar />
-
-        {/* Landing Page Section */}
-        <section className={styles.heroSection}>
-          <WavyBackgroundDemo />
-        </section>
-
-        {/* Announcement Strip */}
-        <div className={styles.announceStrip}>
-          <p>"India's GenAI pioneers gathered at the Ashoka Hotel on January 11th, 2025, lighting the path to the future."<br />
-          "Were you part of it, or did you miss the dawn of a new era?"</p>
+        <div>
+          <SocialSidebar />
+        </div>
+        <div id="home">
+          <AnimatedSection delay={0}>
+            <WavyBackgroundDemo/>
+          </AnimatedSection>
         </div>
 
-        {/* Highlights Section */}
-        <section id="highlightsSection" className={styles.highlightsSection}>
-          <Highlights />
-        </section>
+        
+        {/* <div id="about">
+          <AnimatedSection delay={100}>
+            <Agenda />
+          </AnimatedSection>
+        </div> */}
 
-        {/* Who Should Attend Section */}
-        <section id="who-should-attend">
+        <div id="about">
+          <AnimatedSection delay={100}>
+            <SpeakerSessions />
+          </AnimatedSection>
+        </div>
+
+        <div id="BuyTicketSection">
+          <AnimatedSection delay={100}>
+            <BuyTicketsSection />
+          </AnimatedSection>
+        </div>
+
+       {/* <div id="who-should-attend">
           <AnimatedSection delay={200}>
             <WhoShouldAttend />
           </AnimatedSection>
-        </section>
+        </div>
+        */}
 
-        <div id="themes">
-          <AnimatedSection delay={300}>
-            <Themes />
+        <div id="sessions">
+          <AnimatedSection delay={200}>
+            <Agenda />
+          </AnimatedSection>
+        </div>
+
+        <div id="speakers">
+          <AnimatedSection >
+            <Speakers />
+          </AnimatedSection>
+        </div>
+
+        <div id="BuyTicketSection">
+          <AnimatedSection delay={400}>
+            <BuyTicketsSection />
           </AnimatedSection>
         </div>
 
         <div id="become-speaker">
           <AnimatedSection delay={400}>
-            <BecomeASpeaker />
+            <BecomeASpeaker/>
+          </AnimatedSection>
+        </div>
+
+        <div id="themes">
+          <AnimatedSection delay={500}>
+            <Themes />
           </AnimatedSection>
         </div>
 
         <div id="committee">
-          <AnimatedSection delay={500}>
+          <AnimatedSection delay={600}>
             <AdvisoryCommittee />
           </AnimatedSection>
         </div>
-
+        <div id="BuyTicketSection">
+          <AnimatedSection delay={300}>
+            <BuyTicketsSection />
+          </AnimatedSection>
+        </div>
         <div id="contact">
-          <AnimatedSection delay={600}>
+          <AnimatedSection delay={300}>
             <Contact />
           </AnimatedSection>
         </div>
