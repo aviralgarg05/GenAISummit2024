@@ -28,14 +28,15 @@ export function WavyBackgroundDemo() {
                 <span>GenAI</span>
                 <span>Summit</span>
               </div>
-              <span className={styles.yearAccent}>2025</span>
+              <span className={styles.yearAccent}></span>
             </div>
             <p className={styles.tagline}>Elevate. Innovate. Accelerate.</p>
           </div>
         </div>
       </WavyBackground>
       <div className={styles.announceStrip}>
-        <p>Join us on 11<span className={styles.date}>th</span> January at The Ashok Hotel | New Delhi</p>
+        <p>“India’s GenAI pioneers gathered at the Ashoka Hotel on January 11th, 2025, lighting the path to the future.”<br></br>
+        “Were you part of it, or did you miss the dawn of a new era?”<span className={styles.date}></span> </p>
       </div>
     </div>
   );

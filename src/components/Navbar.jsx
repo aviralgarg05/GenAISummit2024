@@ -85,7 +85,7 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <div className={styles.hamburger} onClick={toggleMenu}>
+      <div className={styles.hamburger} onClick={() => setIsOpen(!isOpen)}>
         <span></span>
         <span></span>
         <span></span>
@@ -93,18 +93,8 @@ const Navbar = () => {
 
       <ul className={`${styles.navLinks} ${isOpen ? styles.open : ''}`}>
         <li onClick={() => setIsOpen(false)}>
-          <a href="#home" onClick={handleNavClick('home')}>
-            Home
-          </a>
-        </li>
-        <li onClick={() => setIsOpen(false)}>
           <a href="#about" onClick={handleNavClick('about')}>
             About
-          </a>
-        </li>
-        <li onClick={() => setIsOpen(false)}>
-          <a href="#sessions" onClick={handleNavClick('sessions')}>
-            Agenda
           </a>
         </li>
         <li onClick={() => setIsOpen(false)}>
@@ -123,14 +113,14 @@ const Navbar = () => {
           </a>
         </li>
         <li onClick={() => setIsOpen(false)}>
+          <Link href="/highlights">
+            Highlights
+          </Link>
+        </li>
+        <li onClick={() => setIsOpen(false)}>
           <a href="#contact" onClick={handleNavClick('contact')}>
             Contact Us
           </a>
-        </li>
-        <li className={styles.desktopOnly}>
-          <Link href="/buy-pass">
-            <button className={styles.preRegisterBtn}>Buy Tickets</button>
-          </Link>
         </li>
         <li onClick={() => setIsOpen(false)}>
           <Link href="/become-a-speaker-sponsor">
